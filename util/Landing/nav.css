@@ -26,7 +26,8 @@ nav {
   background-color: var(--color-bg-overlay);
   box-shadow: var(--shadow-sm);
   position: fixed;
-  transform: translateY(30px);
+  backdrop-filter: blur(5px);
+  /* transform: translateY(30px); */
 }
 .link {
   width: 65%;
