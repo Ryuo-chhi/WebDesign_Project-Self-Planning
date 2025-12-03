@@ -46,14 +46,14 @@ a {
   list-style: none;
   text-decoration: none;
   color: var(--color-text-primary);
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 .log-sign {
   display: flex;
   gap: 10px;
 }
 .log-sign button {
-  font-size: 1rem;
+  font-size: var(--font-size-h4);
   padding: 5px 10px;
   border-radius: 10px;
   color: var(--color-text-primary);
