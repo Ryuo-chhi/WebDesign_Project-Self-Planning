@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Travel Planner</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<h1>Travel Planner Web App</h1>
+
+<div class="container">
+
+    <!-- To-Do List -->
+    <section>
+        <h2>To-Do List</h2>
+        <input id="taskInput" placeholder="Enter task..." />
+        <button onclick="addTask()">Add</button>
+
+        <ul id="taskList"></ul>
+    </section>
+
+    <!-- Trip Planning -->
+    <section>
+        <h2>Trip Planning</h2>
+
+        <label>Destination:</label>
+        <input id="destInput" />
+
+        <label>Date:</label>
+        <input type="date" id="dateInput" />
+
+        <label>Transport:</label>
+        <select id="transportInput">
+            <option>Flight</option>
+            <option>Bus</option>
+            <option>Car</option>
+            <option>Train</option>
+        </select>
+
+        <label>Hotel:</label>
+        <input id="hotelInput" />
+
+        <label>Budget ($):</label>
+        <input id="budgetInput" type="number" />
+
+        <button onclick="saveTripPlan()">Save Plan</button>
+
+        <h3>Map</h3>
+        <iframe id="mapFrame" width="100%" height="200"></iframe>
+
+        <h3>Trip Summary</h3>
+        <div id="tripSummary"></div>
+    </section>
+
+    <!-- Financial Tracker -->
+    <section>
+        <h2>Financial Tracker</h2>
+
+        <label>Category:</label>
+        <select id="expCategory">
+            <option>Food</option>
+            <option>Transport</option>
+            <option>Hotel</option>
+            <option>Shopping</option>
+            <option>Tickets</option>
+        </select>
+
+        <label>Amount ($):</label>
+        <input id="expAmount" type="number" />
+
+        <label>Note:</label>
+        <input id="expNote" />
+
+        <button onclick="addExpense()">Add Expense</button>
+
+        <ul id="expenseList"></ul>
+
+        <h3>Total Spent: $<span id="totalSpent">0</span></h3>
+        <h3>Remaining: $<span id="remaining">0</span></h3>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
