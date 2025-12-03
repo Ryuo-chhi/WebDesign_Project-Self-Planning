@@ -1,62 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="nav.css" />
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="grid-container">
-      <!-- navBar -->
-      <header>
-        <nav>
-          <div class="logo">
-            <img src="/asset/img/Self-Planning-Logo.png" alt="logo" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="grid-container">
+    <!-- navBar -->
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="/asset/img/Self-Planning-Logo.png" alt="logo" />
+        </div>
+        <div class="link">
+          <ul>
+            <li>
+              <a href="">Home</a>
+              <a href="">About</a>
+              <a href="">Feature</a>
+              <a href="">Contact</a>
+            </li>
+          </ul>
+          <div class="log-sign">
+            <button id="login">Log in</button>
+            <button id="sign-up">Sign up</button>
           </div>
-          <div class="link">
-            <ul>
-              <li>
-                <a href="">Home</a>
-                <a href="">About</a>
-                <a href="">Feature</a>
-                <a href="">Contact</a>
-              </li>
-            </ul>
-            <div class="log-sign">
-              <button id="login">Log in</button>
-              <button id="sign-up">Sign up</button>
-            </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="heroSection">
+        <div class="description">
+          <div class="headerText">
+            <h1>Welcome to</h1>
+            <h1 class="mainText">Self-Planning Travel Planner</h1>
           </div>
-        </nav>
-      </header>
-      <main>
-        <section class="heroSection">
-          <div class="description">
-            <div class="headerText">
-              <h1>Welcome to</h1>
-              <h1 class="mainText">Self-Planning Travel Planner</h1>
-            </div>
-            <span>Stop juggling spreadsheets, notes, and separate apps.</span><br>
-            <p>
-              The Self-Planning Travel Planner Web Application is your
-              consolidated digital companion for organizing every detail of your
-              trip. We integrate all essential trip organization tools into one
-              user-friendly platform, making travel preparation efficient and
-              stress-free.
-            </p>
-            <button id="get-started">Get Started</button>
+          <span>Stop juggling spreadsheets, notes, and separate apps.</span><br>
+          <p>
+            The Self-Planning Travel Planner Web Application is your
+            consolidated digital companion for organizing every detail of your
+            trip. We integrate all essential trip organization tools into one
+            user-friendly platform, making travel preparation efficient and
+            stress-free.
+          </p>
+          <button id="get-started">Get Started</button>
+        </div>
+        <div class="mainImg">
+          <img src="/asset/img/mainImg.png" alt="">
+        </div>
+      </section>
+      <section class="features">
+        <div>
+          <h2 class="featuresText">Everything is yours <span> Benefits</span></h2>
+        </div>
+        <div class="container">
+          <div class="card">
+            <img src="" alt="">
+            <h3>To-Do List</h3>
+            <p>Seamlessly manage all your trip tasks. Easily add, edit, track completion, and assign priority labels to
+              ensure nothing is forgotten.</p>
           </div>
-          <div class="mainImg">
-            <img src="/asset/img/mainImg.png" alt="">
-          </div>
-        </section>
-        <section class="features">
-            <h2>Everything is yours <span>Benefits</span></h2>
-        </section>
-      </main>
-      
-    </div>
-  </body>
+        </div>
+
+      </section>
+    </main>
+
+  </div>
+</body>
+
 </html>
