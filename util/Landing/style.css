@@ -1,0 +1,75 @@
+@import url("../../asset/colors.css");
+@import url("../../asset/fontSize.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav {
+  border-radius: 10px;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-bg-overlay);
+  box-shadow: var(--shadow-sm);
+  position: fixed;
+  transform: translateY(30px);
+}
+.link {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-right: 10px; */
+}
+
+.link li {
+  display: flex;
+  gap: 3rem;
+}
+.link li,
+a {
+  list-style: none;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  font-size: 1.25rem;
+}
+.log-sign {
+  display: flex;
+  gap: 10px;
+}
+.log-sign button {
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: var(--color-text-primary);
+}
+#login {
+  background-color: var(--color-primary-blue);
+  border: 1px solid var(--color-primary-blue);
+}
+#sign-up {
+  background-color: transparent;
+  border: 1px solid var(--color-text-primary);
+}
+.logo {
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 40px;
+}
