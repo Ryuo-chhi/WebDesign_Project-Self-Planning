@@ -78,6 +78,8 @@ p {
   padding: 1rem;
   gap: 10px;
   border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.5s;
 }
 
 .div-text {
@@ -89,4 +91,23 @@ p {
 .p-about {
   text-align: center;
   margin-bottom: 2rem;
+}
+
+#login:hover,
+#sign-up:hover {
+  background-color: var(--color-primary-blue-alpha-80);
+  border: 1px solid var(--color-primary-blue-alpha-80);
+  transform: translateY(3px);
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.container-box .container:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all 0.5s;
 }
