@@ -68,13 +68,14 @@ p {
 
 .container-box {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 3rem;
 }
 
 .container-box .container {
   background-color: var(--color-bg-secondary);
   display: flex;
-  padding: 10px;
+  padding: 1rem;
   gap: 10px;
   border-radius: 10px;
 }
