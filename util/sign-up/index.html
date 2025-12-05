@@ -28,7 +28,7 @@
             </div>
             </div>
             <div>
-                <form action="dashboard" method="POST">
+                <form action="../Dashboard/dashboard.html" method="POST" id="sign-upForm">
                 <div class="input-group">
                     <label for="fullname">Full Name</label>
                     <i class="fi fi-rr-user"></i>
@@ -49,7 +49,7 @@
                 </form>
             </div>
             <div class="login-link-container">
-                <p class="rd-have-acc">Already have an account? <a href="/util/log-in/index.html">Log in</a></p>
+                <p class="rd-have-acc">Already have an account? <a href="../log-in/index.html">Log in</a></p>
             </div>
             <div class="continue-with-text">
                 <div class="line"></div>
@@ -57,8 +57,37 @@
                 <div class="line"></div>
             </div>
             
-            <div><button type="dashboard" id="google-btn">Google</button></div>
+            <div><button action="../Dashboard/dashboard.html" type="button" id="google-btn">Google</button></div>
         </div>
     </div>
 </body>
+
+<script>
+    // Get the form element (for submission)
+    const form = document.getElementById('sign-upForm');
+    
+    // Get the Google button element (for clicking)
+    const googleBtn = document.getElementById('google-btn');
+
+    // Add an event listener for the form submission
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            // Stop the default form submission action
+            event.preventDefault(); 
+            
+            // Navigate the user to the dashboard page
+            window.location.href = '../Dashboard/dashboard.html';
+        });
+    }
+
+    // Add an event listener for the Google button click
+    if (googleBtn) {
+        googleBtn.addEventListener('click', function() {
+            // Navigate the user to the dashboard page (or start Google OAuth)
+            window.location.href = '../Dashboard/dashboard.html';
+            // If you wanted a different URL for Google, you'd put it here.
+        });
+    }
+</script>
+
 </html>
