@@ -8,40 +8,41 @@
     <link rel="stylesheet" href="../../asset/colors.css" />
     <link rel="stylesheet" href="../../asset/fontSize.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"/>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     
 </head>
 <body>
     <div class="container-box">
         <div class="container gradient-bg">
             <div class="welcome-content">
-                <div class="safe-lock"></div>
+                <div class="safe-lock"><i class="fi fi-rr-lock"></i></div>
             <div><h2>Welcome to Our Platform</h2></div>
             <div><p>Join thousands of users who trust our secure and seamless authentication experience.</p></div>
             </div>
         </div>
         <div class="container">
             <div>
-                <div class="font-small">
+                <div>
                 <p>Create your account</p>
-                <p style="color: var(--color-text-secondary);">Fill in your details to get started.</p>
+                <p  class="font-small" style="color: var(--color-text-secondary);">Fill in your details to get started.</p>
             </div>
             </div>
             <div>
                 <form action="dashboard" method="POST">
                 <div class="input-group">
                     <label for="fullname">Full Name</label>
-                    <i class="fas fa-user input-icon"></i>
+                    <i class="fi fi-rr-user"></i>
                     <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
                 </div>
 
                 <div class="input-group">
                     <label for="email">Email Address</label>
-                    <i class="fas fa-envelope input-icon"></i>
+                    <i class="fi fi-rr-envelope"></i>
                     <input type="email" id="email" name="email" placeholder="you@example.com" required> </div>
 
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <i class="fas fa-lock input-icon"></i>
+                    <i class="fi fi-rr-lock"></i>
                     <input type="password" id="password" name="password" placeholder="********" required> </div>
 
                 <button type="submit" class="create-account-btn">Create Account</button>
@@ -50,7 +51,12 @@
             <div class="login-link-container">
                 <p class="rd-have-acc">Already have an account? <a href="/util/log-in/index.html">Log in</a></p>
             </div>
-            <div class="continue-with-text">or continue with</div>
+            <div class="continue-with-text">
+                <div class="line"></div>
+                <div>or continue with</div>
+                <div class="line"></div>
+            </div>
+            
             <div><button type="dashboard" id="google-btn">Google</button></div>
         </div>
     </div>

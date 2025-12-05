@@ -184,4 +184,7 @@ button {
   display: block;
 }
 
-.
+.forgot-pw {
+  text-align: right;
+  color: var(--color-primary-blue-light);
+}

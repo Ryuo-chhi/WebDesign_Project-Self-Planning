@@ -23,7 +23,7 @@
   
   /* Body Text Sizes */
   --font-size-base: 1rem;           /* 16px - Body text, form inputs, general content */
-  --font-size-sm: 0.875rem;         /* 14px - Small text, table cells, callouts */
+  --font-size-sm: 0.82rem;         /* 14px - Small text, table cells, callouts */
   --font-size-xs: 0.75rem;          /* 12px - Tiny text, helper text, "New page" */
   --font-size-xxs: 0.625rem;        /* 10px - Tags (e.g., "Roadtrip", "Citytrip") */
 }
