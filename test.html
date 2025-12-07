@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Landing Page with Modals</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5); /* Dark overlay */
+    }
+
+    .modal-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      width: 300px;
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    .close {
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Landing Page -->
+  <h1>Welcome to My Landing Page</h1>
+  <button id="openSignup">Sign Up</button>
+  <button id="openLogin">Log In</button>
+
+  <!-- Sign Up Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeSignup">&times;</span>
+      <h2>Sign Up</h2>
+      <form>
+        <input type="text" placeholder="Username" required><br>
+        <input type="email" placeholder="Email" required><br>
+        <input type="password" placeholder="Password" required><br>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Log In Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeLogin">&times;</span>
+      <h2>Log In</h2>
+      <form>
+        <input type="email" placeholder="Email" required><br>
+        <input type="password" placeholder="Password" required><br>
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Get elements
+    const signupModal = document.getElementById("signupModal");
+    const loginModal = document.getElementById("loginModal");
+
+    const openSignup = document.getElementById("openSignup");
+    const openLogin = document.getElementById("openLogin");
+
+    const closeSignup = document.getElementById("closeSignup");
+    const closeLogin = document.getElementById("closeLogin");
+
+    // Open modals
+    openSignup.onclick = () => signupModal.style.display = "block";
+    openLogin.onclick = () => loginModal.style.display = "block";
+
+    // Close modals
+    closeSignup.onclick = () => signupModal.style.display = "none";
+    closeLogin.onclick = () => loginModal.style.display = "none";
+
+    // Close if user clicks outside modal
+    window.onclick = (event) => {
+      if (event.target === signupModal) signupModal.style.display = "none";
+      if (event.target === loginModal) loginModal.style.display = "none";
+    };
+  </script>
+</body>
+</html>
