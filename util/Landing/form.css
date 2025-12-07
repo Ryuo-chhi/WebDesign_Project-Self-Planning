@@ -9,6 +9,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
   justify-content: center;
+  transition: all 0.5s;
 }
 
 .form-group.open {
@@ -93,6 +94,7 @@ label {
   flex-direction: column;
   gap: 10px;
   padding: 2.5rem;
+  transition: all 0.3s;
 }
 .signup-group {
   padding: 1.5rem 2.5rem;
@@ -244,6 +246,7 @@ form i,
 /* slidform out of container */
 .signup-group.slide, .login-group.slide {
   transform: translateX(350px);
+  /* display: none; */
 }
 
 

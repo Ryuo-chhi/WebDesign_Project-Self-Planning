@@ -13,9 +13,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	function showLoginForm() {
 		loginGroup.classList.remove('slide');
 		signupGroup.classList.add('slide');
+		signupGroup.setAttribute('aria-hidden', 'true');
 	}
 	function showSignupForm() {
 		loginGroup.classList.add('slide');
+		loginGroup.setAttribute('aria-hidden', 'true');
 		signupGroup.classList.remove('slide');
 	}
 	function closeOverlay() {
