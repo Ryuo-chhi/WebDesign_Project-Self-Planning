@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Close overlay when clicking outside the form (on overlay background)
 	formOverlay.addEventListener('mousedown', function (e) {
 		// Only close if click is directly on the overlay, not on the form content
-        // only close the overlay if the click happened directly on the overlay background, not inside the form.”
+		// only close the overlay if the click happened directly on the overlay background, not inside the form.”
 		if (e.target === formOverlay) {
 			closeOverlay();
 		}
@@ -64,4 +64,44 @@ document.addEventListener('DOMContentLoaded', function () {
 		e.preventDefault();
 		showLoginForm();
 	});
+});
+
+// Get elements
+const formSignUp = document.getElementById('sign-upForm');
+const formLogin = document.getElementById('loginForm');
+const googleBtn = document.querySelectorAll('.google-btn');
+const getStarted = document.getElementById('get-started');
+const dashboardUrl = '../Dashboard/dashboard.html';
+
+// Get Started Button
+if (getStarted) {
+	getStarted.addEventListener('click', function () {
+		window.location.href = dashboardUrl;
+	});
+}
+
+// Sign Up Submission Skip to Dashboard
+
+// Add event listener for form submissions
+if (formSignUp) {
+	formSignUp.addEventListener('submit', function (event) {
+		// Stop the default form submission action
+		event.preventDefault();
+		// Navigate the user to the dashboard page
+		window.location.href = dashboardUrl;
+	});
+}
+
+if (formLogin) {
+	formLogin.addEventListener('submit', function (event) {
+		event.preventDefault();
+		window.location.href = dashboardUrl;
+	});
+}
+
+// Add an event listener for the Google button click
+googleBtn.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        window.location.href = dashboardUrl;
+    });
 });
