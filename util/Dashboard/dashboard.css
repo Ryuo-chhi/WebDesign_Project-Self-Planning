@@ -8,6 +8,9 @@
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--color-bg-primary);
 }
 
@@ -15,7 +18,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 350px;
     overflow: hidden;
 }
@@ -33,4 +36,133 @@ body{
     color: var(--color-text-on-img);
     font-size: 3rem;
     font-weight: 700;
+}
+
+.title {
+    position: absolute;
+    top: 450px;
+    left: 100px;
+    display: flex;
+    gap: 10px;
+    align-items: first baseline;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.container-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--color-bg-secondary);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    padding: 30px;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.event-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;  
+    background-color: var(--color-bg-card);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fi-rr-bars-filter, .fi-rr-sort-alt{
+    color: var(--color-primary-blue);
+}
+
+.card-box{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--color-bg-card);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card img{
+    width: 280px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+}
+
+.travel-type{
+    display: flex;
+    align-items: center;
+    padding: 4px 10px 4px 10px;
+    border-radius: 10px;
+    width: fit-content;
+    font-size: 0.75rem;
+}
+
+.citytrip{
+    background-color: var(--color-tag-citytrip);
+}
+
+.roadtrip{
+    background-color: var(--color-tag-roadtrip);
+}
+
+.new-plan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bg-card);
+    border-radius: 10px;
+    border-style: dashed;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.new-plan span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: auto;
 }
