@@ -1,102 +1,966 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Landing Page with Modals</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
 
-    button {
-      margin: 10px;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
+    <style>
+      /* --- Placeholder for asset/colors.css and asset/fontSize.css variables --- */
+      :root {
+        /* Add your color variables here if you need them for testing */
+        --color-bg-primary: #f0f0f0; /* Example primary background */
+        --color-bg-overlay: rgba(255, 255, 255, 0.8); /* Example overlay background */
+        --color-text-primary: #333; /* Example primary text color */
+        --color-text-secondary: #666; /* Example secondary text color */
+        --color-primary-blue: #007bff; /* Example primary button color */
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1); /* Example shadow */
+        --font-size-h4: 1.125rem; /* Example font size */
+      }
+      /* ---------------------------------------------------------------------- */
 
-    .modal {
-      display: none; /* Hidden by default */
-      position: fixed;
-      z-index: 1;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.5); /* Dark overlay */
-    }
+      /* nav.css & Animation Styles */
 
-    .modal-content {
-      background: #fff;
-      margin: 10% auto;
-      padding: 20px;
-      width: 300px;
-      border-radius: 8px;
-      text-align: left;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
 
-    .close {
-      float: right;
-      font-size: 24px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <!-- Landing Page -->
-  <h1>Welcome to My Landing Page</h1>
-  <button id="openSignup">Sign Up</button>
-  <button id="openLogin">Log In</button>
+      body {
+        background-color: var(--color-bg-primary);
+      }
+      header {
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 20px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transition: all 0.5s;
+      }
+      nav {
+        border-radius: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--color-bg-overlay);
+        box-shadow: var(--shadow-sm);
+        backdrop-filter: blur(5px);
+      }
+      nav .link {
+        width: 65%;
+        /* Change initial display from 'none' to 'flex' for animation prep */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-  <!-- Sign Up Modal -->
-  <div id="signupModal" class="modal">
-    <div class="modal-content">
-      <span class="close" id="closeSignup">&times;</span>
-      <h2>Sign Up</h2>
-      <form>
-        <input type="text" placeholder="Username" required><br>
-        <input type="email" placeholder="Email" required><br>
-        <input type="password" placeholder="Password" required><br>
-        <button type="submit">Sign Up</button>
-      </form>
+        /* --- Drop-down Animation Styles --- */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        padding: 0 10px; /* Optional: Adjust padding for mobile links */
+        /* --- Drop-down Animation Styles End --- */
+      }
+      /* New class for when the menu is open (for animation) */
+      .link.open {
+        max-height: 500px; /* Needs to be larger than content height */
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      nav .logo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 8px;
+      }
+      .mobile {
+        display: flex;
+      }
+      nav .close {
+        display: none;
+      }
+      .link li {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        padding: 5px 0;
+      }
+      .link li,
+      a {
+        list-style: none;
+        text-decoration: none;
+        color: var(--color-text-primary);
+        font-size: 1rem;
+      }
+      .log-sign {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+      }
+      .log-sign button {
+        width: 100%;
+        font-size: var(--font-size-h4);
+        padding: 5px 10px;
+        border-radius: 10px;
+        color: var(--color-text-primary);
+        cursor: pointer;
+      }
+      #login {
+        background-color: var(--color-primary-blue);
+        border: 1px solid var(--color-primary-blue);
+        color: white; /* Added for contrast */
+      }
+      #sign-up {
+        background-color: transparent;
+        border: 1px solid var(--color-text-primary);
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      .menu i {
+        font-size: 30px;
+        color: var(--color-text-primary); /* Changed to primary text color for visibility */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .close i {
+        font-size: 30px;
+        color: var(--color-text-primary); /* Changed to primary text color for visibility */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @media (min-width: 1024px) {
+        .mobile {
+          display: none;
+        }
+        nav,
+        nav .link,
+        nav .log-sign,
+        .link li {
+          flex-direction: row;
+        }
+
+        nav .link {
+          display: flex;
+          align-items: center;
+          padding-right: 10px;
+          /* Reset desktop styles, overriding mobile animation */
+          max-height: none;
+          overflow: visible;
+          padding: 0;
+          width: 60%; /* Adjusted width for desktop layout */
+        }
+        nav {
+            flex-direction: row;
+            padding: 5px 15px; /* Added padding to nav for desktop */
+        }
+        nav .logo {
+          width: auto;
+        }
+        .link li {
+          gap: 3rem;
+        }
+        .log-sign {
+            flex-direction: row;
+            gap: 15px;
+            padding: 0;
+        }
+        .log-sign button {
+            width: auto;
+        }
+      }
+
+      /* style.css (Main Content Styles) */
+      .grid-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding-top: 100px; /* Space for fixed header */
+      }
+      main {
+        flex: 1;
+        padding: 20px;
+      }
+      .heroSection {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 50px;
+      }
+      .headerText h1 {
+        font-size: 2rem;
+      }
+      .headerText .mainText {
+        color: var(--color-primary-blue);
+      }
+      .heroSection span {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      .mainImg img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+      #get-started {
+        padding: 10px 20px;
+        background-color: var(--color-primary-blue);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+
+      .features {
+        padding: 50px 0;
+        text-align: center;
+        background-color: #e9ecef; /* Light background for features */
+      }
+      .features .text h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+      .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+      .card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: var(--shadow-sm);
+        text-align: center;
+      }
+      .card img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+      }
+      .card h3 {
+        color: var(--color-primary-blue);
+        margin-bottom: 10px;
+      }
+
+      @media (min-width: 768px) {
+        .heroSection {
+          flex-direction: row;
+          text-align: left;
+        }
+        .heroSection .description, .heroSection .mainImg {
+            width: 50%;
+        }
+        .card-container {
+          flex-direction: row;
+          justify-content: space-around;
+        }
+        .card {
+          width: 30%;
+        }
+      }
+
+      /* footer.css */
+      footer {
+        background-color: #343a40; /* Dark footer background */
+        color: white;
+        padding: 30px 20px 10px;
+      }
+      footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      footer hr {
+        width: 100%;
+        border: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 20px;
+      }
+      footer .logo img {
+        height: 50px;
+        filter: invert(1); /* Adjust logo for dark background */
+        margin-bottom: 20px;
+      }
+      .footer-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        gap: 20px;
+        padding-bottom: 20px;
+      }
+      .so-me h3 {
+        margin-bottom: 10px;
+      }
+      .so-me .icon i {
+        font-size: 24px;
+        margin: 0 10px;
+        cursor: pointer;
+      }
+      .footer-info .link ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+      }
+      .footer-info .link li a {
+        color: white;
+        display: block;
+      }
+      .footer-info .img img {
+        max-width: 100px;
+        height: auto;
+      }
+      .copy-rigth {
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .footer-info {
+          flex-direction: row;
+          justify-content: space-between;
+          text-align: left;
+        }
+        .so-me {
+            order: 1;
+        }
+        .footer-info .link {
+            order: 2;
+        }
+        .footer-info .link ul {
+            flex-direction: row;
+            gap: 20px;
+        }
+        .footer-info .img {
+            order: 3;
+        }
+      }
+
+      /* form.css (Overlay/Modal Styles) */
+      .form-group {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none; /* Controlled by JS to be 'flex' when open */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+      .form-group.active {
+        display: flex;
+        opacity: 1;
+      }
+      .container-box {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        max-width: 900px;
+        width: 90%;
+        display: flex;
+        overflow: hidden;
+      }
+      .container-box .container {
+        padding: 30px;
+      }
+      .welcome-content {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+      }
+      .gradient-bg {
+        background: linear-gradient(135deg, #007bff, #0056b3); /* Example Gradient */
+        display: none; /* Hide on mobile by default */
+        justify-content: center;
+        align-items: center;
+      }
+      .safe-lock i {
+        font-size: 40px;
+      }
+      .form-section {
+        width: 100%;
+        position: relative;
+      }
+      .form-section .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--color-text-primary);
+      }
+      .headline-form {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .input-group {
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+      .input-group input {
+        width: 100%;
+        padding: 10px 10px 10px 40px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .input-group i {
+        position: absolute;
+        left: 15px;
+        top: 65%;
+        transform: translateY(-50%);
+        color: var(--color-text-secondary);
+      }
+      .forgot-pw {
+        text-align: right;
+        margin-bottom: 20px;
+      }
+      .forgot-pw a {
+        color: var(--color-primary-blue);
+        font-size: 0.875rem;
+      }
+      .actions button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      .create-account-btn {
+        background-color: var(--color-primary-blue);
+        color: white;
+      }
+      .link-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .link-container a {
+        color: var(--color-primary-blue);
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .continue-with-text {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: 20px 0;
+        color: var(--color-text-secondary);
+        font-size: 0.875rem;
+      }
+      .continue-with-text .line {
+        flex-grow: 1;
+        height: 1px;
+        background-color: #ccc;
+        margin: 0 10px;
+      }
+      .google-btn {
+        background-color: white;
+        color: var(--color-text-primary);
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
+      .signup-group {
+        display: none; /* Controlled by JS */
+      }
+      
+      /* JS classes for toggling forms */
+      .login-group.hidden { display: none; }
+      .signup-group.hidden { display: none; }
+      .login-group.visible { display: block; }
+      .signup-group.visible { display: block; }
+
+      @media (min-width: 768px) {
+        .container-box {
+          width: 70%;
+        }
+        .gradient-bg {
+          display: flex;
+          width: 40%;
+        }
+        .form-section {
+          width: 60%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <header>
+        <nav>
+          <div class="logo">
+            <img src="/asset/img/Self-Planning-Logo.png" alt="logo" />
+            <div class="mobile">
+              <div class="menu">
+                <i class="fi fi-rr-menu-burger"></i>
+              </div>
+              <div class="close">
+                <i class="fi fi-rr-cross"></i>
+              </div>
+            </div>
+          </div>
+          <div class="link">
+            <ul>
+              <li>
+                <a href="index.html">Home</a>
+                <a href="../about/index.html">About</a>
+                <a href="">Feature</a>
+                <a href="">Contact</a>
+              </li>
+            </ul>
+            <div class="log-sign">
+              <div>
+                <button id="login">Log in</button>
+              </div>
+              <div>
+                <button id="sign-up">Sign up</button>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <section class="heroSection">
+          <div class="description">
+            <div class="headerText">
+              <h1>Welcome to</h1>
+              <h1 class="mainText">Self-Planning Travel Planner</h1>
+            </div>
+            <span>Stop juggling spreadsheets, notes, and separate apps.</span>
+            <p>
+              The Self-Planning Travel Planner Web Application is your
+              consolidated digital companion for organizing every detail of your
+              trip. We integrate all essential trip organization tools into one
+              user-friendly platform, making travel preparation efficient and
+              stress-free.
+            </p>
+            <button id="get-started">Get Started</button>
+          </div>
+          <div class="mainImg">
+            <img src="/asset/img/mainImg.png" alt="mainImg" />
+          </div>
+        </section>
+        <section class="features">
+          <div class="text">
+            <h2>Everything is yours</h2>
+            <h2>Benefits</h2>
+          </div>
+          <div class="card-container">
+            <div class="card">
+              <img src="/asset/img/to-do-list .png" alt="to-do-list" />
+              <h3>To-Do List</h3>
+              <p>
+                Seamlessly manage all your trip tasks. Easily add, edit, track
+                completion, and assign priority labels to ensure nothing is
+                forgotten.
+              </p>
+            </div>
+            <div class="card">
+              <img src="/asset/img/planning.png" alt="to-do-list" />
+              <h3>Trip Planning</h3>
+              <p>
+                Organize all your destination, travel date, transport, and
+                accommodation details. Features interactive map integration to
+                visualize your itinerary.
+              </p>
+            </div>
+            <div class="card">
+              <img src="/asset/img/budget.png" alt="to-do-list" />
+              <h3>Financial Tracker</h3>
+              <p>
+                Stay on budget effortlessly. Track all expenses by category,
+                view a budget overview, and utilize real-time balance
+                calculation.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="container">
+          <hr />
+          <div class="logo">
+            <img src="/asset/img/Self-Planning-Logo.png" alt="logo" />
+          </div>
+          <div class="footer-info">
+            <div class="so-me">
+              <h3>Follow us on:</h3>
+              <div class="icon">
+                <i class="fi fi-brands-facebook"></i>
+                <i class="fi fi-brands-telegram"></i>
+                <i class="fi fi-brands-github"></i>
+              </div>
+            </div>
+            <div class="link">
+              <ul>
+                <li>
+                  <a href="">About</a>
+                  <a href="">Feature</a>
+                  <a href="">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="img">
+              <img src="/asset/img/self-service.png" alt="self-service" />
+            </div>
+          </div>
+          <div class="copy-rigth">
+            <p>Copyright © 2025 Self-Planning, All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
-  </div>
+    <div class="form-group" id="formOverlay" aria-hidden="true">
+      <div class="container-box">
+        <div class="container gradient-bg">
+          <div class="welcome-content">
+            <div class="safe-lock">
+              <i class="fi fi-rr-lock"></i>
+            </div>
+            <div>
+              <h2>Welcome to Our Platform</h2>
+            </div>
+            <div>
+              <p>
+                Join thousands of users who trust our secure and seamless
+                authentication experience.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="form-section container">
+          <div class="close">
+            <i class="fi fi-rr-cross"></i>
+          </div>
+          <div class="login-group visible" aria-hidden="false">
+            <div>
+              <p class="headline-form">Log In</p>
+              <p class="font-small" style="color: var(--color-text-secondary)">
+                Enter your credentials to access your account
+              </p>
+            </div>
 
-  <!-- Log In Modal -->
-  <div id="loginModal" class="modal">
-    <div class="modal-content">
-      <span class="close" id="closeLogin">&times;</span>
-      <h2>Log In</h2>
-      <form>
-        <input type="email" placeholder="Email" required><br>
-        <input type="password" placeholder="Password" required><br>
-        <button type="submit">Log In</button>
-      </form>
+            <div>
+              <form
+                action="../Dashboard/dashboard.html"
+                method="POST"
+                id="loginForm"
+              >
+                <div class="input-group">
+                  <label for="email">Email Address</label>
+                  <i class="fi fi-rr-envelope"></i>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
+
+                <div class="input-group">
+                  <label for="password">Password</label>
+                  <i class="fi fi-rr-lock"></i>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="********"
+                    required
+                  />
+                </div>
+                <div class="forgot-pw font-small">
+                  <span><a href="#">Forgot password?</a></span>
+                </div>
+                <div class="actions">
+                  <button type="submit" class="create-account-btn">
+                    Log in
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="link-container">
+              <p class="rd-have-acc">
+                Don't have an account?
+                <a href="" class="link-signup">Sign Up</a>
+              </p>
+            </div>
+            <div class="continue-with-text">
+              <div class="line"></div>
+              <div class="font-small">or continue with</div>
+              <div class="line"></div>
+            </div>
+
+            <div>
+              <button type="button" class="google-btn">Google</button>
+            </div>
+          </div>
+          <div class="signup-group hidden" aria-hidden="true">
+            <div>
+              <p class="headline-form">Create your account</p>
+              <p class="font-small" style="color: var(--color-text-secondary)">
+                Fill in your details to get started.
+              </p>
+            </div>
+            <div>
+              <form
+                action="../Dashboard/dashboard.html"
+                method="POST"
+                id="sign-upForm"
+              >
+                <div class="input-group">
+                  <label for="fullname">Full Name</label>
+                  <i class="fi fi-rr-user"></i>
+                  <input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
+
+                <div class="input-group">
+                  <label for="email">Email Address</label>
+                  <i class="fi fi-rr-envelope"></i>
+                  <input
+                    type="email"
+                    id="email-sign"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
+
+                <div class="input-group">
+                  <label for="password-sign">Password</label>
+                  <i class="fi fi-rr-lock"></i>
+                  <input
+                    type="password"
+                    id="password-sign"
+                    name="password"
+                    placeholder="********"
+                    required
+                  />
+                </div>
+
+                <div class="actions">
+                  <button type="submit" class="create-account-btn">
+                    Create Account
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="link-container">
+              <p class="rd-have-acc">
+                Already have an account?
+                <a href="" class="link-login">Log in</a>
+              </p>
+            </div>
+            <div class="continue-with-text">
+              <div class="line"></div>
+              <div>or continue with</div>
+              <div class="line"></div>
+            </div>
+
+            <div>
+              <button type="button" class="google-btn">Google</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+    
+    <script>
+        // --- START OF NAV.JS CONTENT ---
+        // You MUST paste the content of your js/nav.js file here.
 
-  <script>
-    // Get elements
-    const signupModal = document.getElementById("signupModal");
-    const loginModal = document.getElementById("loginModal");
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get the elements
+            const menuButton = document.querySelector('.mobile .menu');
+            const closeButton = document.querySelector('.mobile .close');
+            const navLinks = document.querySelector('nav .link');
 
-    const openSignup = document.getElementById("openSignup");
-    const openLogin = document.getElementById("openLogin");
+            // Function to open the menu
+            const openMenu = (e) => {
+                // Prevent default anchor behavior if applicable
+                if (e) e.preventDefault(); 
+                navLinks.classList.add('open');
+                menuButton.style.display = 'none';
+                closeButton.style.display = 'flex'; 
+            };
 
-    const closeSignup = document.getElementById("closeSignup");
-    const closeLogin = document.getElementById("closeLogin");
+            // Function to close the menu
+            const closeMenu = (e) => {
+                if (e) e.preventDefault(); 
+                navLinks.classList.remove('open');
+                menuButton.style.display = 'flex'; 
+                closeButton.style.display = 'none';
+            };
 
-    // Open modals
-    openSignup.onclick = () => signupModal.style.display = "block";
-    openLogin.onclick = () => loginModal.style.display = "block";
+            // Event listeners
+            menuButton.addEventListener('click', openMenu);
+            closeButton.addEventListener('click', closeMenu);
+            
+            // Initial state check for large screens (optional, but good practice)
+            const mediaQuery = window.matchMedia('(min-width: 1024px)');
+            const handleDesktopChange = (e) => {
+                if (e.matches) {
+                    // Desktop: ensure menu is fully open and icons are hidden
+                    navLinks.classList.remove('open'); // The CSS handles visibility on desktop
+                    menuButton.style.display = 'none';
+                    closeButton.style.display = 'none';
+                } else {
+                    // Mobile: ensure the close button is hidden on load if menu is closed
+                    if (!navLinks.classList.contains('open')) {
+                        menuButton.style.display = 'flex';
+                        closeButton.style.display = 'none';
+                    }
+                }
+            };
+            
+            mediaQuery.addListener(handleDesktopChange);
+            handleDesktopChange(mediaQuery); // Run once on load
 
-    // Close modals
-    closeSignup.onclick = () => signupModal.style.display = "none";
-    closeLogin.onclick = () => loginModal.style.display = "none";
+        });
 
-    // Close if user clicks outside modal
-    window.onclick = (event) => {
-      if (event.target === signupModal) signupModal.style.display = "none";
-      if (event.target === loginModal) loginModal.style.display = "none";
-    };
-  </script>
-</body>
+        // --- END OF NAV.JS CONTENT ---
+
+
+        // --- START OF FORM.JS CONTENT ---
+        // You MUST paste the content of your js/form.js file here.
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const formOverlay = document.getElementById('formOverlay');
+            const logInButton = document.getElementById('login');
+            const signUpButton = document.getElementById('sign-up');
+            const getStartedButton = document.getElementById('get-started');
+            const closeFormIcon = document.querySelector('.form-section .close');
+            
+            const loginGroup = document.querySelector('.login-group');
+            const signupGroup = document.querySelector('.signup-group');
+            const linkLogin = document.querySelector('.link-login');
+            const linkSignup = document.querySelector('.link-signup');
+
+            // --- Modal Open/Close Functions ---
+            const openModal = (e) => {
+                if (e) e.preventDefault(); 
+                formOverlay.classList.add('active');
+                formOverlay.setAttribute('aria-hidden', 'false');
+            };
+
+            const closeModal = (e) => {
+                if (e) e.preventDefault(); 
+                formOverlay.classList.remove('active');
+                formOverlay.setAttribute('aria-hidden', 'true');
+            };
+
+            // --- Form Switch Functions ---
+            const showLogin = (e) => {
+                if (e) e.preventDefault();
+                loginGroup.classList.add('visible');
+                loginGroup.classList.remove('hidden');
+                loginGroup.setAttribute('aria-hidden', 'false');
+
+                signupGroup.classList.add('hidden');
+                signupGroup.classList.remove('visible');
+                signupGroup.setAttribute('aria-hidden', 'true');
+            };
+
+            const showSignup = (e) => {
+                if (e) e.preventDefault();
+                signupGroup.classList.add('visible');
+                signupGroup.classList.remove('hidden');
+                signupGroup.setAttribute('aria-hidden', 'false');
+
+                loginGroup.classList.add('hidden');
+                loginGroup.classList.remove('visible');
+                loginGroup.setAttribute('aria-hidden', 'true');
+            };
+
+            // --- Event Listeners ---
+            logInButton.addEventListener('click', (e) => {
+                openModal(e);
+                showLogin();
+            });
+            
+            signUpButton.addEventListener('click', (e) => {
+                openModal(e);
+                showSignup();
+            });
+
+            getStartedButton.addEventListener('click', (e) => {
+                openModal(e);
+                showSignup();
+            });
+
+            closeFormIcon.addEventListener('click', closeModal);
+
+            // Switch links within the form
+            linkLogin.addEventListener('click', showLogin);
+            linkSignup.addEventListener('click', showSignup);
+
+            // Close modal when clicking outside (on the overlay itself)
+            formOverlay.addEventListener('click', (e) => {
+                if (e.target === formOverlay) {
+                    closeModal();
+                }
+            });
+        });
+
+
+        // --- END OF FORM.JS CONTENT ---
+    </script>
+
+  </body>
 </html>
