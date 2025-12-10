@@ -1,50 +1,64 @@
-
-footer .container{
-    padding-top: 3rem;
+footer{
+  width: 100%;
+}
+footer .container {
+  padding-top: 3rem;
 }
 hr {
   width: 100%;
   height: 1.5px;
   background-color: white;
   border: none;
-}
-.footer-info{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8rem;
-}
-.footer-info h3{
-    color: var(--color-text-primary);
-}
-footer p{
-    color: var(--color-text-secondary);
-    text-align: center;
-}
-.footer-info img{
-    height: 170px;
-    width: 170px;
-    aspect-ratio: 1/1;
-}
-.footer-info .link li{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-footer .logo{
-    margin-top: 1rem;
-}
-footer .icon i{
-    font-size: 60px; 
-    margin: 5px;
+  margin-bottom: 1rem;
 }
 
-footer .fi-brands-facebook{
-    color: #1877F2;
+.footer-info h3 {
+  color: var(--color-text-primary);
 }
-footer .fi-brands-telegram{
-    color: #27A7E7;
+footer p {
+  color: var(--color-text-secondary);
+  text-align: center;
 }
-footer .fi-brands-github{
-    color: #ffff;
+.footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.footer-info img {
+  height: 170px;
+  width: 170px;
+  aspect-ratio: 1/1;
+  display: none;
+}
+
+.footer-info .link li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer .icon i {
+  font-size: 60px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+footer .fi-brands-facebook {
+  color: #1877f2;
+}
+footer .fi-brands-telegram {
+  color: #27a7e7;
+}
+footer .fi-brands-github {
+  color: #ffff;
+}
+
+@media (min-width: 768px) {
+  .footer-info {
+    gap: 3rem;
+  }
+  .footer-info img {
+    display: flex;
+  }
 }

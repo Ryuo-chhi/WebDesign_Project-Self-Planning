@@ -13,33 +13,78 @@ body {
   background-color: var(--color-bg-primary);
 }
 header {
+  width: 95%;
+  /* height: 20rem; */
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: all 0.5s;
+
 }
-nav {
+ nav {
   border-radius: 10px;
-  width: 95%;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-bg-overlay);
   box-shadow: var(--shadow-sm);
-  position: fixed;
   backdrop-filter: blur(5px);
-  /* transform: translateY(30px); */
+  
 }
+
+
 nav .link {
   width: 65%;
+  /* Change initial display from 'none' to 'flex' */
+  /* cuz when display none it disappear immediately; */
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* --- Animation changes start here --- */
+  /* Set initial height to 0 and hide content */
+  max-height: 0; 
+  overflow: hidden; 
+  /* Add a transition for a smooth animation */
+  transition: max-height 0.4s ease-in-out; 
+  /* --- Animation changes end here --- */
+}
+
+/* New class for when the menu is open */
+.link.open {
+  /* Set max-height to a value larger than the expected full height */
+  max-height: 500px; /* Adjust this value if content is taller */
+  padding-top: 10px; /* Add some padding when open, if needed */
+  padding-bottom: 10px;
+}
+nav .logo {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding-right: 10px; */
+  padding-right: 8px;
 }
-
+.mobile{
+  display: flex;
+}
+nav .close {
+  display: none;
+}
+nav .close:hover, .menu:hover{
+  scale: 1.1;
+  background-color: transparent;
+}
 .link li {
   display: flex;
-  gap: 3rem;
+  flex-direction: column;
+  gap: 2px;
 }
 .link li,
 a {
@@ -48,11 +93,20 @@ a {
   color: var(--color-text-primary);
   font-size: 1rem;
 }
+.link a{
+border-radius: 6px;
+}
+.link a:hover{
+  background-color: var(--color-white-alpha-10);
+}
 .log-sign {
   display: flex;
+  flex-direction: column;
+  /* justify-content: start; */
   gap: 10px;
 }
 .log-sign button {
+  width: 100%;
   font-size: var(--font-size-h4);
   padding: 5px 10px;
   border-radius: 10px;
@@ -66,11 +120,40 @@ a {
   background-color: transparent;
   border: 1px solid var(--color-text-primary);
 }
-.logo {
-  margin-left: 5px;
-  display: flex;
-  align-items: center;
-}
+
 .logo img {
   height: 50px;
+}
+
+.mobile i {
+  font-size: 30px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+
+  .mobile {
+    display: none;
+  }
+  nav,
+  nav .link,
+  nav .log-sign,
+  .link li {
+    flex-direction: row;
+  }
+
+  nav .link {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+  }
+  nav .logo{
+    width: auto;
+  }
+  .link li {
+    gap: 3rem;
+  }
 }

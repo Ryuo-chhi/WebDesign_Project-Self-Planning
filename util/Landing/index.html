@@ -30,15 +30,25 @@
       <header>
         <nav>
           <div class="logo">
-            <img src="/asset/img/Self-Planning-Logo.png" alt="logo" />
+            <a href="#">
+              <img src="/asset/img/Self-Planning-Logo.png" alt="logo" />
+            </a>
+            <div class="mobile">
+              <div class="menu">
+                <i class="fi fi-rr-menu-burger"></i>
+              </div>
+              <div class="close">
+                <i class="fi fi-rr-cross"></i>
+              </div>
+            </div>
           </div>
           <div class="link">
             <ul>
               <li>
-                <a href="">Home</a>
-                <a href="">About</a>
-                <a href="">Feature</a>
-                <a href="">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="../about/index.html">About</a>
+                <a href="#features">Feature</a>
+                <a href="#Contact">Contact</a>
               </li>
             </ul>
             <div class="log-sign">
@@ -70,10 +80,10 @@
             <button id="get-started">Get Started</button>
           </div>
           <div class="mainImg">
-            <img src="/asset/img/mainImg.png" alt="" />
+            <img src="/asset/img/mainImg.png" alt="mainImg" />
           </div>
         </section>
-        <section class="features">
+        <section class="features" id="features">
           <div class="text">
             <h2>Everything is yours</h2>
             <h2>Benefits</h2>
@@ -89,7 +99,7 @@
               </p>
             </div>
             <div class="card">
-              <img src="/asset/img/planning.png" alt="to-do-list" />
+              <img src="/asset/img/planning.png" alt="planning" />
               <h3>Trip Planning</h3>
               <p>
                 Organize all your destination, travel date, transport, and
@@ -98,7 +108,7 @@
               </p>
             </div>
             <div class="card">
-              <img src="/asset/img/budget.png" alt="to-do-list" />
+              <img src="/asset/img/budget.png" alt="Financial" />
               <h3>Financial Tracker</h3>
               <p>
                 Stay on budget effortlessly. Track all expenses by category,
@@ -113,9 +123,11 @@
         <div class="container">
           <hr />
           <div class="logo">
-            <img src="/asset/img/Self-Planning-Logo.png" alt="logo" />
+            <a href="#">
+              <img src="/asset/img/Self-Planning-Logo.png" alt="logo" />
+            </a>
           </div>
-          <div class="footer-info">
+          <div class="footer-info" id="Contact">
             <div class="so-me">
               <h3>Follow us on:</h3>
               <div class="icon">
@@ -127,9 +139,9 @@
             <div class="link">
               <ul>
                 <li>
-                  <a href="">About</a>
-                  <a href="">Feature</a>
-                  <a href="">Contact</a>
+                  <a href="/util/about/index.html">About</a>
+                  <a href="#features">Feature</a>
+                  <a href="#Contack">Contact</a>
                 </li>
               </ul>
             </div>
@@ -230,80 +242,83 @@
             </div>
           </div>
           <div class="signup-group" aria-hidden="true">
-          <div>
-            <p class="headline-form">Create your account</p>
-            <p class="font-small" style="color: var(--color-text-secondary)">
-              Fill in your details to get started.
-            </p>
-          </div>
-          <div>
-            <form
-              action="../Dashboard/dashboard.html"
-              method="POST"
-              id="sign-upForm"
-            >
-              <div class="input-group">
-                <label for="fullname">Full Name</label>
-                <i class="fi fi-rr-user"></i>
-                <input
-                  type="text"
-                  id="fullname"
-                  name="fullname"
-                  placeholder="John Doe"
-                  required
-                />
-              </div>
+            <div>
+              <p class="headline-form">Create your account</p>
+              <p class="font-small" style="color: var(--color-text-secondary)">
+                Fill in your details to get started.
+              </p>
+            </div>
+            <div>
+              <form
+                action="../Dashboard/dashboard.html"
+                method="POST"
+                id="sign-upForm"
+              >
+                <div class="input-group">
+                  <label for="fullname">Full Name</label>
+                  <i class="fi fi-rr-user"></i>
+                  <input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
 
-              <div class="input-group">
-                <label for="email">Email Address</label>
-                <i class="fi fi-rr-envelope"></i>
-                <input
-                  type="email"
-                  id="email-sign"
-                  name="email"
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
+                <div class="input-group">
+                  <label for="email">Email Address</label>
+                  <i class="fi fi-rr-envelope"></i>
+                  <input
+                    type="email"
+                    id="email-sign"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
 
-              <div class="input-group">
-                <label for="password-sign">Password</label>
-                <i class="fi fi-rr-lock"></i>
-                <input
-                  type="password"
-                  id="password-sign"
-                  name="password"
-                  placeholder="********"
-                  required
-                />
-              </div>
+                <div class="input-group">
+                  <label for="password-sign">Password</label>
+                  <i class="fi fi-rr-lock"></i>
+                  <input
+                    type="password"
+                    id="password-sign"
+                    name="password"
+                    placeholder="********"
+                    required
+                  />
+                </div>
 
-              <div class="actions">
-                <button type="submit" class="create-account-btn">
-                  Create Account
-                </button>
-              </div>
-            </form>
-          </div>
-          <div class="link-container">
-            <p class="rd-have-acc">
-              Already have an account?
-              <a href="" class="link-login">Log in</a>
-            </p>
-          </div>
-          <div class="continue-with-text">
-            <div class="line"></div>
-            <div>or continue with</div>
-            <div class="line"></div>
-          </div>
+                <div class="actions">
+                  <button type="submit" class="create-account-btn">
+                    Create Account
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="link-container">
+              <p class="rd-have-acc">
+                Already have an account?
+                <a href="" class="link-login">Log in</a>
+              </p>
+            </div>
+            <div class="continue-with-text">
+              <div class="line"></div>
+              <div>or continue with</div>
+              <div class="line"></div>
+            </div>
 
-          <div>
-            <button type="button" class="google-btn">Google</button>
-          </div>
+            <div>
+              <button type="button" class="google-btn">Google</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <script  type="module" src="js/form.js"></script>
+
+    <!-- <script type="module" src="js/nav.js"></script> -->
+    <script type="module" src="js/landingPage.js"></script>
+
   </body>
 </html>

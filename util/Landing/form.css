@@ -27,7 +27,7 @@
   background: var(--color-bg-primary);
 }
 
-.container-box .container {
+.container-box .form-section {
   width: 24rem;
   height: 36rem;
   display: flex;
@@ -39,6 +39,9 @@
 }
 
 .gradient-bg {
+  width: 24rem;
+  height: 36rem;
+  display: none;
   background: var(--gradient-auth-panel);
   border-radius: 10px;
   border: 1px solid var(--color-bg-overlay);
@@ -47,13 +50,16 @@
 }
 
 .welcome-content {
-  display: flex;
+  display: none;
   flex-direction: column;
-  gap: 15px;
+  justify-content: center;
+  align-items: start;
+  /* gap: 15px; */
   max-width: 80%;
 }
 
 .welcome-content h2 {
+  color: var(--color-text-primary);
   font-size: 2.2rem;
   font-weight: 700;
   line-height: 1.2;
@@ -61,7 +67,7 @@
 
 .welcome-content p {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-white-alpha-80);
 }
 
 /* --- Form Elements --- */
@@ -99,7 +105,7 @@ label {
 .signup-group {
   padding: 1.5rem 2.5rem;
 }
-.close {
+.form-group .close {
   z-index: 9999;
   background-color: red;
   position: absolute;
@@ -247,6 +253,11 @@ form i,
 .signup-group.slide, .login-group.slide {
   transform: translateX(350px);
   /* display: none; */
+}
+@media (min-width:1024px) {
+  .gradient-bg, .welcome-content{
+    display: flex;
+  }
 }
 
 

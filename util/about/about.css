@@ -7,8 +7,8 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 80px auto auto;
+  /* grid-template-columns: 1fr;
+  grid-template-rows: 80px auto auto; */
   grid-template-areas:
     "nav"
     "main"
@@ -44,13 +44,11 @@ main {
   gap: 2rem;
   padding: 0 6rem;
 }
-h1,
-h2,
-h3 {
+main h1 {
   color: var(--color-primary-blue);
   margin-bottom: 15px;
 }
-p {
+main p {
   margin-bottom: 10px;
 }
 
@@ -66,13 +64,13 @@ p {
   line-height: var(--line-height-relaxed);
 }
 
-.container-box {
+.container-about {
   display: flex;
   justify-content: center;
   gap: 3rem;
 }
 
-.container-box .container {
+.container-about .container {
   background-color: var(--color-bg-secondary);
   display: flex;
   padding: 1rem;
@@ -105,7 +103,7 @@ button {
   transition: all 0.5s;
 }
 
-.container-box .container:hover {
+.container-about .container:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
   cursor: pointer;

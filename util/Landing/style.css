@@ -1,20 +1,21 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 80px auto auto;
+  /* grid-template-rows: auto auto auto; */
   grid-template-areas:
-    "nav nav nav"
-    "main main main"
-    "footer footer footer";
+    "nav"
+    "main"
+    "footer";
   gap: 4rem;
+  justify-items: center;
 }
 header {
   grid-area: nav;
@@ -24,23 +25,34 @@ main {
   /* background-color: antiquewhite; */
   display: flex;
   flex-direction: column;
-  gap: 12rem;
+  gap: 4rem;
   padding: 0 6rem;
 }
 .heroSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.mainImg{
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
-.description {
-  width: 45%;
+.mainImg img {
+  height: 400px;
+  aspect-ratio: 1/1;
 }
 h1 {
   color: var(--color-text-primary);
   font-size: var(--font-size-hero);
   line-height: 1;
 }
-h2 {
+.features h2 {
   color: var(--color-text-primary);
   margin-bottom: 20px;
 }
@@ -82,6 +94,7 @@ button {
   border: 1px solid var(--color-primary-blue-alpha-80);
   transform: translateY(3px);
 }
+
 .features .text {
   display: flex;
   justify-content: center;
@@ -97,11 +110,14 @@ button {
 }
 .card-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
+  padding: 1rem;
   gap: 2rem;
+  justify-items: center;
 }
 
 .card {
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -124,6 +140,7 @@ button {
 }
 .card p {
   color: var(--color-text-secondary);
+  text-align:center;
 }
 .card:hover {
   transform: translateY(-5px);
@@ -132,3 +149,39 @@ footer {
   grid-area: footer;
   padding: 0 6rem;
 }
+
+/* @media (min-width: 768px) {
+  .grid-container{
+    grid-template-areas:
+    "nav nav nav"
+    "main main main"
+    "footer footer footer";
+  }
+  
+} */
+ @media (min-width:768px) {
+  .heroSection{
+    grid-template-columns: minmax(500px, 1fr);
+  }
+  .mainText{
+    font-size: var(--font-size-h2);
+  }
+  .features .card-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  
+ }
+ @media (min-width:1024px) {
+  
+  .heroSection{
+    grid-template-columns: 1fr 0.8fr;
+  }
+  .features .card-container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .mainText{
+    font-size: var(--font-size-h1);
+  }
+ 
+ }

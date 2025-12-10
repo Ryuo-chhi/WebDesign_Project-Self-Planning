@@ -1,4 +1,6 @@
 // Make login/signup forms interactive: slide in/out on button click
+import { closeNav } from "./nav.js";
+
 document.addEventListener('DOMContentLoaded', function () {
 	const formOverlay = document.getElementById('formOverlay');
 	const loginBtn = document.getElementById('login');
@@ -30,6 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		showLoginForm();
 		formOverlay.classList.add('open');
 		formOverlay.setAttribute('aria-hidden', 'false');
+		if(window.innerWidth<1024){
+			closeNav();
+		}
 	});
 
 	// Show signup form overlay
@@ -37,6 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		showSignupForm();
 		formOverlay.classList.add('open');
 		formOverlay.setAttribute('aria-hidden', 'false');
+		if(window.innerWidth<1024){
+			closeNav();
+		}
 	});
 
 	// Close overlay on close icon
