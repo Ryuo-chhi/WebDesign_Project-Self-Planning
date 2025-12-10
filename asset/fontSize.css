@@ -11,14 +11,14 @@
 
   /* Display & Hero Sizes */
   --font-size-display: 6rem; /* 96px - Emoji icons, decorative large text */
-  --font-size-hero: 3rem; /* 48px - Hero headings (e.g., "Welcome to Our Platform") */
+  --font-size-hero:clamp(2rem, 5vw, 3rem); /* 48px - Hero headings (e.g., "Welcome to Our Platform") */
 
   /* Heading Sizes */
 
   --font-size-h1: clamp(2rem, 1.5rem + 2vw, 2.5rem); /* ~32px → 40px */
-  --font-size-h2: clamp(1.5rem, 1.25rem + 1.5vw, 2rem); /* ~24px → 32px */
+  --font-size-h2: clamp(1.5rem, 1.25rem + 1vw, 2rem); /* ~24px → 32px */
   --font-size-h3: clamp(1.25rem, 1rem + 1vw, 1.5rem); /* ~20px → 24px */
-  --font-size-h4: clamp(1rem, 0.875rem + 0.5vw, 1.25rem); /* ~16px → 20px */
+  --font-size-h4: clamp(0.82rem, 0.875rem + 0.5vw, 1.25rem); /* ~14px → 20px */
   /* 20px - Section headers, feature titles, navigation */
   --font-size-h5: 1.125rem; /* 18px - Large body text, form labels, emphasized content */
   --font-size-h6: 1rem; /* 16px - Standard headings, labels */
@@ -41,14 +41,7 @@
   --line-height-loose: 2; /* 200% - Extra spacious, tags with padding */
 }
 
-:root {
-  /* ========================================
-     LETTER SPACING
-     ======================================== */
-  --letter-spacing-tight: -0.5px; /* Condensed text */
-  --letter-spacing-normal: 0; /* Default spacing */
-  --letter-spacing-wide: 1px; /* Hero headings, expanded text */
-}
+
 
 :root {
   /* ========================================
@@ -90,62 +83,7 @@
 }
 
 /* Headings */
-.text-h1 {
-  font-size: var(--font-size-h1);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-tight);
-}
 
-.text-h2 {
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-tight);
-}
-
-.text-h3 {
-  font-size: var(--font-size-h3);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-tight);
-}
-
-.text-h4 {
-  font-size: var(--font-size-h4);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-snug);
-}
-
-.text-h5 {
-  font-size: var(--font-size-h5);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-relaxed);
-}
-
-.text-h6 {
-  font-size: var(--font-size-h6);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-normal);
-}
-
-/* Body Text */
-.text-base {
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-normal);
-}
-
-.text-sm {
-  font-size: var(--font-size-sm);
-  line-height: var(--line-height-normal);
-}
-
-.text-xs {
-  font-size: var(--font-size-xs);
-  line-height: var(--line-height-loose);
-}
-
-.text-xxs {
-  font-size: var(--font-size-xxs);
-  line-height: var(--line-height-loose);
-}
 
 /* ========================================
    COMPONENT-SPECIFIC TYPOGRAPHY
