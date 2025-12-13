@@ -35,7 +35,7 @@ header {
   min-height: 100vh;
 }
 
-main {
+.about-page {
   grid-area: main;
   display: flex;
   flex-direction: column;
@@ -43,14 +43,14 @@ main {
   padding: 0 2rem;
 }
 
-main h1 {
+.about-page h1 {
   color: var(--color-primary-blue);
   margin-top: 20px;
   margin-bottom: 10px;
   font-size: var(--font-size-h3);
 }
 
-main p {
+.about-page p {
   font-size: var(--font-size-xs);
   margin-bottom: 10px;
 }
@@ -157,7 +157,7 @@ button {
 }
 
 .card {
-  background-color: var(--color-text-accent);
+  background-color: var(--color-white-alpha-10);
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: var(--shadow-sm);
@@ -187,7 +187,7 @@ button {
     width: 48px;
   }
 
-  main h1 {
+  .about-page h1 {
     margin-bottom: 13px;
     font-size: var(--font-size-h2);
   }
@@ -227,7 +227,6 @@ button {
     display: flex;
     gap: 2rem;
   }
-
 }
 
 @media (min-width: 1024px) {
@@ -235,7 +234,7 @@ button {
     width: 64px;
   }
 
-  main h1 {
+  .about-page h1 {
     margin-bottom: 15px;
     font-size: var(--font-size-h1);
   }
@@ -263,7 +262,6 @@ button {
   body {
     padding: 20px;
   }
-
 
   .developer-section h2 {
     color: var(--color-primary-blue);
