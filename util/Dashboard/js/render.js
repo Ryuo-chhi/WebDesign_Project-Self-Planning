@@ -1,38 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Barcelona</title>
-    <link rel="stylesheet" href="../../../asset/colors.css" />
-    <link rel="stylesheet" href="../../../asset/fontSize.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
-    />
-    <link rel="stylesheet" href="fullCard.css" />
-  </head>
-  <body>
-    <div class="planner" id="planOverlay" aria-hidden="true">
-      <div class="bigCard bacelonaOverlay">
+import "data/data.js"
+
+function renderCardOverlay(){
+  const planOverlay = document.getElementById("planOverlay");
+  let id = 0;
+  planOverlay = travelPlans.map(plan =>{
+    id++;
+    plan.id = id;
+    return `
+      <div class="bigCard bacelonaOverlay" id ="${id}">
         <div class="close">
             <i class="fi fi-rr-cross"></i>
           </div>
-        <!-- Hero Image -->
         <div class="hero-img">
           <img
-            src="https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt98aab8678ac3bce7/663907b78447cbf1b69ca84f/logan-armstrong-hVhfqhDYciU-unsplash-edited-MOBILE-HEADER.jpg?fit=crop&disable=upscale&auto=webp&quality=60&crop=smart"
-            alt="barcelona"
+            src="${plan.heroImageUrl}"
+            alt="${plan.title}"
           />
         </div>
         <div class="emoji-icon">🏛️</div>
-        <!-- Main Content -->
         <main class="main-content">
-          <!-- Title Section -->
           <section class="title-section">
             <h1 class="title">Barcelona</h1>
             <hr class="divider" />
@@ -45,7 +31,7 @@
                     alt="calendar icon"
                 /></span>
                 <span class="meta-label">Travel Date</span>
-                <span class="meta-value">July 23, 2024 - July 30, 2024</span>
+                <span class="meta-value">${plan.meta.travelDate}</span>
               </div>
               <div class="meta-item">
                 <span class="meta-icon"
@@ -54,7 +40,7 @@
                     alt="status icon"
                 /></span>
                 <span class="meta-label">Travel Status</span>
-                <span class="meta-value">Visited</span>
+                <span class="meta-value">${plan.meta.travelStatus}</span>
               </div>
               <div class="meta-item">
                 <span class="meta-icon"
@@ -63,18 +49,16 @@
                     alt="layer icon"
                 /></span>
                 <span class="meta-label">Travel Type</span>
-                <span class="meta-value">City</span>
+                <span class="meta-value">${plan.meta.travelType}</span>
               </div>
             </div>
           </section>
           <hr class="divider" />
 
-          <!-- Itinerary Section -->
           <section>
             <h2 class="section-header">🛣️ Itinerary</h2>
             <hr class="divider" />
             <div class="itinerary-grid">
-              <!-- Day 1 -->
               <div class="day-card day-1">
                 <div class="day-badge">Day 1</div>
 
@@ -112,7 +96,6 @@
                 </button>
               </div>
 
-              <!-- Day 2 -->
               <div class="day-card day-2">
                 <div class="day-badge">Day 2</div>
 
@@ -150,7 +133,6 @@
                 </button>
               </div>
 
-              <!-- Day 3 -->
               <div class="day-card day-3">
                 <div class="day-badge">Day 3</div>
 
@@ -188,7 +170,6 @@
                 </button>
               </div>
 
-              <!-- Day 3 -->
               <div class="day-card day-3">
                 <div class="day-badge">Day 3</div>
 
@@ -229,7 +210,6 @@
           </section>
 
           <div class="grid-section">
-            <!-- Booking Details -->
             <section class="info-section booking">
               <h2 class="section-header">✈️ Booking Details</h2>
               <hr class="divider" />
@@ -250,7 +230,6 @@
               </div>
             </section>
 
-            <!-- Transport Details -->
             <section class="info-section transport">
               <h2 class="section-header">🚗 Transport Details</h2>
               <hr class="divider" />
@@ -264,7 +243,6 @@
               </div>
             </section>
 
-            <!-- Google Maps -->
             <section class="info-section span-full googleMap">
               <h2 class="section-header">🗺️ Google Maps</h2>
               <hr class="divider" />
@@ -274,7 +252,6 @@
               </div>
             </section>
 
-            <!-- To Do's -->
             <section class="todo-list">
               <h2 class="section-header">🎯 To Do's</h2>
               <hr class="divider" />
@@ -310,7 +287,6 @@
               </div>
             </section>
 
-            <!-- Travel Highlights -->
             <section class="travel">
               <h2 class="section-header">⭐ Travel Highlights</h2>
               <hr class="divider" />
@@ -338,7 +314,6 @@
               </ul>
             </section>
 
-            <!-- Packing List -->
             <section class="packing-list">
               <h2 class="section-header">🎒 Packing List</h2>
               <hr class="divider" />
@@ -368,7 +343,6 @@
               </div>
             </section>
 
-            <!-- Travel Costs -->
             <section class="travelCost">
               <h2 class="section-header">💸 Travel Costs</h2>
               <hr class="divider" />
@@ -418,6 +392,13 @@
           </div>
         </main>
       </div>
-    </div>
-  </body>
-</html>
+    `;
+    
+  })
+
+}
+
+
+// Example of how you would use it:
+// document.getElementById('planOverlay').innerHTML = plannerInnerHtml;
+// console.log(plannerInnerHtml);

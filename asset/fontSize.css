@@ -18,7 +18,7 @@
   --font-size-h1: clamp(2rem, 1.5rem + 2vw, 2.5rem); /* ~32px → 40px */
   --font-size-h2: clamp(1.5rem, 1.25rem + 1vw, 2rem); /* ~24px → 32px */
   --font-size-h3: clamp(1.25rem, 1rem + 1vw, 1.5rem); /* ~20px → 24px */
-  --font-size-h4: clamp(0.82rem, 0.875rem + 0.5vw, 1.25rem); /* ~14px → 20px */
+  --font-size-h4: clamp(0.82rem, 0.8rem + 0.5vw, 1.25rem); /* ~14px → 20px */
   /* 20px - Section headers, feature titles, navigation */
   --font-size-h5: 1.125rem; /* 18px - Large body text, form labels, emphasized content */
   --font-size-h6: 1rem; /* 16px - Standard headings, labels */

@@ -1,160 +1,980 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboard.css" />
     <link rel="stylesheet" href="../../asset/colors.css" />
-    <link rel="stylesheet" href="../../asset/fontSize.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" />
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"/>
-</head>
+    <link rel="stylesheet" href="../../asset/fontSize.css" />'
+    <link rel="stylesheet" href="overlays/fullCard.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+  </head>
 
-<body>
-    <div class="bgImg"><img src="../../asset/img/angkor-cambodia.jpg" alt="Dashboard Background Image"></div>
-    <div class="travel1"><img src="../../asset/img/travel1.png" alt="Travel Symbol"></div>
-    <div class="title"><img src="https://cdn-icons-png.flaticon.com/128/684/684908.png" alt="map-point" width="50"><h1>Let's Explore</h1></div>
-    <div class="container-box">
+  <body>
+    <div class="dashboard">
+      <div class="bgImg">
+        <img
+          src="../../asset/img/angkor-cambodia.jpg"
+          alt="Dashboard Background Image"
+        />
+      </div>
+      <div class="travel1">
+        <img src="../../asset/img/travel1.png" alt="Travel Symbol" />
+      </div>
+      <div class="title">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/684/684908.png"
+          alt="map-point"
+          width="50"
+        />
+        <h1>Let's Explore</h1>
+      </div>
+      <div class="container-box">
         <!-- Upcoming Holidays Section -->
         <div class="container">
-            <div class="event-box">
-                <div class="event">
-                    <img src="https://cdn-icons-png.flaticon.com/128/6381/6381403.png" alt="icon" width="32">
-                    <span>Upcoming Holidays</span>
-                </div>
-                <div class="classify">
-                    <i class="fi fi-rr-bars-filter"></i>
-                    <i class="fi fi-rr-sort-alt"></i>
-                    <i class="fi fi-rr-search"></i>
-                </div>
+          <div class="event-box">
+            <div class="event">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/6381/6381403.png"
+                alt="icon"
+                width="32"
+              />
+              <span>Upcoming Holidays</span>
             </div>
-            <div class="card-box">
-                <div class="card">
-                    <div class="img"><img src="https://res.cloudinary.com/shipit-cdn/images/c_scale,w_448,h_299,dpr_2/f_auto,q_auto/v1733410609/wordpress/new-york/new-york.jpg?_i=AA" alt="new-york"></div>
-                    <div class="info">
-                        <span>🏙 New York</span>
-                        <div class="travel-type citytrip">Citytrip</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSy-JEFxBp0IsGaVTkGfqdmJZ73Z1MIm4H1jr4wGpknFvvtbcH9bImZgSkRtOp2iUWnUNzC8QCa4T4-zkuYL6bjKcKra2gy-qMwViqDv2YAaIAqXcO0hlGzZu0mCcrzNIbLMExHG9A=w675-h390-n-k-no" alt="mondulkiri"></div>
-                    <div class="info">
-                        <span>🏕 Mondulkiri</span>
-                        <div class="travel-type roadtrip">Roadtrip</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzDIBukkProErAZpes_3F77o_G8-BfAqH0vW4zRlV6VLLKRQU1h9iEMGu_bZtJTh6h-66msSJnlE6-4U0x7qvIukJ5FcjjmirvVGfLlVGfQ2d55AGhjyii1NdA8mlKc5vWy-4yE=s1360-w1360-h1020-rw" alt="phnom-1500"></div>
-                    <div class="info">
-                        <span>🏕 Phnom 1500</span>
-                        <div class="travel-type roadtrip">Roadtrip</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxhUCjk-ygEwpXi9LPDgLEEqVh-GW_a6ZUfEmHTd0Ifu_WT9MwmHHOWXKnZyKPUlYwkcFTiy1VK0lxXsqgeoK3i-ZObaMTWhB689GVIFwEIQaE7q_oLQXcfMh2Z9-7iv_--Zq8e=s1360-w1360-h1020-rw" alt="new-york"></div>
-                    <div class="info">
-                        <span>🏕 Kirirom National Park</span>
-                        <div class="travel-type"></div>
-                    </div>
-                </div>
-                <div class="new-plan">
-                    <span>+ New Plan</span>
-                </div>
+            <div class="classify">
+              <i class="fi fi-rr-bars-filter"></i>
+              <i class="fi fi-rr-sort-alt"></i>
+              <i class="fi fi-rr-search"></i>
             </div>
+          </div>
+          <div class="card-box">
+            <div class="card">
+              <div class="img">
+                <img
+                  src="https://res.cloudinary.com/shipit-cdn/images/c_scale,w_448,h_299,dpr_2/f_auto,q_auto/v1733410609/wordpress/new-york/new-york.jpg?_i=AA"
+                  alt="new-york"
+                />
+              </div>
+              <div class="info">
+                <span>🏙 New York</span>
+                <div class="travel-type citytrip">Citytrip</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="img">
+                <img
+                  src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSy-JEFxBp0IsGaVTkGfqdmJZ73Z1MIm4H1jr4wGpknFvvtbcH9bImZgSkRtOp2iUWnUNzC8QCa4T4-zkuYL6bjKcKra2gy-qMwViqDv2YAaIAqXcO0hlGzZu0mCcrzNIbLMExHG9A=w675-h390-n-k-no"
+                  alt="mondulkiri"
+                />
+              </div>
+              <div class="info">
+                <span>🏕 Mondulkiri</span>
+                <div class="travel-type roadtrip">Roadtrip</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="img">
+                <img
+                  src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzDIBukkProErAZpes_3F77o_G8-BfAqH0vW4zRlV6VLLKRQU1h9iEMGu_bZtJTh6h-66msSJnlE6-4U0x7qvIukJ5FcjjmirvVGfLlVGfQ2d55AGhjyii1NdA8mlKc5vWy-4yE=s1360-w1360-h1020-rw"
+                  alt="phnom-1500"
+                />
+              </div>
+              <div class="info">
+                <span>🏕 Phnom 1500</span>
+                <div class="travel-type roadtrip">Roadtrip</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="img">
+                <img
+                  src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxhUCjk-ygEwpXi9LPDgLEEqVh-GW_a6ZUfEmHTd0Ifu_WT9MwmHHOWXKnZyKPUlYwkcFTiy1VK0lxXsqgeoK3i-ZObaMTWhB689GVIFwEIQaE7q_oLQXcfMh2Z9-7iv_--Zq8e=s1360-w1360-h1020-rw"
+                  alt="new-york"
+                />
+              </div>
+              <div class="info">
+                <span>🏕 Kirirom National Park</span>
+                <div class="travel-type"></div>
+              </div>
+            </div>
+            <div class="new-plan">
+              <span>+ New Plan</span>
+            </div>
+          </div>
         </div>
         <!-- Visted Section -->
-         <div class="container">
-            <div class="event-box">
-                <div class="event">
-                    <img src="https://cdn-icons-png.flaticon.com/128/4698/4698094.png" alt="icon" width="32">
-                    <span>Visited</span>
-                </div>
-                <div class="classify">
-                    <i class="fi fi-rr-bars-filter"></i>
-                    <i class="fi fi-rr-sort-alt"></i>
-                    <i class="fi fi-rr-search"></i>
-                </div>
+        <div class="container">
+          <div class="event-box">
+            <div class="event">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/4698/4698094.png"
+                alt="icon"
+                width="32"
+              />
+              <span>Visited</span>
             </div>
-            <div class="card-box">
-                <div class="card">
-                    <div class="img"><img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwAHSv2pcAwt_fkasaY7G2rytXHtCSN9z-VHABHTuLsaixeBmoG_Gyfr6xiDU5-tt8CjR-lXVQ4dnuXTdeEqSgUGAVCMkLAuDAFGMylLXKMzq1ff0A-H2jVcqyxrIqiB0EYvqyS8Q=w675-h390-n-k-no" alt="bacelona"></div>
-                    <div class="info">
-                        <span>🏙 Bacelona</span>
-                        <div class="travel-type citytrip">Citytrip</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS1Se-_5NSMgmwF_KpETRWQg6Pta2M5JtTAiGaBLw65TUyDLmgJRP0PKk6mbCiT2DoqH-Ew0LFMSHLCA2RTVOLKdgE&s=19" alt="japan"></div>
-                    <div class="info">
-                        <span>🏙 Japan</span>
-                        <div class="travel-type citytrip">Citytrip</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="https://cdn.mos.cms.futurecdn.net/v2/t:0,l:459,cw:1184,ch:1184,q:80,w:1184/Z6rs3jNJab8PC2cWavyt97.jpg" alt="area-51"></div>
-                    <div class="info">
-                        <span>🗽 Area 51, Nevada</span>
-                        <div class="travel-type"></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="https://geohistory.today/wp-content/uploads/2017/09/Moscow.jpg" alt="moscow"></div>
-                    <div class="info">
-                        <span>🏙 Moscow, Russia</span>
-                        <div class="travel-type citytrip">Citytrip</div>
-                    </div>
-                </div>
-                <div class="new-plan">
-                    <span>+ New Plan</span>
-                </div>
+            <div class="classify">
+              <i class="fi fi-rr-bars-filter"></i>
+              <i class="fi fi-rr-sort-alt"></i>
+              <i class="fi fi-rr-search"></i>
             </div>
+          </div>
+          <div class="card-box">
+            <div class="card bacelona">
+              <div class="img">
+                <img
+                  src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwAHSv2pcAwt_fkasaY7G2rytXHtCSN9z-VHABHTuLsaixeBmoG_Gyfr6xiDU5-tt8CjR-lXVQ4dnuXTdeEqSgUGAVCMkLAuDAFGMylLXKMzq1ff0A-H2jVcqyxrIqiB0EYvqyS8Q=w675-h390-n-k-no"
+                  alt="bacelona"
+                />
+              </div>
+              <div class="info">
+                <span>🏙 Bacelona</span>
+                <div class="travel-type citytrip">Citytrip</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="img">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS1Se-_5NSMgmwF_KpETRWQg6Pta2M5JtTAiGaBLw65TUyDLmgJRP0PKk6mbCiT2DoqH-Ew0LFMSHLCA2RTVOLKdgE&s=19"
+                  alt="japan"
+                />
+              </div>
+              <div class="info">
+                <span>🏙 Japan</span>
+                <div class="travel-type citytrip">Citytrip</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="img">
+                <img
+                  src="https://cdn.mos.cms.futurecdn.net/v2/t:0,l:459,cw:1184,ch:1184,q:80,w:1184/Z6rs3jNJab8PC2cWavyt97.jpg"
+                  alt="area-51"
+                />
+              </div>
+              <div class="info">
+                <span>🗽 Area 51, Nevada</span>
+                <div class="travel-type"></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="img">
+                <img
+                  src="https://geohistory.today/wp-content/uploads/2017/09/Moscow.jpg"
+                  alt="moscow"
+                />
+              </div>
+              <div class="info">
+                <span>🏙 Moscow, Russia</span>
+                <div class="travel-type citytrip">Citytrip</div>
+              </div>
+            </div>
+            <div class="new-plan">
+              <span>+ New Plan</span>
+            </div>
+          </div>
         </div>
         <!-- Holiday to plan Section -->
-         <div class="container">
-            <div class="event-box">
-                <div class="event">
-                    <img src="https://cdn-icons-png.flaticon.com/128/2269/2269743.png" alt="icon" width="32">
-                    <span>Holiday to plan</span>
-                </div>
-                <div class="classify">
-                    <i class="fi fi-rr-bars-filter"></i>
-                    <i class="fi fi-rr-sort-alt"></i>
-                    <i class="fi fi-rr-search"></i>
-                </div>
+        <div class="container">
+          <div class="event-box">
+            <div class="event">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/2269/2269743.png"
+                alt="icon"
+                width="32"
+              />
+              <span>Holiday to plan</span>
             </div>
-            <div class="card-box">
-                <div class="card">
-                    <div class="img"><img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxq48DkEg2mrpm6WOvl0Mvb-13HgCknKxBJdaMjHIWAWXUKQl-HkePiI0BHIfO8F1CbfifcNrqbj-1eMciEhaGTsfe8PJ4BhvnnCjhtXA5TyKz4aCXZQF2IFcROWyDsmgDZIAZ_Aw=s1360-w1360-h1020-rw" alt="angkor-wat"></div>
-                    <div class="info">
-                        <span>🏕 Angkor Wat</span>
-                        <div class="travel-type">Exposure trip</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="https://www.asiaone.com/sites/default/files/styles/article_top_image/public/original_images/Apr2024/140424_kampot_ig.jpg?itok=nFu0VoBZ" alt="kampot"></div>
-                    <div class="info">
-                        <span>🏕 Kampot</span>
-                        <div class="travel-type roadtrip">Roadtrip</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="https://media.assettype.com/outlooktraveller%2F2023-11%2F65edc73f-81ce-425c-a7f5-4bd34133f095%2Fshutterstock_697224274.jpeg?w=1024&auto=format%2Ccompress&fit=max" alt="singapore"></div>
-                    <div class="info">
-                        <span>🏙 Singapore</span>
-                        <div class="travel-type citytrip">Citytrip</div>
-                    </div>
-                </div>
-                <div class="new-plan">
-                    <span>+ New Plan</span>
-                </div>
+            <div class="classify">
+              <i class="fi fi-rr-bars-filter"></i>
+              <i class="fi fi-rr-sort-alt"></i>
+              <i class="fi fi-rr-search"></i>
             </div>
+          </div>
+          <div class="card-box">
+            <div class="card">
+              <div class="img">
+                <img
+                  src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxq48DkEg2mrpm6WOvl0Mvb-13HgCknKxBJdaMjHIWAWXUKQl-HkePiI0BHIfO8F1CbfifcNrqbj-1eMciEhaGTsfe8PJ4BhvnnCjhtXA5TyKz4aCXZQF2IFcROWyDsmgDZIAZ_Aw=s1360-w1360-h1020-rw"
+                  alt="angkor-wat"
+                />
+              </div>
+              <div class="info">
+                <span>🏕 Angkor Wat</span>
+                <div class="travel-type">Exposure trip</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="img">
+                <img
+                  src="https://www.asiaone.com/sites/default/files/styles/article_top_image/public/original_images/Apr2024/140424_kampot_ig.jpg?itok=nFu0VoBZ"
+                  alt="kampot"
+                />
+              </div>
+              <div class="info">
+                <span>🏕 Kampot</span>
+                <div class="travel-type roadtrip">Roadtrip</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="img">
+                <img
+                  src="https://media.assettype.com/outlooktraveller%2F2023-11%2F65edc73f-81ce-425c-a7f5-4bd34133f095%2Fshutterstock_697224274.jpeg?w=1024&auto=format%2Ccompress&fit=max"
+                  alt="singapore"
+                />
+              </div>
+              <div class="info">
+                <span>🏙 Singapore</span>
+                <div class="travel-type citytrip">Citytrip</div>
+              </div>
+            </div>
+            <div class="new-plan">
+              <span>+ New Plan</span>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- overlays -->
-     <div class="overlays" id="dashboardOverlay" aria-hidden="true"></div>
-</body>
+    <div class="planner" id="planOverlay" aria-hidden="true">
+      <div class="bigCard bacelonaOverlay">
+        <div class="close">
+            <i class="fi fi-rr-cross"></i>
+          </div>
+        <!-- Hero Image -->
+        <div class="hero-img">
+          <img
+            src="https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt98aab8678ac3bce7/663907b78447cbf1b69ca84f/logan-armstrong-hVhfqhDYciU-unsplash-edited-MOBILE-HEADER.jpg?fit=crop&disable=upscale&auto=webp&quality=60&crop=smart"
+            alt="barcelona"
+          />
+        </div>
+        <div class="emoji-icon">🏛️</div>
+        <!-- Main Content -->
+        <main class="main-content">
+          <!-- Title Section -->
+          <section class="title-section">
+            <h1 class="title">Barcelona</h1>
+            <hr class="divider" />
 
+            <div class="meta-info">
+              <div class="meta-item">
+                <span class="meta-icon"
+                  ><img
+                    src="https://cdn-icons-png.flaticon.com/128/3652/3652267.png"
+                    alt="calendar icon"
+                /></span>
+                <span class="meta-label">Travel Date</span>
+                <span class="meta-value">July 23, 2024 - July 30, 2024</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"
+                  ><img
+                    src="https://cdn-icons-png.flaticon.com/128/17438/17438463.png"
+                    alt="status icon"
+                /></span>
+                <span class="meta-label">Travel Status</span>
+                <span class="meta-value">Visited</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"
+                  ><img
+                    src="https://cdn-icons-png.flaticon.com/128/3308/3308315.png"
+                    alt="layer icon"
+                /></span>
+                <span class="meta-label">Travel Type</span>
+                <span class="meta-value">City</span>
+              </div>
+            </div>
+          </section>
+          <hr class="divider" />
+
+          <!-- Itinerary Section -->
+          <section>
+            <h2 class="section-header">🛣️ Itinerary</h2>
+            <hr class="divider" />
+            <div class="itinerary-grid">
+              <!-- Day 1 -->
+              <div class="day-card day-1">
+                <div class="day-badge">Day 1</div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Visit A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Sleep in A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <button class="new-page-btn">
+                  <span>+</span>
+                  <span>New page</span>
+                </button>
+              </div>
+
+              <!-- Day 2 -->
+              <div class="day-card day-2">
+                <div class="day-badge">Day 2</div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Visit A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Sleep in Sokha Hotel</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <button class="new-page-btn">
+                  <span>+</span>
+                  <span>New page</span>
+                </button>
+              </div>
+
+              <!-- Day 3 -->
+              <div class="day-card day-3">
+                <div class="day-badge">Day 3</div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Visit A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Sleep in A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <button class="new-page-btn">
+                  <span>+</span>
+                  <span>New page</span>
+                </button>
+              </div>
+
+              <!-- Day 3 -->
+              <div class="day-card day-3">
+                <div class="day-badge">Day 3</div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Visit A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Sleep in A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <button class="new-page-btn">
+                  <span>+</span>
+                  <span>New page</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <div class="grid-section">
+            <!-- Booking Details -->
+            <section class="info-section booking">
+              <h2 class="section-header">✈️ Booking Details</h2>
+              <hr class="divider" />
+
+              <div class="info-callout">
+                <div class="info-callout-title">
+                  🛫 Departure: KEF Airport - Jan 4, 2025
+                </div>
+                <div class="info-callout-text">
+                  🛫 Departure: KEF Airport - Jan 4, 2025
+                </div>
+              </div>
+
+              <div class="info-callout">
+                <div class="info-callout-text">
+                  🛬 Arrival: KEF Airport - Jan 24, 2025
+                </div>
+              </div>
+            </section>
+
+            <!-- Transport Details -->
+            <section class="info-section transport">
+              <h2 class="section-header">🚗 Transport Details</h2>
+              <hr class="divider" />
+
+              <div class="info-callout">
+                <div class="info-callout-text">🚘 Rental Car: 4x4 SUV</div>
+              </div>
+
+              <div class="info-callout">
+                <div class="info-callout-text">🚘 Rental Car: 4x4 SUV</div>
+              </div>
+            </section>
+
+            <!-- Google Maps -->
+            <section class="info-section span-full googleMap">
+              <h2 class="section-header">🗺️ Google Maps</h2>
+              <hr class="divider" />
+
+              <div class="info-callout">
+                <div class="info-callout-text">Link to route planning</div>
+              </div>
+            </section>
+
+            <!-- To Do's -->
+            <section class="todo-list">
+              <h2 class="section-header">🎯 To Do's</h2>
+              <hr class="divider" />
+
+              <div class="callout-note">
+                <input
+                  type="text"
+                  name="todo"
+                  id="todo"
+                  placeholder="Callout text..."
+                />
+              </div>
+
+              <div class="todo-item">
+                <div class="todo-checkbox"></div>
+                <span>Book flights</span>
+              </div>
+              <div class="todo-item">
+                <div class="todo-checkbox"></div>
+                <span>Book rental car</span>
+              </div>
+              <div class="todo-item">
+                <div class="todo-checkbox"></div>
+                <span>Book accommodations</span>
+              </div>
+              <div class="todo-item">
+                <div class="todo-checkbox"></div>
+                <span>Research activities</span>
+              </div>
+              <div class="todo-item">
+                <div class="todo-checkbox"></div>
+                <span>Pack winter clothes</span>
+              </div>
+            </section>
+
+            <!-- Travel Highlights -->
+            <section class="travel">
+              <h2 class="section-header">⭐ Travel Highlights</h2>
+              <hr class="divider" />
+              <div class="callout-note">
+                <input
+                  type="text"
+                  name="todo"
+                  id="todo"
+                  placeholder="Callout text..."
+                />
+              </div>
+              <ul class="highlights-list">
+                <li class="highlight-item">
+                  <span class="bullet">•</span>
+                  <span>Northern Lights viewing</span>
+                </li>
+                <li class="highlight-item">
+                  <span class="bullet">•</span>
+                  <span>Blue Lagoon geothermal spa</span>
+                </li>
+                <li class="highlight-item">
+                  <span class="bullet">•</span>
+                  <span>Glacier hiking</span>
+                </li>
+              </ul>
+            </section>
+
+            <!-- Packing List -->
+            <section class="packing-list">
+              <h2 class="section-header">🎒 Packing List</h2>
+              <hr class="divider" />
+              <div class="callout-note">
+                <input
+                  type="text"
+                  name="todo"
+                  id="todo"
+                  placeholder="Callout text..."
+                />
+              </div>
+              <div class="packing-item">
+                <div class="todo-checkbox"></div>
+                <span>Passport & documents</span>
+              </div>
+              <div class="packing-item">
+                <div class="todo-checkbox"></div>
+                <span>Winter jacket</span>
+              </div>
+              <div class="packing-item">
+                <div class="todo-checkbox"></div>
+                <span>Waterproof boots</span>
+              </div>
+              <div class="packing-item">
+                <div class="todo-checkbox"></div>
+                <span>Camera & charger</span>
+              </div>
+            </section>
+
+            <!-- Travel Costs -->
+            <section class="travelCost">
+              <h2 class="section-header">💸 Travel Costs</h2>
+              <hr class="divider" />
+              <div class="callout-note">
+                <input
+                  type="text"
+                  name="todo"
+                  id="todo"
+                  placeholder="Callout text..."
+                />
+              </div>
+              <table class="cost-table">
+                <thead>
+                  <tr>
+                    <th>Cost Name</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Plane Tickets</td>
+                    <td>$800</td>
+                  </tr>
+                  <tr>
+                    <td>Car Rental</td>
+                    <td>$600</td>
+                  </tr>
+                  <tr>
+                    <td>Hotels</td>
+                    <td>$1,200</td>
+                  </tr>
+                  <tr>
+                    <td>Food Budget</td>
+                    <td>$500</td>
+                  </tr>
+                  <tr>
+                    <td>Activities</td>
+                    <td>$400</td>
+                  </tr>
+                  <tr>
+                    <td>Total</td>
+                    <td>$3,500</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+        </main>
+      </div>
+      <div class="bigCard newPlanOverlay">
+        <div class="close">
+          <i class="fi fi-rr-cross"></i>
+        </div>
+        <!-- Hero Image -->
+        <div class="hero-img">
+          <img src="../../../asset/img/img-placeholder.png" alt="new-plan" />
+          <div class="emoji-icon">🌋</div>
+        </div>
+        <!-- Main Content -->
+        <main class="main-content">
+          <!-- Title Section -->
+          <section class="title-section">
+            <h1 class="title">New Itinerary</h1>
+            <hr class="divider" />
+
+            <div class="meta-info">
+              <div class="meta-item">
+                <span class="meta-icon"
+                  ><img
+                    src="https://cdn-icons-png.flaticon.com/128/3652/3652267.png"
+                    alt="calendar icon"
+                /></span>
+                <span class="meta-label">Travel Date</span>
+                <span class="meta-value">Empty</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"
+                  ><img
+                    src="https://cdn-icons-png.flaticon.com/128/17438/17438463.png"
+                    alt="status icon"
+                /></span>
+                <span class="meta-label">Travel Status</span>
+                <span class="meta-value">Empty</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon"
+                  ><img
+                    src="https://cdn-icons-png.flaticon.com/128/3308/3308315.png"
+                    alt="layer icon"
+                /></span>
+                <span class="meta-label">Travel Type</span>
+                <span class="meta-value">Empty</span>
+              </div>
+            </div>
+          </section>
+          <hr class="divider" />
+
+          <!-- Itinerary Section -->
+          <section>
+            <h2 class="section-header">🛣️ Itinerary</h2>
+            <hr class="divider" />
+            <div class="itinerary-grid">
+              <!-- Day 1 -->
+              <div class="day-card day-1">
+                <div class="day-badge">Day 1</div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Visit A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Sleep in A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <button class="new-page-btn">
+                  <span>+</span>
+                  <span>New page</span>
+                </button>
+              </div>
+
+              <!-- Day 2 -->
+              <div class="day-card day-2">
+                <div class="day-badge">Day 2</div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Visit A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Sleep in A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <button class="new-page-btn">
+                  <span>+</span>
+                  <span>New page</span>
+                </button>
+              </div>
+
+              <!-- Day 3 -->
+              <div class="day-card day-3">
+                <div class="day-badge">Day 3</div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Visit A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title">Sleep in A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <div class="checkbox"></div>
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <button class="new-page-btn">
+                  <span>+</span>
+                  <span>New page</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <div class="grid-section">
+            <!-- Booking Details -->
+            <section class="info-section">
+              <h2 class="section-header">✈️ Booking Details</h2>
+              <hr class="divider" />
+
+              <div class="info-callout">
+                <div class="info-callout-title">
+                  🛫 Departure: Location - Date
+                </div>
+                <div class="info-callout-text">
+                  🛫 Departure: Location - Date
+                </div>
+              </div>
+
+              <div class="info-callout">
+                <div class="info-callout-text">🛬 Arrival: Location - Date</div>
+              </div>
+            </section>
+
+            <!-- Transport Details -->
+            <section class="info-section">
+              <h2 class="section-header">🚗 Transport Details</h2>
+              <hr class="divider" />
+
+              <div class="info-callout">
+                <div class="info-callout-text">🚘 Rental Car: Brand</div>
+              </div>
+
+              <div class="info-callout">
+                <div class="info-callout-text">🚘 Rental Car: Type</div>
+              </div>
+            </section>
+
+            <!-- Google Maps -->
+            <section class="info-section span-full">
+              <h2 class="section-header">🗺️ Google Maps</h2>
+              <hr class="divider" />
+
+              <div class="info-callout">
+                <div class="info-callout-text">Link to route planning</div>
+              </div>
+            </section>
+
+            <!-- To Do's -->
+            <section class="todo-list">
+              <h2 class="section-header">🎯 To Do's</h2>
+              <hr class="divider" />
+
+              <div class="callout-note">Callout text...</div>
+
+              <div class="todo-item">
+                <div class="todo-checkbox"></div>
+                <span>Book flights</span>
+              </div>
+              <div class="todo-item">
+                <div class="todo-checkbox"></div>
+                <span>Book rental car</span>
+              </div>
+              <div class="todo-item">
+                <div class="todo-checkbox"></div>
+                <span>Book accommodations</span>
+              </div>
+              <div class="todo-item">
+                <div class="todo-checkbox"></div>
+                <span>Research activities</span>
+              </div>
+              <div class="todo-item">
+                <div class="todo-checkbox"></div>
+                <span>Pack winter clothes</span>
+              </div>
+            </section>
+
+            <!-- Travel Highlights -->
+            <section>
+              <h2 class="section-header">⭐ Travel Highlights</h2>
+              <hr class="divider" />
+
+              <ul class="highlights-list">
+                <li class="highlight-item">
+                  <span class="bullet">•</span>
+                  <span>Empty</span>
+                </li>
+                <li class="highlight-item">
+                  <span class="bullet">•</span>
+                  <span>Empty</span>
+                </li>
+                <li class="highlight-item">
+                  <span class="bullet">•</span>
+                  <span>...</span>
+                </li>
+              </ul>
+            </section>
+
+            <!-- Packing List -->
+            <section class="packing-list">
+              <h2 class="section-header">🎒 Packing List</h2>
+              <hr class="divider" />
+
+              <div class="packing-item">
+                <div class="todo-checkbox"></div>
+                <span>Passport & documents</span>
+              </div>
+              <div class="packing-item">
+                <div class="todo-checkbox"></div>
+                <span>Winter jacket</span>
+              </div>
+              <div class="packing-item">
+                <div class="todo-checkbox"></div>
+                <span>Waterproof boots</span>
+              </div>
+              <div class="packing-item">
+                <div class="todo-checkbox"></div>
+                <span>Camera & charger</span>
+              </div>
+            </section>
+
+            <!-- Travel Costs -->
+            <section>
+              <h2 class="section-header">💸 Travel Costs</h2>
+              <hr class="divider" />
+
+              <table class="cost-table">
+                <thead>
+                  <tr>
+                    <th>Cost Name</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Plane Tickets</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Car Rental</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Hotels</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Food Budget</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Activities</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Total</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/cardOverlay.js"></script>
+  </body>
 </html>
