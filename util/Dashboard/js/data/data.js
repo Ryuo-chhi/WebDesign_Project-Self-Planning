@@ -161,6 +161,41 @@ export let travelPlans = [
     ],
     
   },
+  {
+    id: "4",
+    title: "Moscow",
+    heroImageUrl: "https://geohistory.today/wp-content/uploads/2017/09/Moscow.jpg",
+    meta: {
+      travelDate: "July 23, 2024 - July 30, 2024",
+      travelStatus: "Visited", // Options: 'Visited', 'Upcoming', 'Planned'
+      travelType: "City" // Options: 'City', 'Nature', 'Road Trip', 'Island'
+    },
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          { title: "Visit A", isDone: true },
+          { title: "Sleep in Sokha Hotel", isDone: true },
+        ]
+      },
+      {
+        day: 3,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      }
+      // You can add more days here
+    ],
+    
+  },
 
 
 ];

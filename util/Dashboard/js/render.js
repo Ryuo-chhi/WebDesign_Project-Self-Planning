@@ -399,6 +399,7 @@ function renderCardOverlay(){
 
 function generateCard() {
   const visitedContainer = document.getElementById("visited");
+  const newPlanBtn = visitedContainer.querySelector(".new-plan");
   let id = 0;
 
   travelPlans.forEach(card => {
@@ -424,7 +425,7 @@ function generateCard() {
     `;
 
     // Append each card
-    visitedContainer.appendChild(newCard);
+    visitedContainer.insertBefore(newCard, newPlanBtn || null);
   });
 }
 generateCard();
