@@ -88,22 +88,10 @@
   border-radius: 10px 10px 0 0;
 }
 
-.emoji-icon {
-  position: absolute;
-  top: 200px;
-  left: 36px;
-  font-size: 6rem;
-  width: 6rem;
-  height: 6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* Main Content */
 .main-content {
   position: relative;
-  margin-top: 64px;
+  margin-top: 24px;
   width: 90%;
 }
 
