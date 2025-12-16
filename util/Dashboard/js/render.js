@@ -1,9 +1,9 @@
-import "data/data.js"
+import { travelPlans } from "./data/data.js";
 
 function renderCardOverlay(){
   const planOverlay = document.getElementById("planOverlay");
   let id = 0;
-  planOverlay = travelPlans.map(plan =>{
+  planOverlay.innerHTML = travelPlans.map(plan =>{
     id++;
     plan.id = id;
     return `
@@ -19,7 +19,7 @@ function renderCardOverlay(){
         </div>
         <main class="main-content">
           <section class="title-section">
-            <h1 class="title">Barcelona</h1>
+            <h1 class="title">${plan.title}</h1>
             <hr class="divider" />
 
             <div class="meta-info">
@@ -393,9 +393,42 @@ function renderCardOverlay(){
       </div>
     `;
     
-  })
+  }).join('');
 
 }
+
+function generateCard() {
+  const visitedContainer = document.getElementById("visited");
+  let id = 0;
+
+  travelPlans.forEach(card => {
+    id++;
+
+    // Create the wrapper div
+    const newCard = document.createElement("div");
+    newCard.className = "card";
+    newCard.id = id;
+
+    // Add inner HTML
+    newCard.innerHTML = `
+      <div class="img">
+        <img
+          src="${card.heroImageUrl}"
+          alt="${card.title}"
+        />
+      </div>
+      <div class="info">
+        <span>🏙 ${card.title}</span>
+        <div class="travel-type citytrip">Citytrip</div>
+      </div>
+    `;
+
+    // Append each card
+    visitedContainer.appendChild(newCard);
+  });
+}
+generateCard();
+renderCardOverlay();
 
 
 // Example of how you would use it:
