@@ -17,7 +17,6 @@ function renderCardOverlay(){
             alt="${plan.title}"
           />
         </div>
-        <div class="emoji-icon">🏛️</div>
         <main class="main-content">
           <section class="title-section">
             <h1 class="title">Barcelona</h1>
