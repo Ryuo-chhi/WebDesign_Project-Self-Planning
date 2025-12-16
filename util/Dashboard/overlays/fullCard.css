@@ -109,6 +109,7 @@ hr {
 .title-section .title {
   font-size: var(--font-size-h1);
   font-weight: var(--font-weight-regular);
+  outline: none;
 }
 
 .meta-info {
@@ -148,6 +149,53 @@ hr {
   gap: 8px;
   font-size: var(--font-size-h3);
   font-weight: var(--font-weight-medium);
+}
+
+input[type="date"] {
+  padding: 6px 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary);
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Custom icon */
+input[type="date"]::after {
+  content: "📅";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 18px;
+  color: none;
+}
+
+.meta-item #travelStatus {
+  padding: 6px 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary);
+  outline: none;
+}
+
+.meta-item #travelType {
+  padding: 6px 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary);
+  outline: none;
 }
 
 /* Itinerary Cards */
@@ -260,6 +308,11 @@ hr {
   border: 1px solid var(--color-border-input);
   border-radius: 5px;
   background: transparent;
+}
+
+.checkbox:checked + .done {
+  text-decoration: line-through;
+  opacity: 0.8;
 }
 
 .new-page-btn {
