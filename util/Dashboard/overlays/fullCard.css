@@ -310,9 +310,12 @@ input[type="date"]::after {
   background: transparent;
 }
 
-.checkbox:checked + .done {
+input[type="checkbox"]:checked + span {
   text-decoration: line-through;
   opacity: 0.8;
+}
+.edit{
+  outline: none;
 }
 
 .new-page-btn {
@@ -398,9 +401,6 @@ input[type="date"]::after {
   margin: 16px 0;
 }
 
-/* .span-full {
-    grid-column: span 2;
-} */
 
 /* To Do List */
 .todo-list {

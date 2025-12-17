@@ -26,7 +26,7 @@
         <main class="main-content">
           <!-- Title Section -->
           <section class="title-section">
-            <h1 class="title" contenteditable="true">New Itinerary</h1>
+            <h1 class="title edit">New Itinerary</h1>
             <hr class="divider" />
 
             <div class="meta-info">
@@ -37,9 +37,9 @@
                     alt="calendar icon"
                 /></span>
                 <span class="meta-label">Travel Date</span>
-                <input type="date">
+                <input type="date" />
                 <span class="meta-value">-</span>
-                <input type="date">
+                <input type="date" />
               </div>
               <div class="meta-item">
                 <span class="meta-icon"
@@ -50,7 +50,7 @@
                 <span class="meta-label">Travel Status</span>
                 <select name="travelStatus" id="travelStatus">
                   <option value="empty" disabled selected hidden>Empty</option>
-                  <option value="planning" >Planning</option>
+                  <option value="planning">Planning</option>
                   <option value="booked">Booked</option>
                   <option value="completed">Completed</option>
                 </select>
@@ -64,7 +64,7 @@
                 <span class="meta-label">Travel Type</span>
                 <select name="travelType" id="travelType">
                   <option value="empty" disabled selected hidden>Empty</option>
-                  <option value="citytrip" >Citytrip</option>
+                  <option value="citytrip">Citytrip</option>
                   <option value="roadtrip">Roadtrip</option>
                   <option value="beachholiday">Beach Holiday</option>
                   <option value="festivaltrip">Festival Trip</option>
@@ -94,7 +94,7 @@
                     </div>
                   </div>
                   <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox" name="checkbox">
+                    <input class="checkbox" type="checkbox" name="checkbox" />
                     <span class="done">Done</span>
                   </label>
                 </div>
@@ -108,7 +108,7 @@
                     </div>
                   </div>
                   <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox" name="checkbox">
+                    <input class="checkbox" type="checkbox" name="checkbox" />
                     <span class="done">Done</span>
                   </label>
                 </div>
@@ -132,7 +132,7 @@
                     </div>
                   </div>
                   <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox" name="checkbox">
+                    <input class="checkbox" type="checkbox" name="checkbox" />
                     <span class="done">Done</span>
                   </label>
                 </div>
@@ -146,7 +146,7 @@
                     </div>
                   </div>
                   <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox" name="checkbox">
+                    <input class="checkbox" type="checkbox" name="checkbox" />
                     <span class="done">Done</span>
                   </label>
                 </div>
@@ -170,7 +170,7 @@
                     </div>
                   </div>
                   <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox" name="checkbox">
+                    <input class="checkbox" type="checkbox" name="checkbox" />
                     <span class="done">Done</span>
                   </label>
                 </div>
@@ -184,7 +184,7 @@
                     </div>
                   </div>
                   <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox" name="checkbox">
+                    <input class="checkbox" type="checkbox" name="checkbox" />
                     <span class="done">Done</span>
                   </label>
                 </div>
@@ -203,7 +203,7 @@
               <h2 class="section-header">✈️ Booking Details</h2>
               <hr class="divider" />
 
-              <div class="info-callout" contenteditable="true">
+              <div class="info-callout edit">
                 <div class="info-callout-title">
                   🛫 Departure: Location - Date
                 </div>
@@ -212,7 +212,7 @@
                 </div>
               </div>
 
-              <div class="info-callout" contenteditable="true">
+              <div class="info-callout edit">
                 <div class="info-callout-text">🛬 Arrival: Location - Date</div>
               </div>
             </section>
@@ -222,11 +222,11 @@
               <h2 class="section-header">🚗 Transport Details</h2>
               <hr class="divider" />
 
-              <div class="info-callout" contenteditable="true">
+              <div class="info-callout edit">
                 <div class="info-callout-text">🚘 Rental Car: Brand</div>
               </div>
 
-              <div class="info-callout" contenteditable="true">
+              <div class="info-callout edit">
                 <div class="info-callout-text">🚘 Rental Car: Type</div>
               </div>
             </section>
@@ -236,7 +236,7 @@
               <h2 class="section-header">🗺️ Google Maps</h2>
               <hr class="divider" />
 
-              <div class="info-callout" contenteditable="true">
+              <div class="info-callout edit">
                 <div class="info-callout-text">Link to route planning</div>
               </div>
             </section>
@@ -246,28 +246,48 @@
               <h2 class="section-header">🎯 To Do's</h2>
               <hr class="divider" />
 
-              <div class="callout-note" >
+              <div class="callout-note">
                 <input type="text" placeholder="Callout text..." />
               </div>
 
               <div class="todo-item">
-                <input class="todo-checkbox" type="checkbox" name="todo-checkbox">
+                <input
+                  class="todo-checkbox"
+                  type="checkbox"
+                  name="todo-checkbox"
+                />
                 <span>Book flights</span>
               </div>
               <div class="todo-item">
-                <input class="todo-checkbox" type="checkbox" name="todo-checkbox">
+                <input
+                  class="todo-checkbox"
+                  type="checkbox"
+                  name="todo-checkbox"
+                />
                 <span>Book rental car</span>
               </div>
               <div class="todo-item">
-                <input class="todo-checkbox" type="checkbox" name="todo-checkbox">
+                <input
+                  class="todo-checkbox"
+                  type="checkbox"
+                  name="todo-checkbox"
+                />
                 <span>Book accommodations</span>
               </div>
               <div class="todo-item">
-                <input class="todo-checkbox" type="checkbox" name="todo-checkbox">
+                <input
+                  class="todo-checkbox"
+                  type="checkbox"
+                  name="todo-checkbox"
+                />
                 <span>Research activities</span>
               </div>
               <div class="todo-item">
-                <input class="todo-checkbox" type="checkbox" name="todo-checkbox">
+                <input
+                  class="todo-checkbox"
+                  type="checkbox"
+                  name="todo-checkbox"
+                />
                 <span>Pack winter clothes</span>
               </div>
             </section>
@@ -280,19 +300,19 @@
               <ul class="highlights-list">
                 <li class="highlight-item">
                   <span class="bullet">•</span>
-                  <span contenteditable="true">Empty</span>
+                  <span class="edit">Empty</span>
                 </li>
                 <li class="highlight-item">
                   <span class="bullet">•</span>
-                  <span contenteditable="true">Empty</span>
+                  <span class="edit">Empty</span>
                 </li>
                 <li class="highlight-item">
                   <span class="bullet">•</span>
-                  <span contenteditable="true">Empty</span>
+                  <span class="edit">Empty</span>
                 </li>
                 <li class="highlight-item">
                   <span class="bullet">•</span>
-                  <span contenteditable="true">...</span>
+                  <span class="edit">...</span>
                 </li>
               </ul>
             </section>
@@ -302,24 +322,40 @@
               <h2 class="section-header">🎒 Packing List</h2>
               <hr class="divider" />
 
-              <div class="callout-note" >
+              <div class="callout-note">
                 <input type="text" placeholder="Callout text..." />
               </div>
 
               <div class="packing-item">
-                <input class="todo-checkbox" type="checkbox" name="todo-checkbox">
+                <input
+                  class="todo-checkbox"
+                  type="checkbox"
+                  name="todo-checkbox"
+                />
                 <span>Passport & documents</span>
               </div>
               <div class="packing-item">
-                <input class="todo-checkbox" type="checkbox" name="todo-checkbox">
+                <input
+                  class="todo-checkbox"
+                  type="checkbox"
+                  name="todo-checkbox"
+                />
                 <span>Winter jacket</span>
               </div>
               <div class="packing-item">
-                <input class="todo-checkbox" type="checkbox" name="todo-checkbox">
+                <input
+                  class="todo-checkbox"
+                  type="checkbox"
+                  name="todo-checkbox"
+                />
                 <span>Waterproof boots</span>
               </div>
               <div class="packing-item">
-                <input class="todo-checkbox" type="checkbox" name="todo-checkbox">
+                <input
+                  class="todo-checkbox"
+                  type="checkbox"
+                  name="todo-checkbox"
+                />
                 <span>Camera & charger</span>
               </div>
             </section>
@@ -339,27 +375,27 @@
                 <tbody>
                   <tr>
                     <td>Plane Tickets</td>
-                    <td contenteditable="true"></td>
+                    <td class="edit amount-money"></td>
                   </tr>
                   <tr>
                     <td>Car Rental</td>
-                    <td contenteditable="true"></td>
+                    <td class="edit amount-money"></td>
                   </tr>
                   <tr>
                     <td>Hotels</td>
-                    <td contenteditable="true"></td>
+                    <td class="edit amount-money"></td>
                   </tr>
                   <tr>
                     <td>Food Budget</td>
-                    <td contenteditable="true"></td>
+                    <td class="edit amount-money"></td>
                   </tr>
                   <tr>
                     <td>Activities</td>
-                    <td contenteditable="true"></td>
+                    <td class="edit amount-money"></td>
                   </tr>
                   <tr>
                     <td>Total</td>
-                    <td contenteditable="true"></td>
+                    <td class="total-amount"></td>
                   </tr>
                 </tbody>
               </table>
@@ -368,5 +404,6 @@
         </main>
       </div>
     </div>
+    <script type="module" src="../js/calculate.js"></script>
   </body>
 </html>

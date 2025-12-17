@@ -1,115 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Holiday Tracker</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 2rem;
-      background: #f9f9f9;
-      color: #333;
-    }
-    h2 {
-      margin-top: 2rem;
-      color: #2c3e50;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin-bottom: 0.5rem;
-    }
-    input[type="checkbox"] {
-      margin-right: 0.5rem;
-    }
-    label[contenteditable] {
-      padding: 0.2rem 0.5rem;
-      border: 1px dashed #ccc;
-      border-radius: 4px;
-      display: inline-block;
-      min-width: 200px;
-      /* background-color: aqua; */
-    }
-    .highlight-box {
-      border: 1px solid #ccc;
-      padding: 1rem;
-      border-radius: 6px;
-      background: #fff;
-      min-height: 100px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 0.5rem;
-      text-align: left;
-    }
-    td[contenteditable] {
-      background: #fff8dc;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Holiday Tracker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+        background: #f9f9f9;
+        color: #333;
+      }
+      h2 {
+        margin-top: 2rem;
+        color: #2c3e50;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+      input[type="checkbox"] {
+        margin-right: 0.5rem;
+      }
+      label.edit {
+        padding: 0.2rem 0.5rem;
+        border: 1px dashed #ccc;
+        border-radius: 4px;
+        display: inline-block;
+        min-width: 200px;
+        /* background-color: aqua; */
+      }
+      .highlight-box {
+        border: 1px solid #ccc;
+        padding: 1rem;
+        border-radius: 6px;
+        background: #fff;
+        min-height: 100px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+        text-align: left;
+      }
+      td.edit {
+        background: #fff8dc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Holiday Tracker</h1>
 
-  <h1>Holiday Tracker</h1>
+    <h2>To Do's</h2>
+    <ul>
+      <li>
+        <input type="checkbox" /><label class="edit"
+          >Decide the type of trip you want to do</label
+        >
+      </li>
+      <li>
+        <input type="checkbox" /><label class="edit"
+          >Decide who you're doing the trip with</label
+        >
+      </li>
+      <li>
+        <input type="checkbox" /><label class="edit">Pick the location</label>
+      </li>
+      <li>
+        <input type="checkbox" /><label class="edit"
+          >Pick the best date to go</label
+        >
+      </li>
+      <li>
+        <input type="checkbox" /><label class="edit"
+          >Check if you can take holidays from work</label
+        >
+      </li>
+      <li>
+        <input type="checkbox" /><label class="edit"
+          >Research similar trips on travel blogs</label
+        >
+      </li>
+      <li>
+        <input type="checkbox" /><label class="edit"
+          >Build the trip by combining the research</label
+        >
+      </li>
+      <li>
+        <input type="checkbox" /><label class="edit"
+          >Create a travel plan on Google Maps</label
+        >
+      </li>
+      <li>
+        <input type="checkbox" /><label class="edit"
+          >Create an itinerary in Notion</label
+        >
+      </li>
+      <li>
+        <input type="checkbox" /><label class="edit">Book your flights</label>
+      </li>
+      <li>
+        <input type="checkbox" /><label class="edit"
+          >Book your rental car / train tickets (if required)</label
+        >
+      </li>
+      <li>
+        <input type="checkbox" /><label class="edit"
+          >Book your first and last stay</label
+        >
+      </li>
+    </ul>
 
-  <h2>To Do's</h2>
-  <ul>
-    <li><input type="checkbox"><label contenteditable="true">Decide the type of trip you want to do</label></li>
-    <li><input type="checkbox"><label contenteditable="true">Decide who you're doing the trip with</label></li>
-    <li><input type="checkbox"><label contenteditable="true">Pick the location</label></li>
-    <li><input type="checkbox"><label contenteditable="true">Pick the best date to go</label></li>
-    <li><input type="checkbox"><label contenteditable="true">Check if you can take holidays from work</label></li>
-    <li><input type="checkbox"><label contenteditable="true">Research similar trips on travel blogs</label></li>
-    <li><input type="checkbox"><label contenteditable="true">Build the trip by combining the research</label></li>
-    <li><input type="checkbox"><label contenteditable="true">Create a travel plan on Google Maps</label></li>
-    <li><input type="checkbox"><label contenteditable="true">Create an itinerary in Notion</label></li>
-    <li><input type="checkbox"><label contenteditable="true">Book your flights</label></li>
-    <li><input type="checkbox"><label contenteditable="true">Book your rental car / train tickets (if required)</label></li>
-    <li><input type="checkbox"><label contenteditable="true">Book your first and last stay</label></li>
-  </ul>
+    <h2>Travel Highlights</h2>
+    <div class="highlight-box edit">Add your travel highlights here...</div>
 
-  <h2>Travel Highlights</h2>
-  <div class="highlight-box" contenteditable="true">
-    Add your travel highlights here...
-  </div>
-
-  <h2>Travel Costs</h2>
-  <table>
-    <tr>
-      <th>Cost Name</th>
-      <th>Cost</th>
-    </tr>
-    <tr>
-      <td contenteditable="true">Plane Tickets</td>
-      <td contenteditable="true">$500</td>
-    </tr>
-    <tr>
-      <td contenteditable="true">Car Rental</td>
-      <td contenteditable="true">$200</td>
-    </tr>
-    <tr>
-      <td contenteditable="true">Hotel(s)</td>
-      <td contenteditable="true">$600</td>
-    </tr>
-    <tr>
-      <td contenteditable="true">Food Budget</td>
-      <td contenteditable="true">$300</td>
-    </tr>
-    <tr>
-      <td contenteditable="true">Activities</td>
-      <td contenteditable="true">$250</td>
-    </tr>
-    <tr>
-      <td><strong>Total</strong></td>
-      <td contenteditable="true"><strong>$1850</strong></td>
-    </tr>
-  </table>
-
-</body>
+    <h2>Travel Costs</h2>
+    <table>
+      <tr>
+        <th>Cost Name</th>
+        <th>Cost</th>
+      </tr>
+      <tr>
+        <td class="edit">Plane Tickets</td>
+        <td class="edit">$500</td>
+      </tr>
+      <tr>
+        <td class="edit">Car Rental</td>
+        <td class="edit">$200</td>
+      </tr>
+      <tr>
+        <td class="edit">Hotel(s)</td>
+        <td class="edit">$600</td>
+      </tr>
+      <tr>
+        <td class="edit">Food Budget</td>
+        <td class="edit">$300</td>
+      </tr>
+      <tr>
+        <td class="edit">Activities</td>
+        <td class="edit">$250</td>
+      </tr>
+      <tr>
+        <td><strong>Total</strong></td>
+        <td class="edit"><strong>$1850</strong></td>
+      </tr>
+    </table>
+  </body>
 </html>
