@@ -372,7 +372,7 @@
                     <th>Amount</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="costContainer">
                   <tr>
                     <td>Plane Tickets</td>
                     <td class="edit amount-money"></td>
@@ -393,9 +393,13 @@
                     <td>Activities</td>
                     <td class="edit amount-money"></td>
                   </tr>
-                  <tr>
+                  <tr id="totalCell">
                     <td>Total</td>
                     <td class="total-amount"></td>
+                  </tr>
+                  <tr>
+                    <td class="addCost" style="font-size: 1rem; cursor: pointer;">+ New</td>
+                    <td></td>
                   </tr>
                 </tbody>
               </table>
