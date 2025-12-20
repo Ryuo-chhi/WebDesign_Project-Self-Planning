@@ -10,6 +10,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
     <link rel="stylesheet" href="fullCard.css" />
   </head>
   <body>
@@ -66,8 +70,8 @@
                   <option value="empty" disabled selected hidden>Empty</option>
                   <option value="citytrip">Citytrip</option>
                   <option value="roadtrip">Roadtrip</option>
-                  <option value="beachholiday">Beach Holiday</option>
-                  <option value="festivaltrip">Festival Trip</option>
+                  <option value="beachholiday">Beach</option>
+                  <option value="festivaltrip">Festival</option>
                   <option value="camping">Camping</option>
                   <option value="hiking">Hiking</option>
                 </select>
@@ -87,7 +91,7 @@
 
                 <div class="activity-card">
                   <div class="activity-header">
-                    <span class="activity-title">Visit A</span>
+                    <span class="activity-title edit">Visit A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
                       <button class="action-btn">⋮</button>
@@ -101,7 +105,7 @@
 
                 <div class="activity-card">
                   <div class="activity-header">
-                    <span class="activity-title">Sleep in A</span>
+                    <span class="activity-title edit">Sleep in A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
                       <button class="action-btn">⋮</button>
@@ -125,7 +129,7 @@
 
                 <div class="activity-card">
                   <div class="activity-header">
-                    <span class="activity-title">Visit A</span>
+                    <span class="activity-title edit">Visit A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
                       <button class="action-btn">⋮</button>
@@ -139,7 +143,7 @@
 
                 <div class="activity-card">
                   <div class="activity-header">
-                    <span class="activity-title">Sleep in A</span>
+                    <span class="activity-title edit">Sleep in A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
                       <button class="action-btn">⋮</button>
@@ -163,7 +167,7 @@
 
                 <div class="activity-card">
                   <div class="activity-header">
-                    <span class="activity-title">Visit A</span>
+                    <span class="activity-title edit">Visit A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
                       <button class="action-btn">⋮</button>
@@ -177,7 +181,7 @@
 
                 <div class="activity-card">
                   <div class="activity-header">
-                    <span class="activity-title">Sleep in A</span>
+                    <span class="activity-title edit">Sleep in A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
                       <button class="action-btn">⋮</button>
@@ -364,7 +368,6 @@
             <section>
               <h2 class="section-header">💸 Travel Costs</h2>
               <hr class="divider" />
-
               <table class="cost-table">
                 <thead>
                   <tr>
@@ -374,31 +377,61 @@
                 </thead>
                 <tbody id="costContainer">
                   <tr>
-                    <td>Plane Tickets</td>
-                    <td class="edit amount-money"></td>
+                    <td class="edit">Plane Tickets</td>
+                    <td class="cost">
+                      <div class="edit amount-money"></div>
+                      <div class="remove">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
-                    <td>Car Rental</td>
-                    <td class="edit amount-money"></td>
+                    <td class="edit">Car Rental</td>
+                    <td class="cost">
+                      <div class="edit amount-money"></div>
+                      <div class="remove">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
-                    <td>Hotels</td>
-                    <td class="edit amount-money"></td>
+                    <td class="edit">Hotels</td>
+                    <td class="cost">
+                      <div class="edit amount-money"></div>
+                      <div class="remove">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
-                    <td>Food Budget</td>
-                    <td class="edit amount-money"></td>
+                    <td class="edit">Food Budget</td>
+                    <td class="cost">
+                      <div class="edit amount-money"></div>
+                      <div class="remove">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
-                    <td>Activities</td>
-                    <td class="edit amount-money"></td>
+                    <td class="edit">Activities</td>
+                    <td class="cost">
+                      <div class="edit amount-money"></div>
+                      <div class="remove">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
+                    </td>
                   </tr>
                   <tr id="totalCell">
                     <td>Total</td>
                     <td class="total-amount"></td>
                   </tr>
                   <tr>
-                    <td class="addCost" style="font-size: 1rem; cursor: pointer;">+ New</td>
+                    <td
+                      class="addCost"
+                      style="font-size: 1rem; cursor: pointer"
+                    >
+                      + New
+                    </td>
                     <td></td>
                   </tr>
                 </tbody>
@@ -408,6 +441,6 @@
         </main>
       </div>
     </div>
-    <script type="module" src="../js/calculate.js"></script>
+    <script type="module" src="../js/tableCalc.js"></script>
   </body>
 </html>

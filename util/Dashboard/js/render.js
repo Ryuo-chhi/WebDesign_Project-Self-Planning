@@ -1,13 +1,14 @@
 import { travelPlans } from "./data/data.js";
 
-function renderCardOverlay(){
+function renderCardOverlay() {
   const planOverlay = document.getElementById("planOverlay");
   let id = 0;
-  planOverlay.innerHTML = travelPlans.map(plan =>{
-    id++;
-    plan.id = id;
-    return `
-      <div class="bigCard bacelonaOverlay" id ="${id}">
+  planOverlay.innerHTML = travelPlans
+    .map((plan) => {
+      id++;
+      plan.id = id;
+      return `
+      <div class="bigCard" id ="${id}">
         <div class="close">
             <i class="fi fi-rr-cross"></i>
           </div>
@@ -63,28 +64,28 @@ function renderCardOverlay(){
 
                 <div class="activity-card">
                   <div class="activity-header">
-                    <span class="activity-title">Visit A</span>
+                    <span class="activity-title edit">Visit A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
                       <button class="action-btn">⋮</button>
                     </div>
                   </div>
                   <label class="checkbox-label">
-                    <div class="checkbox"></div>
+                    <input class="checkbox" type="checkbox" name="checkbox" />
                     <span>Done</span>
                   </label>
                 </div>
 
                 <div class="activity-card">
                   <div class="activity-header">
-                    <span class="activity-title">Sleep in A</span>
+                    <span class="activity-title edit">Sleep in A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
                       <button class="action-btn">⋮</button>
                     </div>
                   </div>
                   <label class="checkbox-label">
-                    <div class="checkbox"></div>
+                    <input class="checkbox" type="checkbox" name="checkbox" />
                     <span>Done</span>
                   </label>
                 </div>
@@ -100,65 +101,28 @@ function renderCardOverlay(){
 
                 <div class="activity-card">
                   <div class="activity-header">
-                    <span class="activity-title">Visit A</span>
+                    <span class="activity-title edit">Visit A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
                       <button class="action-btn">⋮</button>
                     </div>
                   </div>
                   <label class="checkbox-label">
-                    <div class="checkbox"></div>
+                    <input class="checkbox" type="checkbox" name="checkbox" />
                     <span>Done</span>
                   </label>
                 </div>
 
                 <div class="activity-card">
                   <div class="activity-header">
-                    <span class="activity-title">Sleep in Sokha Hotel</span>
+                    <span class="activity-title edit">Sleep in Sokha Hotel</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
                       <button class="action-btn">⋮</button>
                     </div>
                   </div>
                   <label class="checkbox-label">
-                    <div class="checkbox"></div>
-                    <span>Done</span>
-                  </label>
-                </div>
-
-                <button class="new-page-btn">
-                  <span>+</span>
-                  <span>New page</span>
-                </button>
-              </div>
-
-              <div class="day-card day-3">
-                <div class="day-badge">Day 3</div>
-
-                <div class="activity-card">
-                  <div class="activity-header">
-                    <span class="activity-title">Visit A</span>
-                    <div class="activity-actions">
-                      <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
-                    </div>
-                  </div>
-                  <label class="checkbox-label">
-                    <div class="checkbox"></div>
-                    <span>Done</span>
-                  </label>
-                </div>
-
-                <div class="activity-card">
-                  <div class="activity-header">
-                    <span class="activity-title">Sleep in A</span>
-                    <div class="activity-actions">
-                      <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
-                    </div>
-                  </div>
-                  <label class="checkbox-label">
-                    <div class="checkbox"></div>
+                    <input class="checkbox" type="checkbox" name="checkbox" />
                     <span>Done</span>
                   </label>
                 </div>
@@ -174,28 +138,65 @@ function renderCardOverlay(){
 
                 <div class="activity-card">
                   <div class="activity-header">
-                    <span class="activity-title">Visit A</span>
+                    <span class="activity-title edit">Visit A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
                       <button class="action-btn">⋮</button>
                     </div>
                   </div>
                   <label class="checkbox-label">
-                    <div class="checkbox"></div>
+                    <input class="checkbox" type="checkbox" name="checkbox" />
                     <span>Done</span>
                   </label>
                 </div>
 
                 <div class="activity-card">
                   <div class="activity-header">
-                    <span class="activity-title">Sleep in A</span>
+                    <span class="activity-title edit">Sleep in A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
                       <button class="action-btn">⋮</button>
                     </div>
                   </div>
                   <label class="checkbox-label">
-                    <div class="checkbox"></div>
+                    <input class="checkbox" type="checkbox" name="checkbox" />
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <button class="new-page-btn">
+                  <span>+</span>
+                  <span>New page</span>
+                </button>
+              </div>
+
+              <div class="day-card day-3">
+                <div class="day-badge">Day 3</div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title edit">Visit A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" name="checkbox" />
+                    <span>Done</span>
+                  </label>
+                </div>
+
+                <div class="activity-card">
+                  <div class="activity-header">
+                    <span class="activity-title edit">Sleep in A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <button class="action-btn">⋮</button>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" name="checkbox" />
                     <span>Done</span>
                   </label>
                 </div>
@@ -392,9 +393,8 @@ function renderCardOverlay(){
         </main>
       </div>
     `;
-    
-  }).join('');
-
+    })
+    .join("");
 }
 
 function generateCard() {
@@ -402,7 +402,7 @@ function generateCard() {
   const newPlanBtn = visitedContainer.querySelector(".new-plan");
   let id = 0;
 
-  travelPlans.forEach(card => {
+  travelPlans.forEach((card) => {
     id++;
 
     // Create the wrapper div
@@ -430,7 +430,6 @@ function generateCard() {
 }
 generateCard();
 renderCardOverlay();
-
 
 // Example of how you would use it:
 // document.getElementById('planOverlay').innerHTML = plannerInnerHtml;

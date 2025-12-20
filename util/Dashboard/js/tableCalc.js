@@ -69,8 +69,6 @@
 
 // }
 
-
-
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", init);
 } else {
@@ -80,15 +78,19 @@ if (document.readyState === "loading") {
 function init() {
   const table = document.getElementById("costContainer");
   const addBtn = document.querySelector(".addCost");
+  const editContent = document.querySelectorAll(".edit");
 
   addBtn.addEventListener("click", addNewTableRow);
 
   // enable editing
-  table.addEventListener("click", (e) => {
-    if (e.target.classList.contains("edit")) {
-      e.target.setAttribute("contenteditable", "true");
-      e.target.focus();
-    }
+
+  editContent.forEach((el) => {
+    el.setAttribute("contenteditable", "true");
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+      }
+    });
   });
 
   // prevent enter
@@ -106,18 +108,42 @@ function init() {
   });
 
   // format on blur
-  table.addEventListener("blur", (e) => {
-    if (e.target.classList.contains("amount-money")) {
-      let raw = e.target.textContent || "";
-      raw = raw.replace(/[^0-9.\-]+/g, "");
-      const n = parseFloat(raw);
+  table.addEventListener(
+    "blur",
+    (e) => {
+      if (e.target.classList.contains("amount-money")) {
+        let raw = e.target.textContent || "";
+        raw = raw.replace(/[^0-9.\-]+/g, "");
+        const n = parseFloat(raw);
 
-      e.target.textContent = !isNaN(n) ? `$${n.toFixed(2)}` : "$0.00";
-      calculate();
-    }
-  }, true);
+        e.target.textContent = !isNaN(n) ? `$${n.toFixed(2)}` : "$0.00";
+        calculate();
+      }
+    },
+    true
+  );
+
+  //remove
+  remove();
 
   calculate();
+}
+
+function remove() {
+  const tableRow = document.querySelectorAll("#costContainer tr");
+
+  tableRow.forEach((el) => {
+    const removeBtn = el.querySelector(".remove");
+    const amounts = el.querySelector(".amount-money");
+
+    if (removeBtn) {
+      removeBtn.addEventListener("click", () => {
+        amounts.textContent = "";
+        calculate()
+        el.remove();
+      });
+    }
+  });
 }
 
 function calculate() {
@@ -149,4 +175,3 @@ function addNewTableRow() {
 
   container.insertBefore(tr, totalRow || null);
 }
-
