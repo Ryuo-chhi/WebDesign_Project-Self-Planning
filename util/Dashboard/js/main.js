@@ -2,3 +2,4 @@
 import './cardOverlay.js'
 import './tableCalc.js'
 import './itineraryCard.js'
+import './infoSection.js'

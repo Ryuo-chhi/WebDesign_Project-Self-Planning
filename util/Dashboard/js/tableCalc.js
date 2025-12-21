@@ -126,7 +126,7 @@ function init() {
     true
   );
 
-  remove();
+  removeTb();
   // delegated remove handler so new rows don't need individual listeners
   //to make the new row have added works with remove func
   table.addEventListener("click", (e) => {
@@ -136,14 +136,14 @@ function init() {
       const amounts = tr.querySelector(".amount-money");
       if (amounts) amounts.textContent = "";
       calculate();
-      tr.remove();
+      tr.removeTb();
     }
   });
 
   calculate();
 }
 
-function remove() {
+function removeTb() {
   const tableRow = document.querySelectorAll("#costContainer tr");
 
   tableRow.forEach((el) => {

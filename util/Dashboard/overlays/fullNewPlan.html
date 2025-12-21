@@ -234,18 +234,28 @@
 
           <div class="grid-section">
             <!-- Booking Details -->
-            <section class="info-section">
+            <section class="info-section booking">
               <h2 class="section-header">✈️ Booking Details</h2>
               <hr class="divider" />
-
-              <div class="info-callout edit">
-                <div class="info-callout-title">
+              <div class="new-booking-btn new">
+                <span>+ New</span>
+              </div>
+              <div class="info-callout">
+                <div class="info-callout-title edit">
                   🛫 Departure: Location - Date
+                </div>
+                <div class="removeAct">
+                  <i class="fi fi-rr-cross"></i>
                 </div>
               </div>
 
-              <div class="info-callout edit">
-                <div class="info-callout-text">🛬 Arrival: Location - Date</div>
+              <div class="info-callout">
+                <div class="info-callout-text edit">
+                  🛬 Arrival: Location - Date
+                </div>
+                <div class="removeAct">
+                  <i class="fi fi-rr-cross"></i>
+                </div>
               </div>
             </section>
 
@@ -253,23 +263,36 @@
             <section class="info-section">
               <h2 class="section-header">🚗 Transport Details</h2>
               <hr class="divider" />
-
-              <div class="info-callout edit">
-                <div class="info-callout-text">🚘 Rental Car: Brand</div>
+              <div class="new-transport-btn new">
+                <span>+ New</span>
+              </div>
+              <div class="info-callout">
+                <div class="info-callout-text edit">🚘 Rental Car: Brand</div>
+                <div class="removeAct">
+                  <i class="fi fi-rr-cross"></i>
+                </div>
               </div>
 
-              <div class="info-callout edit">
-                <div class="info-callout-text">🚘 Rental Car: Type</div>
+              <div class="info-callout">
+                <div class="info-callout-text edit">🚘 Rental Car: Type</div>
+                <div class="removeAct">
+                  <i class="fi fi-rr-cross"></i>
+                </div>
               </div>
             </section>
 
             <!-- Google Maps -->
-            <section class="info-section span-full">
+            <section class="info-section googleMap">
               <h2 class="section-header">🗺️ Google Maps</h2>
               <hr class="divider" />
-
-              <div class="info-callout edit">
-                <div class="info-callout-text">Link to route planning</div>
+              <div class="new-map-btn new">
+                <span>+ New</span>
+              </div>
+              <div class="info-callout">
+                <div class="info-callout-text edit">Link to route planning</div>
+                <div class="removeAct">
+                  <i class="fi fi-rr-cross"></i>
+                </div>
               </div>
             </section>
 
@@ -278,8 +301,9 @@
               <h2 class="section-header">🎯 To Do's</h2>
               <hr class="divider" />
 
-              <div class="callout-note">
+              <div class="callout-note" id="todo-input">
                 <input type="text" placeholder="Callout text..." />
+                <i class="fi fi-rr-paper-plane-top"></i>
               </div>
 
               <div class="todo-item">
@@ -288,7 +312,13 @@
                   type="checkbox"
                   name="todo-checkbox"
                 />
-                <span>Book flights</span>
+                <div class="action">
+                  <span>Book flights</span>
+
+                  <div class="removeAct">
+                    <i class="fi fi-rr-cross"></i>
+                  </div>
+                </div>
               </div>
               <div class="todo-item">
                 <input
@@ -296,7 +326,13 @@
                   type="checkbox"
                   name="todo-checkbox"
                 />
-                <span>Book rental car</span>
+                <div class="action">
+                  <span>Book rental car</span>
+
+                  <div class="removeAct">
+                    <i class="fi fi-rr-cross"></i>
+                  </div>
+                </div>
               </div>
               <div class="todo-item">
                 <input
@@ -304,7 +340,12 @@
                   type="checkbox"
                   name="todo-checkbox"
                 />
-                <span>Book accommodations</span>
+                <div class="action">
+                  <span>Book accommodations</span>
+                  <div class="removeAct">
+                    <i class="fi fi-rr-cross"></i>
+                  </div>
+                </div>
               </div>
               <div class="todo-item">
                 <input
@@ -312,7 +353,12 @@
                   type="checkbox"
                   name="todo-checkbox"
                 />
-                <span>Research activities</span>
+                <div class="action">
+                  <span>Research activities</span>
+                  <div class="removeAct">
+                    <i class="fi fi-rr-cross"></i>
+                  </div>
+                </div>
               </div>
               <div class="todo-item">
                 <input
@@ -320,38 +366,59 @@
                   type="checkbox"
                   name="todo-checkbox"
                 />
-                <span>Pack winter clothes</span>
+                <div class="action">
+                  <span>Pack winter clothes</span>
+                  <div class="removeAct">
+                    <i class="fi fi-rr-cross"></i>
+                  </div>
+                </div>
               </div>
             </section>
 
             <!-- Travel Highlights -->
-            <section>
+            <section class="travel">
               <h2 class="section-header">⭐ Travel Highlights</h2>
               <hr class="divider" />
-
+              <div class="callout-note" id="travel-input">
+                <input type="text" placeholder="Callout text..." />
+                <i class="fi fi-rr-paper-plane-top"></i>
+              </div>
               <ul class="highlights-list">
-                <li class="highlight-item">
-                  <span class="bullet">•</span>
-                  <span class="edit">Empty</span>
+                <li class="highlight-item edit">
+                  <div class="action">
+                    <span class="edit">Empty</span>
+                    <div class="removeAct">
+                      <i class="fi fi-rr-cross"></i>
+                    </div>
+                  </div>
                 </li>
-                <li class="highlight-item">
-                  <span class="bullet">•</span>
-                  <span class="edit">Empty</span>
+                <li class="highlight-item edit">
+                  <div class="action">
+                    <span class="edit">Empty</span>
+                    <div class="removeAct">
+                      <i class="fi fi-rr-cross"></i>
+                    </div>
+                  </div>
                 </li>
-                <li class="highlight-item">
-                  <span class="bullet">•</span>
-                  <span class="edit">Empty</span>
+                <li class="highlight-item edit">
+                  <div class="action">
+                    <span class="edit">Empty</span>
+                    <div class="removeAct">
+                      <i class="fi fi-rr-cross"></i>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </section>
 
             <!-- Packing List -->
-            <section class="packing-list">
+            <section class="packing-list" id="packing-input">
               <h2 class="section-header">🎒 Packing List</h2>
               <hr class="divider" />
 
               <div class="callout-note">
                 <input type="text" placeholder="Callout text..." />
+                <i class="fi fi-rr-paper-plane-top"></i>
               </div>
 
               <div class="packing-item">
@@ -360,7 +427,13 @@
                   type="checkbox"
                   name="todo-checkbox"
                 />
-                <span>Passport & documents</span>
+                <div class="action">
+                  <span>Passport & documents</span>
+
+                  <div class="removeAct">
+                    <i class="fi fi-rr-cross"></i>
+                  </div>
+                </div>
               </div>
               <div class="packing-item">
                 <input
@@ -368,7 +441,13 @@
                   type="checkbox"
                   name="todo-checkbox"
                 />
-                <span>Winter jacket</span>
+                <div class="action">
+                  <span>Winter jacket</span>
+
+                  <div class="removeAct">
+                    <i class="fi fi-rr-cross"></i>
+                  </div>
+                </div>
               </div>
               <div class="packing-item">
                 <input
@@ -376,7 +455,13 @@
                   type="checkbox"
                   name="todo-checkbox"
                 />
-                <span>Waterproof boots</span>
+                <div class="action">
+                  <span>Waterproof boots</span>
+
+                  <div class="removeAct">
+                    <i class="fi fi-rr-cross"></i>
+                  </div>
+                </div>
               </div>
               <div class="packing-item">
                 <input
@@ -384,12 +469,18 @@
                   type="checkbox"
                   name="todo-checkbox"
                 />
-                <span>Camera & charger</span>
+                <div class="action">
+                  <span>Camera & charger</span>
+
+                  <div class="removeAct">
+                    <i class="fi fi-rr-cross"></i>
+                  </div>
+                </div>
               </div>
             </section>
 
             <!-- Travel Costs -->
-            <section>
+            <section class="travelCost">
               <h2 class="section-header">💸 Travel Costs</h2>
               <hr class="divider" />
               <table class="cost-table">

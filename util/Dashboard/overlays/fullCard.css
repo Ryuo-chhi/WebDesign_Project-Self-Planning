@@ -11,12 +11,6 @@
   display: none;
 }
 
-/* body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: blueviolet;
-} */
 .planner {
   height: 100vh;
   width: 100vw;
@@ -261,6 +255,10 @@ input[type="date"]::after {
   background-color: var(--color-white-alpha-20);
 }
 
+.removeAct{
+  width: 15px;
+  text-align: center;
+}
 .removeAct i,
 .removeCard i {
   font-size: 10px;
@@ -285,10 +283,10 @@ input[type="date"]::after {
   margin-bottom: 12px;
 }
 
-.activity-title edit {
+/* .activity-title .edit {
   font-size: var(--font-size-sm);
   color: var(--color-text-primary);
-}
+} */
 
 .activity-actions {
   display: flex;
@@ -344,6 +342,15 @@ input[type="checkbox"]:checked + span {
 .new-page-btn span {
   font-size: var(--font-size-sm);
 }
+.new {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+  cursor: pointer;
+}
+.new span {
+  color: var(--color-total-highlight);
+}
 
 /*Grid Section*/
 .grid-section {
@@ -389,6 +396,10 @@ input[type="checkbox"]:checked + span {
 }
 
 .info-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
   background: var(--color-callout-bg);
   border: 0.8px solid var(--color-callout-border);
   border-radius: 4px;
@@ -435,7 +446,15 @@ input[type="checkbox"]:checked + span {
   flex-shrink: 0;
 }
 
+.action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .callout-note {
+  height: 45px;
   background: var(--color-callout-bg);
   border: 0.8px solid var(--color-callout-border);
   border-radius: 4px;
@@ -443,6 +462,9 @@ input[type="checkbox"]:checked + span {
   margin-bottom: 16px;
   font-size: var(--font-size-sm);
   color: var(--color-text-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .callout-note input[type="text"] {
   flex: 1;
@@ -451,9 +473,11 @@ input[type="checkbox"]:checked + span {
   background-color: transparent;
   font-size: 14px;
 }
+.callout-note i {
+  color: var(--color-button-primary);
+}
 /* Highlights List */
-.highlights-list {
-  list-style: none;
+ul {
   margin: 16px 0;
 }
 
@@ -461,14 +485,9 @@ input[type="checkbox"]:checked + span {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 8px 0;
+  padding: 8px 10px;
   font-size: var(--font-size-base);
   color: var(--color-text-primary);
-}
-
-.bullet {
-  color: var(--color-text-muted);
-  font-size: var(--font-size-base);
 }
 
 /* Table */
@@ -543,7 +562,7 @@ input[type="checkbox"]:checked + span {
       "booking transport"
       "googleMap googleMap"
       "todo-list packing-list"
-      " travelCost travel";
+      "travelCost travel";
   }
 }
 @media (min-width: 1024px) {
@@ -557,6 +576,6 @@ input[type="checkbox"]:checked + span {
       "booking transport"
       "googleMap googleMap"
       "todo-list packing-list"
-      " travelCost travel";
+      "travelCost travel";
   }
 }
