@@ -60,14 +60,16 @@ function renderCardOverlay() {
             <hr class="divider" />
             <div class="itinerary-grid">
               <div class="day-card day-1">
-                <div class="day-badge">Day 1</div>
+                <div class="day-badge edit">Day 1</div>
 
                 <div class="activity-card">
                   <div class="activity-header">
                     <span class="activity-title edit">Visit A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                       <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">
@@ -81,7 +83,9 @@ function renderCardOverlay() {
                     <span class="activity-title edit">Sleep in A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                       <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">
@@ -97,14 +101,16 @@ function renderCardOverlay() {
               </div>
 
               <div class="day-card day-2">
-                <div class="day-badge">Day 2</div>
+                <div class="day-badge edit">Day 2</div>
 
                 <div class="activity-card">
                   <div class="activity-header">
                     <span class="activity-title edit">Visit A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                       <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">
@@ -118,7 +124,9 @@ function renderCardOverlay() {
                     <span class="activity-title edit">Sleep in Sokha Hotel</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                       <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">
@@ -134,14 +142,16 @@ function renderCardOverlay() {
               </div>
 
               <div class="day-card day-3">
-                <div class="day-badge">Day 3</div>
+                <div class="day-badge edit">Day 3</div>
 
                 <div class="activity-card">
                   <div class="activity-header">
                     <span class="activity-title edit">Visit A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                       <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">
@@ -155,7 +165,9 @@ function renderCardOverlay() {
                     <span class="activity-title edit">Sleep in A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                       <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">
@@ -171,14 +183,16 @@ function renderCardOverlay() {
               </div>
 
               <div class="day-card day-3">
-                <div class="day-badge">Day 3</div>
+                <div class="day-badge edit">Day 3</div>
 
                 <div class="activity-card">
                   <div class="activity-header">
                     <span class="activity-title edit">Visit A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                       <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">
@@ -192,7 +206,9 @@ function renderCardOverlay() {
                     <span class="activity-title edit">Sleep in A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                       <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">

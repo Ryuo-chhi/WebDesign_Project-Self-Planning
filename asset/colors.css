@@ -34,8 +34,8 @@
      WHITE & VARIATIONS
      ======================================== */
   --color-white: #FFFFFF;
-  --color-white-alpha-10: rgba(255, 255, 255, 0.1);
-  --color-white-alpha-20: rgba(255, 255, 255, 0.2);
+  --color-white-alpha-10: rgba(255, 255, 255, 0.05);
+  --color-white-alpha-20: rgba(255, 255, 255, 0.1);
   --color-white-alpha-50: rgba(255, 255, 255, 0.5);
   --color-white-alpha-70: rgba(255, 255, 255, 0.7);
   --color-white-alpha-80: rgba(255, 255, 255, 0.8);
@@ -62,22 +62,19 @@
      DAY PLANNER COLORS (Purple-Red Theme)
      ======================================== */
   --color-planner-day1-bg: #3D2633;
-  --color-planner-day1-tag: #5A3A4F;
-  --color-planner-day1-card: #4A323F;
+
   
   /* ========================================
      DAY PLANNER COLORS (Brown Theme)
      ======================================== */
   --color-planner-day2-bg: #3D3026;
-  --color-planner-day2-tag: #594739;
-  --color-planner-day2-card: #4A3C32;
+
   
   /* ========================================
      DAY PLANNER COLORS (Green Theme)
      ======================================== */
   --color-planner-day3-bg: #263D30;
-  --color-planner-day3-tag: #395947;
-  --color-planner-day3-card: #324A3C;
+
   
   /* ========================================
      CATEGORY TAG COLORS

@@ -74,15 +74,8 @@ if (document.readyState === "loading") {
 } else {
   init();
 }
-
-function init() {
-  const table = document.getElementById("costContainer");
-  const addBtn = document.querySelector(".addCost");
+export function edit(){
   const editContent = document.querySelectorAll(".edit");
-
-  addBtn.addEventListener("click", addNewTableRow);
-
-  // enable editing
 
   editContent.forEach((el) => {
     el.setAttribute("contenteditable", "true");
@@ -93,6 +86,16 @@ function init() {
     });
   });
 
+}
+function init() {
+  const table = document.getElementById("costContainer");
+  const addBtn = document.querySelector(".addCost");
+
+  addBtn.addEventListener("click", addNewTableRow);
+
+  // enable editing
+  edit();
+  
   // prevent enter
   table.addEventListener("keydown", (e) => {
     if (e.target.classList.contains("edit") && e.key === "Enter") {
@@ -123,8 +126,19 @@ function init() {
     true
   );
 
-  //remove
   remove();
+  // delegated remove handler so new rows don't need individual listeners
+  //to make the new row have added works with remove func
+  table.addEventListener("click", (e) => {
+    const removeBtn = e.target.closest(".remove");
+    if (removeBtn && table.contains(removeBtn)) {
+      const tr = removeBtn.closest("tr");
+      const amounts = tr.querySelector(".amount-money");
+      if (amounts) amounts.textContent = "";
+      calculate();
+      tr.remove();
+    }
+  });
 
   calculate();
 }
@@ -139,7 +153,7 @@ function remove() {
     if (removeBtn) {
       removeBtn.addEventListener("click", () => {
         amounts.textContent = "";
-        calculate()
+        calculate();
         el.remove();
       });
     }
@@ -169,9 +183,19 @@ function addNewTableRow() {
   const tr = document.createElement("tr");
 
   tr.innerHTML = `
-    <td class="edit">Activities</td>
-    <td class="edit amount-money"></td>
+                   <td class="edit">Activities</td>
+                    <td class="cost">
+                      <div class="edit amount-money"></div>
+                      <div class="remove">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
+                    </td>
   `;
 
   container.insertBefore(tr, totalRow || null);
+
+  // make the new editable cells actually editable
+  tr.querySelectorAll(".edit").forEach((el) => {
+    el.setAttribute("contenteditable", "true");
+  });
 }

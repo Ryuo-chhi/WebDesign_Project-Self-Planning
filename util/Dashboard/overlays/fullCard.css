@@ -209,23 +209,46 @@ input[type="date"]::after {
   border-radius: 10px;
 }
 
-.day-card {
+.day-card,
+.newDay {
   flex: 0 0 200px;
   border-radius: 10px;
   padding: 16px;
   min-height: 320px;
   overflow-x: auto;
 }
+.day-card {
+  height: max-content;
+}
+.day-card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
 
-.day-card.day-1 {
+.newDay {
+  border: 1px dashed lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+  min-height: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.newDay:hover {
+  background-color: var(--color-white-alpha-10);
+}
+.day-card:nth-child(3n + 1) {
   background: var(--color-planner-day1-bg);
 }
 
-.day-card.day-2 {
+.day-card:nth-child(3n + 2) {
   background: var(--color-planner-day2-bg);
 }
 
-.day-card.day-3 {
+.day-card:nth-child(3n + 3) {
   background: var(--color-planner-day3-bg);
 }
 
@@ -235,18 +258,13 @@ input[type="date"]::after {
   border-radius: 4px;
   font-size: var(--font-size-base);
   margin-bottom: 16px;
+  background-color: var(--color-white-alpha-20);
 }
 
-.day-1 .day-badge {
-  background: var(--color-planner-day1-tag);
-}
-
-.day-2 .day-badge {
-  background: var(--color-planner-day2-tag);
-}
-
-.day-3 .day-badge {
-  background: var(--color-planner-day3-tag);
+.removeAct i,
+.removeCard i {
+  font-size: 10px;
+  cursor: pointer;
 }
 
 .activity-card {
@@ -256,16 +274,8 @@ input[type="date"]::after {
   position: relative;
 }
 
-.day-1 .activity-card {
-  background: var(--color-planner-day1-card);
-}
-
-.day-2 .activity-card {
-  background: var(--color-planner-day2-card);
-}
-
-.day-3 .activity-card {
-  background: var(--color-planner-day3-card);
+.activity-card {
+  background-color: var(--color-white-alpha-10);
 }
 
 .activity-header {

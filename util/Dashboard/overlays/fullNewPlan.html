@@ -55,8 +55,8 @@
                 <select name="travelStatus" id="travelStatus">
                   <option value="empty" disabled selected hidden>Empty</option>
                   <option value="planning">Planning</option>
-                  <option value="booked">Booked</option>
-                  <option value="completed">Completed</option>
+                  <option value="To plan">To plan</option>
+                  <option value="Visited">Visited</option>
                 </select>
               </div>
               <div class="meta-item">
@@ -87,14 +87,21 @@
             <div class="itinerary-grid">
               <!-- Day 1 -->
               <div class="day-card day-1">
-                <div class="day-badge">Day 1</div>
+                <div class="day-card-title">
+                  <div class="day-badge edit">Day 1</div>
+                  <div class="removeCard">
+                    <i class="fi fi-rr-cross"></i>
+                  </div>
+                </div>
 
                 <div class="activity-card">
                   <div class="activity-header">
                     <span class="activity-title edit">Visit A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                      <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">
@@ -108,7 +115,9 @@
                     <span class="activity-title edit">Sleep in A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                      <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">
@@ -125,14 +134,21 @@
 
               <!-- Day 2 -->
               <div class="day-card day-2">
-                <div class="day-badge">Day 2</div>
+                <div class="day-card-title">
+                  <div class="day-badge edit">Day 2</div>
+                  <div class="removeCard">
+                    <i class="fi fi-rr-cross"></i>
+                  </div>
+                </div>
 
                 <div class="activity-card">
                   <div class="activity-header">
                     <span class="activity-title edit">Visit A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                      <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">
@@ -146,7 +162,9 @@
                     <span class="activity-title edit">Sleep in A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                      <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">
@@ -163,14 +181,21 @@
 
               <!-- Day 3 -->
               <div class="day-card day-3">
-                <div class="day-badge">Day 3</div>
+                <div class="day-card-title">
+                  <div class="day-badge edit">Day 3</div>
+                  <div class="removeCard">
+                    <i class="fi fi-rr-cross"></i>
+                  </div>
+                </div>
 
                 <div class="activity-card">
                   <div class="activity-header">
                     <span class="activity-title edit">Visit A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                      <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">
@@ -184,7 +209,9 @@
                     <span class="activity-title edit">Sleep in A</span>
                     <div class="activity-actions">
                       <button class="action-btn">✏️</button>
-                      <button class="action-btn">⋮</button>
+                      <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
                     </div>
                   </div>
                   <label class="checkbox-label">
@@ -198,6 +225,10 @@
                   <span>New page</span>
                 </button>
               </div>
+
+              <div class="newDay">
+                <span>+ New day</span>
+              </div>
             </div>
           </section>
 
@@ -209,9 +240,6 @@
 
               <div class="info-callout edit">
                 <div class="info-callout-title">
-                  🛫 Departure: Location - Date
-                </div>
-                <div class="info-callout-text">
                   🛫 Departure: Location - Date
                 </div>
               </div>
@@ -313,10 +341,6 @@
                 <li class="highlight-item">
                   <span class="bullet">•</span>
                   <span class="edit">Empty</span>
-                </li>
-                <li class="highlight-item">
-                  <span class="bullet">•</span>
-                  <span class="edit">...</span>
                 </li>
               </ul>
             </section>
@@ -441,6 +465,6 @@
         </main>
       </div>
     </div>
-    <script type="module" src="../js/tableCalc.js"></script>
+    <script type="module" src="../js/main.js"></script>
   </body>
 </html>
