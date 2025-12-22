@@ -1,172 +1,92 @@
-// if (document.readyState === "loading") {
-//   document.addEventListener("DOMContentLoaded", initCalculate);
-// } else {
-//   initCalculate();
-// }
-
-// function edit() {
-//   document.querySelectorAll(".edit").forEach((el) => {
-//     el.setAttribute("contenteditable", "true");
-//     el.addEventListener("keydown", (e) => {
-//       if (e.key === "Enter") e.preventDefault();
-//     });
-//   });
-// }
-
-// function calculate() {
-//   const eachAmount = document.querySelectorAll(".amount-money");
-//   const total = document.querySelector(".total-amount");
-//   if (!total) return;
-
-//   let sum = 0;
-
-//   eachAmount.forEach((el) => {
-//     let raw = el.textContent || "";
-//     raw = raw.replace(/[^0-9.\-]+/g, "");
-//     const n = parseFloat(raw);
-//     if (!isNaN(n)) sum += n;
-//   });
-
-//   total.textContent = `$${sum.toFixed(2)}`;
-// }
-
-// function initCalculate() {
-//   document.querySelector(".addCost").addEventListener("click", addNewTableRow);
-
-//   edit();
-
-//   const inputs = document.querySelectorAll(".amount-money");
-
-//   inputs.forEach((el) => {
-//     // recalc while typing
-//     el.addEventListener("input", calculate);
-
-//     // format on blur for wait user input finish and then insert $
-//     el.addEventListener("blur", () => {
-//       let raw = el.textContent || "";
-//       raw = raw.replace(/[^0-9.\-]+/g, "");
-//       const n = parseFloat(raw);
-
-//       el.textContent = !isNaN(n) ? `$${n.toFixed(2)}` : "$0.00";
-//       calculate();
-//     });
-//   });
-
-//   calculate(); // initial
-// }
-
-// function addNewTableRow() {
-//   const costContainer = document.getElementById("costContainer");
-//   const totalCell = document.querySelector("#totalCell");
-//   const newCell = document.createElement("tr");
-
-//   newCell.innerHTML = `
-//                         <td class ="edit" >Activities</td>
-//                         <td class="edit amount-money"></td>
-//                       `;
-
-//   costContainer.insertBefore(newCell, totalCell || null);
-
-// }
+// Table calculation utilities — scoped per cost table (supports multiple overlays)
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", init);
 } else {
   init();
 }
-export function edit(){
-  const editContent = document.querySelectorAll(".edit");
 
+export function edit() {
+  const editContent = document.querySelectorAll(".edit");
   editContent.forEach((el) => {
     el.setAttribute("contenteditable", "true");
     el.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-      }
+      if (e.key === "Enter") e.preventDefault();
     });
   });
-
 }
+
 function init() {
-  const table = document.getElementById("costContainer");
-  const addBtn = document.querySelector(".addCost");
+  // Delegated click handler for add/remove buttons so each table is handled independently
+  document.addEventListener("click", (e) => {
+    const addBtn = e.target.closest(".addCost");
+    if (addBtn) {
+      const tbody = addBtn.closest("tbody");
+      if (tbody) addNewTableRow(tbody);
+      return;
+    }
 
-  addBtn.addEventListener("click", addNewTableRow);
+    const removeBtn = e.target.closest(".remove");
+    if (removeBtn) {
+      const tr = removeBtn.closest("tr");
+      const tbody = removeBtn.closest("tbody");
+      if (tr) tr.remove();
+      if (tbody) calculate(tbody);
+      return;
+    }
+  });
 
-  // enable editing
-  edit();
-  
-  // prevent enter
-  table.addEventListener("keydown", (e) => {
-    if (e.target.classList.contains("edit") && e.key === "Enter") {
+  // Prevent Enter in editable fields globally
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.target.classList &&
+      e.target.classList.contains("edit") &&
+      e.key === "Enter"
+    ) {
       e.preventDefault();
     }
   });
 
-  // recalc while typing
-  table.addEventListener("input", (e) => {
-    if (e.target.classList.contains("amount-money")) {
-      calculate();
+  // Recalculate while typing and on blur — scoped to the table containing the changed element
+  document.addEventListener("input", (e) => {
+    if (e.target.classList && e.target.classList.contains("amount-money")) {
+      const tbody = e.target.closest("tbody");
+      calculate(tbody);
     }
   });
 
-  // format on blur
-  table.addEventListener(
+  document.addEventListener(
     "blur",
     (e) => {
-      if (e.target.classList.contains("amount-money")) {
+      if (e.target.classList && e.target.classList.contains("amount-money")) {
         let raw = e.target.textContent || "";
         raw = raw.replace(/[^0-9.\-]+/g, "");
         const n = parseFloat(raw);
-
         e.target.textContent = !isNaN(n) ? `$${n.toFixed(2)}` : "$0.00";
-        calculate();
+        const tbody = e.target.closest("tbody");
+        calculate(tbody);
       }
     },
     true
   );
 
-  removeTb();
-  // delegated remove handler so new rows don't need individual listeners
-  //to make the new row have added works with remove func
-  table.addEventListener("click", (e) => {
-    const removeBtn = e.target.closest(".remove");
-    if (removeBtn && table.contains(removeBtn)) {
-      const tr = removeBtn.closest("tr");
-      const amounts = tr.querySelector(".amount-money");
-      if (amounts) amounts.textContent = "";
-      calculate();
-      tr.removeTb();
-    }
-  });
+  // make current editable fields editable
+  edit();
 
-  calculate();
-}
-
-function removeTb() {
-  const tableRow = document.querySelectorAll("#costContainer tr");
-
-  tableRow.forEach((el) => {
-    const removeBtn = el.querySelector(".remove");
-    const amounts = el.querySelector(".amount-money");
-
-    if (removeBtn) {
-      removeBtn.addEventListener("click", () => {
-        amounts.textContent = "";
-        calculate();
-        el.remove();
-      });
-    }
+  // initial calculation for every cost table on the page
+  document.querySelectorAll(".cost-table").forEach((tableEl) => {
+    const tbody = tableEl.querySelector("tbody") || tableEl;
+    calculate(tbody);
   });
 }
 
-function calculate() {
-  const amounts = document.querySelectorAll(".amount-money");
-  const total = document.querySelector(".total-amount");
+function calculate(root) {
+  const scope = root || document;
+  const amounts = scope.querySelectorAll(".amount-money");
+  const total = scope.querySelector(".total-amount");
   if (!total) return;
 
   let sum = 0;
-
   amounts.forEach((el) => {
     let raw = el.textContent || "";
     raw = raw.replace(/[^0-9.\-]+/g, "");
@@ -177,25 +97,24 @@ function calculate() {
   total.textContent = `$${sum.toFixed(2)}`;
 }
 
-function addNewTableRow() {
-  const container = document.getElementById("costContainer");
-  const totalRow = document.querySelector("#totalCell");
+function addNewTableRow(tbody) {
+  const container = tbody || document.getElementById("costContainer");
+  if (!container) return;
+  const totalRow = container.querySelector("#totalCell");
   const tr = document.createElement("tr");
 
   tr.innerHTML = `
-                   <td class="edit">Activities</td>
-                    <td class="cost">
-                      <div class="edit amount-money"></div>
-                      <div class="remove">
-                        <i class="fi fi-rr-cross"></i>
-                      </div>
-                    </td>
+    <td class="edit">Activities</td>
+    <td class="cost">
+      <div class="edit amount-money"></div>
+      <div class="remove">
+        <i class="fi fi-rr-cross"></i>
+      </div>
+    </td>
   `;
 
   container.insertBefore(tr, totalRow || null);
-
-  // make the new editable cells actually editable
-  tr.querySelectorAll(".edit").forEach((el) => {
-    el.setAttribute("contenteditable", "true");
-  });
+  tr.querySelectorAll(".edit").forEach((el) =>
+    el.setAttribute("contenteditable", "true")
+  );
 }

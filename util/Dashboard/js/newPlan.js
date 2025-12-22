@@ -1,4 +1,6 @@
 // import { visitedPlans } from "./data/data.js";
+import { edit } from "./tableCalc.js";
+
 
 document.querySelectorAll(".new-plan").forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -597,4 +599,5 @@ function addNewplanOverlay(container, id, status) {
     else if (status.toLowerCase() === "planning") select.value = "planning";
     else if (status.toLowerCase() === "to plan") select.value = "To plan";
   }
+  edit();
 }
