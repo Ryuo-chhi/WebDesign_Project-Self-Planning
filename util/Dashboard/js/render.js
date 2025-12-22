@@ -4,13 +4,12 @@ function renderCardOverlay() {
   const planOverlay = document.getElementById("planOverlay");
   if (!planOverlay) return;
   let id = 0;
-  planOverlay.innerHTML =
-    visitedPlans
-      .map((plan) => {
-        id++;
-        plan.id = `${plan.meta.travelStatus}-${plan.id}`;
-        console.log(plan.id);
-        return `
+  planOverlay.innerHTML = visitedPlans
+    .map((plan) => {
+      id++;
+      plan.id = `${plan.meta.travelStatus}-${plan.id}`;
+      console.log(plan.id);
+      return `
         <div class="bigCard" id = "${plan.id}">
         <div class="close">
           <i class="fi fi-rr-cross"></i>
@@ -45,7 +44,7 @@ function renderCardOverlay() {
                     alt="status icon"
                 /></span>
                 <span class="meta-label">Travel Status</span>
-                <select name="travelStatus" class="travelStatus"">
+                <select name="travelStatus" class="travelStatus">
                   <option value="empty" disabled selected hidden>Empty</option>
                   <option value="planning">Planning</option>
                   <option value="To plan">To plan</option>
@@ -59,7 +58,7 @@ function renderCardOverlay() {
                     alt="layer icon"
                 /></span>
                 <span class="meta-label">Travel Type</span>
-                <select name="travelType" class = "travelType" ">
+                <select name="travelType" class="travelType">
                   <option value="empty" disabled selected hidden>Empty</option>
                   <option value="citytrip">Citytrip</option>
                   <option value="roadtrip">Roadtrip</option>
@@ -549,8 +548,8 @@ function renderCardOverlay() {
         </main>
       </div>
         `;
-      })
-      .join("");
+    })
+    .join("");
 }
 
 function generateCard() {
