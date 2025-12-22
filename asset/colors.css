@@ -79,8 +79,12 @@
   /* ========================================
      CATEGORY TAG COLORS
      ======================================== */
-  --color-tag-roadtrip: #7B618E;
-  --color-tag-citytrip: #46709B;
+   --color-tag-roadtrip: #7B618E;
+   --color-tag-citytrip: #46709B;
+   --color-tag-beachholiday: #4BAF9B;
+   --color-tag-festivaltrip: #D46A6A;
+   --color-tag-camping: #A67C52;
+   --color-tag-hiking: #6AA84F;
   
   /* ========================================
      COMPONENT-SPECIFIC COLORS

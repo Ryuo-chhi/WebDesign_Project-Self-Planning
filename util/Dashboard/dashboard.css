@@ -157,6 +157,22 @@ body{
     background-color: var(--color-tag-roadtrip);
 }
 
+.beachholiday{
+    background-color: var(--color-tag-beachholiday);
+}
+
+.festivaltrip{
+    background-color: var(--color-tag-festivaltrip);
+}
+
+.camping{
+    background-color: var(--color-tag-camping);
+}
+
+.hiking{
+    background-color: var(--color-tag-hiking);
+}
+
 .new-plan{
     display: flex;
     justify-content: center;
