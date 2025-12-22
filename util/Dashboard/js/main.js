@@ -1,5 +1,6 @@
-// import './render.js'
+import './render.js'
 import './cardOverlay.js'
 import './tableCalc.js'
 import './itineraryCard.js'
 import './infoSection.js'
+import './newPlan.js'

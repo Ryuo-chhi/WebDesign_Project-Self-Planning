@@ -171,7 +171,7 @@ input[type="date"]::after {
   color: none;
 }
 
-.meta-item #travelStatus {
+.meta-item .travelStatus {
   width: 150px;
   padding: 6px 8px;
   border: none;
@@ -182,7 +182,7 @@ input[type="date"]::after {
   outline: none;
 }
 
-.meta-item #travelType {
+.meta-item .travelType {
   width: 150px;
 
   padding: 6px 8px;
@@ -255,7 +255,7 @@ input[type="date"]::after {
   background-color: var(--color-white-alpha-20);
 }
 
-.removeAct{
+.removeAct {
   width: 15px;
   text-align: center;
 }
@@ -279,14 +279,15 @@ input[type="date"]::after {
 .activity-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   margin-bottom: 12px;
 }
 
-/* .activity-title .edit {
+.activity-title {
+  width: 90px;
   font-size: var(--font-size-sm);
   color: var(--color-text-primary);
-} */
+}
 
 .activity-actions {
   display: flex;

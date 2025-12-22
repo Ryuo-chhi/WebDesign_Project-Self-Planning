@@ -1,8 +1,8 @@
 function initCardOverlay() {
   const cardOverlay = document.getElementById("planOverlay");
-  const triggerCards = document.querySelectorAll(".card[id]");
-  const newPlanButtons = document.querySelectorAll(".new-plan");
-  const newPlanOverlay = document.querySelector(".newPlanOverlay");
+  const rootContainer =
+    document.querySelector(".container-box") || document.body;
+  const newPlanButtons = () => document.querySelectorAll(".new-plan");
 
   function openOverlay() {
     if (!cardOverlay) return;
@@ -26,23 +26,26 @@ function initCardOverlay() {
   // Initialize: hide any overlay children
   if (cardOverlay) hideAllOverlays();
 
-  // Open overlay matching clicked card's id (search only inside the overlay container)
-  triggerCards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const id = card.getAttribute("id");
-      if (!id || !cardOverlay) return;
-      const target = cardOverlay.querySelector(`.bigCard[id="${id}"]`);
-      if (!target) return;
-      hideAllOverlays();
-      openOverlay();
-      target.style.display = "flex";
-    });
+  // Use event delegation so dynamically added .card elements work
+  rootContainer.addEventListener("click", (e) => {
+    const card = e.target.closest(".card[id]");
+    if (!card) return;
+    const id = card.getAttribute("id");
+    if (!id || !cardOverlay) return;
+    const target = cardOverlay.querySelector(`.bigCard[id="${id}"]`);
+    if (!target) return;
+    hideAllOverlays();
+    openOverlay();
+    target.style.display = "flex";
   });
 
   // Close buttons inside overlays
   if (cardOverlay) {
-    cardOverlay.querySelectorAll(".bigCard .close").forEach((el) => {
-      el.addEventListener("click", closeOverlay);
+    // Close buttons inside overlays (use delegation so newly-added overlays are handled)
+    cardOverlay.addEventListener("click", (e) => {
+      if (e.target.closest(".bigCard .close")) {
+        closeOverlay();
+      }
     });
 
     // Close when clicking on overlay background
@@ -54,14 +57,29 @@ function initCardOverlay() {
   }
 
   // New plan buttons (show the newPlanOverlay)
-  newPlanButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (!cardOverlay) return;
-      hideAllOverlays();
-      openOverlay();
-      if (newPlanOverlay) newPlanOverlay.style.display = "flex";
+  // New plan buttons: re-query the overlay at click time so dynamically appended
+  // newPlan overlays are found.
+  const bindNewPlan = () => {
+    newPlanButtons().forEach((btn) => {
+      btn.removeEventListener("click", btn._newPlanHandler);
+      const handler = () => {
+        if (!cardOverlay) return;
+        hideAllOverlays();
+        openOverlay();
+        const newPlanOverlayEl = cardOverlay.querySelector(
+          ".bigCard.newPlanOverlay"
+        );
+        if (newPlanOverlayEl) newPlanOverlayEl.style.display = "flex";
+      };
+      btn._newPlanHandler = handler;
+      btn.addEventListener("click", handler);
     });
-  });
+  };
+
+  // Initial bind and also observe DOM mutations to re-bind if new buttons are added
+  bindNewPlan();
+  const observer = new MutationObserver(bindNewPlan);
+  observer.observe(document.body, { childList: true, subtree: true });
 }
 
 if (document.readyState === "loading") {
@@ -69,4 +87,3 @@ if (document.readyState === "loading") {
 } else {
   initCardOverlay();
 }
-

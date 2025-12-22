@@ -1,11 +1,11 @@
-export let travelPlans = [
+export let visitedPlans = [
   {
     id: "1",
     title: "Barcelona",
     heroImageUrl: "https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt98aab8678ac3bce7/663907b78447cbf1b69ca84f/logan-armstrong-hVhfqhDYciU-unsplash-edited-MOBILE-HEADER.jpg?fit=crop&disable=upscale&auto=webp&quality=60&crop=smart",
     meta: {
       travelDate: "July 23, 2024 - July 30, 2024",
-      travelStatus: "Visited", // Options: 'Visited', 'Upcoming', 'Planned'
+      travelStatus: "visited", // Options: 'Visited', 'Upcoming', 'Planned'
       travelType: "City" // Options: 'City', 'Nature', 'Road Trip', 'Island'
     },
     itinerary: [
@@ -199,6 +199,8 @@ export let travelPlans = [
 
 
 ];
+
+  
 
 // To see the data in your console:
 // console.log(travelPlans);

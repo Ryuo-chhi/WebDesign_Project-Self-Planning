@@ -1,24 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Plan</title>
-    <link rel="stylesheet" href="../../../asset/colors.css" />
-    <link rel="stylesheet" href="../../../asset/fontSize.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
-    />
-    <link rel="stylesheet" href="fullCard.css" />
-  </head>
-  <body>
-    <div class="planner newPlanOverlay">
-      <div class="bigCard newPlan">
+// import { visitedPlans } from "./data/data.js";
+
+document.querySelectorAll(".new-plan").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Find the section this button belongs to
+    const cardContainer = btn.closest(".card-box");
+    if (!cardContainer) return;
+
+    const newInfo = document.createElement("div");
+    newInfo.className = "card";
+    newInfo.innerHTML = ` 
+              <div class="img">
+                <img
+                  src="https://images.pexels.com/photos/13760503/pexels-photo-13760503.jpeg"
+                  alt="angkor-wat"
+                />
+              </div>
+              <div class="info">
+                <span>🏕 New itinerary</span>
+                <div class="travel-type">Camping</div>
+              </div>
+    `;
+
+    // determine status based on the parent section title
+    const getStatusFromContainer = (container) => {
+      const section = container.closest(".container");
+      const title =section?.querySelector(".event span")?.textContent?.trim().toLowerCase() || "";
+      if (title.includes("visited")) return "Visited";
+      if (title.includes("visiting")) return "planning";
+      if (title.includes("upcoming")) return "To plan";
+      return "planning";
+    };
+
+    const count = cardContainer.querySelectorAll(".card").length;
+    const status = getStatusFromContainer(cardContainer);
+    const newId = `${status}-${count + 1}`;
+    newInfo.id = newId;
+
+    cardContainer.insertBefore(newInfo, btn);
+    addNewplanOverlay(cardContainer, newId, status);
+  });
+});
+
+function addNewplanOverlay(container, id, status) {
+  const planOverlay = document.getElementById("planOverlay");
+  if (!planOverlay) return;
+  const newOverlay = document.createElement("div");
+  newOverlay.className = "bigCard";
+  newOverlay.id = id || `${container.id || "plan"}-${Date.now()}`;
+  console.log("new overlay id:", newOverlay.id, "status:", status);
+
+  newOverlay.innerHTML = `
         <div class="close">
           <i class="fi fi-rr-cross"></i>
         </div>
@@ -66,7 +97,7 @@
                     alt="layer icon"
                 /></span>
                 <span class="meta-label">Travel Type</span>
-                <select name="travelType"  class="travelType">
+                <select name="travelType" class="travelType">
                   <option value="empty" disabled selected hidden>Empty</option>
                   <option value="citytrip">Citytrip</option>
                   <option value="roadtrip">Roadtrip</option>
@@ -554,8 +585,16 @@
             </section>
           </div>
         </main>
-      </div>
-    </div>
-    <script type="module" src="../js/main.js"></script>
-  </body>
-</html>
+    
+  `;
+
+  planOverlay.appendChild(newOverlay);
+
+  // initialize travelStatus select inside the overlay
+  const select = newOverlay.querySelector(".travelStatus");
+  if (select && status) {
+    if (status.toLowerCase() === "visited") select.value = "Visited";
+    else if (status.toLowerCase() === "planning") select.value = "planning";
+    else if (status.toLowerCase() === "to plan") select.value = "To plan";
+  }
+}
