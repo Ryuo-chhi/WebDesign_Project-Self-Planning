@@ -6,7 +6,7 @@ export let visitedPlans = [
     meta: {
       travelDate: "July 23, 2024 - July 30, 2024",
       travelStatus: "visited", // Options: 'Visited', 'Upcoming', 'Planned'
-      travelType: "City" // Options: 'City', 'Nature', 'Road Trip', 'Island'
+      travelType: "Citytrip" // Options: 'Citytrip', 'Roadtrip', 'Beach', 'Festival', 'Camping', 'Hiking'
     },
     itinerary: [
       {
@@ -98,7 +98,7 @@ export let visitedPlans = [
     meta: {
       travelDate: "July 23, 2024 - July 30, 2024",
       travelStatus: "Visited", // Options: 'Visited', 'Upcoming', 'Planned'
-      travelType: "City" // Options: 'City', 'Nature', 'Road Trip', 'Island'
+      travelType: "Citytrip" // Options: 'Citytrip', 'Roadtrip', 'Beach', 'Festival', 'Camping', 'Hiking'
     },
     itinerary: [
       {
@@ -128,12 +128,12 @@ export let visitedPlans = [
   },
   {
     id: "3",
-    title: "area-51",
+    title: "Area 51, Nevada",
     heroImageUrl: "https://cdn.mos.cms.futurecdn.net/v2/t:0,l:459,cw:1184,ch:1184,q:80,w:1184/Z6rs3jNJab8PC2cWavyt97.jpg",
     meta: {
       travelDate: "July 23, 2024 - July 30, 2024",
       travelStatus: "Visited", // Options: 'Visited', 'Upcoming', 'Planned'
-      travelType: "City" // Options: 'City', 'Nature', 'Road Trip', 'Island'
+      travelType: "Camping" // Options: 'Citytrip', 'Roadtrip', 'Beach', 'Festival', 'Camping', 'Hiking'
     },
     itinerary: [
       {
@@ -168,7 +168,7 @@ export let visitedPlans = [
     meta: {
       travelDate: "July 23, 2024 - July 30, 2024",
       travelStatus: "Visited", // Options: 'Visited', 'Upcoming', 'Planned'
-      travelType: "City" // Options: 'City', 'Nature', 'Road Trip', 'Island'
+      travelType: "Citytrip" // Options: 'Citytrip', 'Roadtrip', 'Beach', 'Festival', 'Camping', 'Hiking'
     },
     itinerary: [
       {

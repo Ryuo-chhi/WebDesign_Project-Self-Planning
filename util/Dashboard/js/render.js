@@ -1,5 +1,16 @@
 import { visitedPlans } from "./data/data.js";
 
+// Helper function to convert date format "Month Day, Year" to "YYYY-MM-DD"
+function convertToDateInput(dateStr) {
+  if (!dateStr) return '';
+  const date = new Date(dateStr.trim());
+  if (isNaN(date)) return '';
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 function renderCardOverlay() {
   const planOverlay = document.getElementById("planOverlay");
   if (!planOverlay) return;
@@ -33,9 +44,9 @@ function renderCardOverlay() {
                     alt="calendar icon"
                 /></span>
                 <span class="meta-label">Travel Date</span>
-                <input type="date" />
+                <input type="date" value="${convertToDateInput(plan.meta.travelDate.split(' - ')[0])}" />
                 <span class="meta-value">-</span>
-                <input type="date" />
+                <input type="date" value="${convertToDateInput(plan.meta.travelDate.split(' - ')[1])}" />
               </div>
               <div class="meta-item">
                 <span class="meta-icon"
@@ -44,9 +55,9 @@ function renderCardOverlay() {
                     alt="status icon"
                 /></span>
                 <span class="meta-label">Travel Status</span>
-                <select name="travelStatus" class="travelStatus">
-                  <option value="empty" disabled selected hidden>Empty</option>
-                  <option value="planning">Planning</option>
+                <select name="travelStatus" class="travelStatus" value="${plan.meta.travelStatus}">
+                  <option value="empty" disabled hidden>Empty</option>
+                  <option value="Planning">Planning</option>
                   <option value="To plan">To plan</option>
                   <option value="Visited">Visited</option>
                 </select>
@@ -58,12 +69,12 @@ function renderCardOverlay() {
                     alt="layer icon"
                 /></span>
                 <span class="meta-label">Travel Type</span>
-                <select name="travelType" class="travelType">
-                  <option value="empty" disabled selected hidden>Empty</option>
+                <select name="travelType" class="travelType" value="${plan.meta.travelType.toLowerCase()}">
+                  <option value="empty" disabled hidden>Empty</option>
                   <option value="citytrip">Citytrip</option>
                   <option value="roadtrip">Roadtrip</option>
-                  <option value="beachholiday">Beach</option>
-                  <option value="festivaltrip">Festival</option>
+                  <option value="beach">Beach</option>
+                  <option value="festival">Festival</option>
                   <option value="camping">Camping</option>
                   <option value="hiking">Hiking</option>
                 </select>
@@ -579,7 +590,7 @@ function generateCard() {
       </div>
       <div class="info">
         <span>🏙 ${card.title}</span>
-        <div class="travel-type citytrip">Citytrip</div>
+        <div class="travel-type ${card.meta.travelType}">${card.meta.travelType}</div>
       </div>
     `;
 
@@ -589,6 +600,26 @@ function generateCard() {
 }
 generateCard();
 renderCardOverlay();
+
+// Set select values after rendering
+function setSelectValues() {
+  visitedPlans.forEach((plan) => {
+    const bigCard = document.getElementById(`${plan.meta.travelStatus}-${plan.id}`);
+    if (bigCard) {
+      const statusSelect = bigCard.querySelector('.travelStatus');
+      const typeSelect = bigCard.querySelector('.travelType');
+
+      if (statusSelect) {
+        statusSelect.value = plan.meta.travelStatus;
+      }
+      if (typeSelect) {
+        typeSelect.value = plan.meta.travelType.toLowerCase();
+      }
+    }
+  });
+}
+
+setSelectValues();
 
 // Example of how you would use it:
 // document.getElementById('planOverlay').innerHTML = plannerInnerHtml;

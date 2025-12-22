@@ -149,27 +149,27 @@ body{
     font-size: 0.75rem;
 }
 
-.citytrip{
+.Citytrip{
     background-color: var(--color-tag-citytrip);
 }
 
-.roadtrip{
+.Roadtrip{
     background-color: var(--color-tag-roadtrip);
 }
 
-.beachholiday{
+.Beach{
     background-color: var(--color-tag-beachholiday);
 }
 
-.festivaltrip{
+.Festival{
     background-color: var(--color-tag-festivaltrip);
 }
 
-.camping{
+.Camping{
     background-color: var(--color-tag-camping);
 }
 
-.hiking{
+.Hiking{
     background-color: var(--color-tag-hiking);
 }
 
