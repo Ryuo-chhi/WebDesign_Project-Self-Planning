@@ -1,11 +1,5 @@
 // Table calculation utilities — scoped per cost table (supports multiple overlays)
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", init);
-} else {
-  init();
-}
-
 export function edit() {
   const editContent = document.querySelectorAll(".edit");
   editContent.forEach((el) => {
@@ -16,7 +10,7 @@ export function edit() {
   });
 }
 
-function init() {
+export function init() {
   // Delegated click handler for add/remove buttons so each table is handled independently
   document.addEventListener("click", (e) => {
     const addBtn = e.target.closest(".addCost");
