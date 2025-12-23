@@ -19,7 +19,7 @@ document.querySelectorAll(".new-plan").forEach((btn) => {
               </div>
               <div class="info">
                 <span>🏕 New itinerary</span>
-                <div class="travel-type">Camping</div>
+                <div class="travel-type Camping">Camping</div>
               </div>
     `;
 
