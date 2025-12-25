@@ -44,9 +44,11 @@ function renderCardOverlay() {
                     alt="calendar icon"
                 /></span>
                 <span class="meta-label">Travel Date</span>
-                <input type="date" value="${convertToDateInput(plan.meta.travelDate.split(' - ')[0])}" />
-                <span class="meta-value">-</span>
-                <input type="date" value="${convertToDateInput(plan.meta.travelDate.split(' - ')[1])}" />
+                <div class="date-container">
+                  <input type="date" value="${convertToDateInput(plan.meta.travelDate.split(' - ')[0])}" />
+                  <span class="meta-value">-</span>
+                  <input type="date" value="${convertToDateInput(plan.meta.travelDate.split(' - ')[1])}" />
+                </div>
               </div>
               <div class="meta-item">
                 <span class="meta-icon"
