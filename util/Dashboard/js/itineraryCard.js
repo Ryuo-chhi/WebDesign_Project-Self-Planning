@@ -28,10 +28,19 @@ export function initItineraryLogic() {
       const newAct = document.createElement("div");
       newAct.className = "activity-card";
       newAct.innerHTML = `
-        <div class="activity-header">
-          <span class="activity-title edit">New Activity</span>
-          <div class="removeAct"><i class="fi fi-rr-cross"></i></div>
-        </div>
+                  <div class="activity-header">
+                    <span class="activity-title edit">Visit A</span>
+                    <div class="activity-actions">
+                      <button class="action-btn">✏️</button>
+                      <div class="removeAct">
+                        <i class="fi fi-rr-cross"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox" name="checkbox" />
+                    <span class="done">Done</span>
+                  </label>
       `;
       dayCard.insertBefore(newAct, btn);
       edit();

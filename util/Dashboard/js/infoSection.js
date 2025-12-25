@@ -3,13 +3,13 @@
 // Global click handler for add/remove and new-item buttons
 document.body.addEventListener("click", (e) => {
   // Remove action (works for info-callout, todo-item, packing-item, highlight-item)
-  const rem = e.target.closest(".removeAct");
-  if (rem) {
+  const removeEle = e.target.closest(".removeAct");
+  if (removeEle) {
     const info =
-      rem.closest(".info-callout") ||
-      rem.closest(".todo-item") ||
-      rem.closest(".packing-item") ||
-      rem.closest(".highlight-item");
+      removeEle.closest(".info-callout") ||
+      removeEle.closest(".todo-item") ||
+      removeEle.closest(".packing-item") ||
+      removeEle.closest(".highlight-item");
     if (info) info.remove();
     return;
   }
@@ -30,23 +30,45 @@ document.body.addEventListener("click", (e) => {
   }
 
   // New map
-  const newMapBtn = e.target.closest(".new-map-btn");
-  if (newMapBtn) {
-    const section =
-      newMapBtn.closest(".googleMap") || document.querySelector(".googleMap");
-    if (!section) return;
-    const newInfo = document.createElement("div");
-    newInfo.className = "info-callout";
-    newInfo.innerHTML = `
-      <div class="info-callout-text edit">Link to route planning</div>
-      <div class="removeAct"><i class="fi fi-rr-cross"></i></div>
-    `;
-    section.appendChild(newInfo);
-    return;
+  // const newMapBtn = e.target.closest(".new-map-btn");
+  // if (newMapBtn) {
+  //   const section =
+  //     newMapBtn.closest(".googleMap") || document.querySelector(".googleMap");
+  //   if (!section) return;
+  //   const newInfo = document.createElement("div");
+  //   newInfo.className = "info-callout";
+  //   newInfo.innerHTML = `
+  //     <div class="info-callout-text edit">Link to route planning</div>
+  //     <div class="removeAct"><i class="fi fi-rr-cross"></i></div>
+  //   `;
+  //   section.appendChild(newInfo);
+  //   return;
+  // }
+
+  const icon = e.target.closest("i");
+  if (icon && icon.classList.contains("fi-rr-paper-plane-top")) {
+    const mapSection = icon.closest(".googleMap");
+    if (mapSection) {
+      const input = mapSection.querySelector('input[type="text"]');
+      if (!input) return;
+      const url = input.value.trim();
+      if (!url) return;
+      const newlink = document.createElement("div");
+      newlink.className = "info-callout";
+      newlink.innerHTML = `
+      <a href="${url}">${url}</a>
+      <div class="removeAct">
+        <i class="fi fi-rr-cross"></i>
+      </div>
+      `;
+      mapSection.appendChild(newlink);
+      input.value = "";
+      return;
+    }
   }
 
   // Todo / highlight / packing submission via icon
-  const icon = e.target.closest("i");
+  // const icon = e.target.closest("i");
   if (icon && icon.classList.contains("fi-rr-paper-plane-top")) {
     // Determine which section the icon belongs to
     const todoSection = icon.closest(".todo-list");
@@ -134,6 +156,13 @@ document.body.addEventListener("keydown", (e) => {
   if (packSec && input.matches("input")) {
     e.preventDefault();
     const icon = packSec.querySelector("i.fi-rr-paper-plane-top");
+    icon?.click();
+    return;
+  }
+  const mapSection = input.closest(".googleMap");
+  if (mapSection && input.matches("input")) {
+    e.preventDefault();
+    const icon = mapSection.querySelector("i.fi-rr-paper-plane-top");
     icon?.click();
     return;
   }

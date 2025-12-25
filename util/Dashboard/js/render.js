@@ -288,11 +288,12 @@ function renderCardOverlay() {
             <section class="info-section googleMap">
               <h2 class="section-header">🗺️ Google Maps</h2>
               <hr class="divider" />
-              <div class="new-map-btn new">
-                <span>+ New</span>
+              <div class="callout-note" id="google-input">
+                <input type="text" placeholder="Callout text..." />
+                <i class="fi fi-rr-paper-plane-top"></i>
               </div>
               <div class="info-callout">
-                <div class="info-callout-text edit">Link to route planning</div>
+                <a href="#">Link to routing plan</a>
                 <div class="removeAct">
                   <i class="fi fi-rr-cross"></i>
                 </div>

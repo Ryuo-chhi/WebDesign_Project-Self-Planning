@@ -171,6 +171,18 @@ input[type="date"]::after {
   color: none;
 }
 
+input[type="url"] {
+  width: 100%;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-callout-bg);
+  outline: none;
+  position: relative;
+}
+
 .meta-item .travelStatus {
   width: 150px;
   padding: 6px 8px;
