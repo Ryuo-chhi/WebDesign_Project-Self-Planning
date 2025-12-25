@@ -1,4 +1,6 @@
 // Use delegated handlers so dynamically injected overlays and elements work
+import { edit } from "./tableCalc.js";
+
 
 // Global click handler for add/remove and new-item buttons
 document.body.addEventListener("click", (e) => {
@@ -131,6 +133,8 @@ document.body.addEventListener("click", (e) => {
       return;
     }
   }
+    edit();
+  
 });
 
 // Keydown delegation for Enter on inputs inside these sections
