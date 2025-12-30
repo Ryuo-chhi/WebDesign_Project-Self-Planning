@@ -1,7 +1,4 @@
-/**
- * Self-Planning Travel Planner - Color System
- * Extracted from Figma Design
- */
+/** Self-Planning Travel Planner - Color System **/
 
 :root {
   /* ========================================
@@ -59,23 +56,12 @@
   --color-border-input: #99A1AF;
   
   /* ========================================
-     DAY PLANNER COLORS (Purple-Red Theme)
+     DAY PLANNER COLORS (Purple-Red Theme), (Brown Theme), and (Green Theme).
      ======================================== */
   --color-planner-day1-bg: #3D2633;
-
-  
-  /* ========================================
-     DAY PLANNER COLORS (Brown Theme)
-     ======================================== */
   --color-planner-day2-bg: #3D3026;
-
-  
-  /* ========================================
-     DAY PLANNER COLORS (Green Theme)
-     ======================================== */
   --color-planner-day3-bg: #263D30;
 
-  
   /* ========================================
      CATEGORY TAG COLORS
      ======================================== */
@@ -116,20 +102,16 @@
   --color-table-header-bg: #2A2A2A;
   --color-table-border: #1E2939;
   --color-total-highlight: #51A2FF;
-}
 
 /* ========================================
    GRADIENT UTILITIES
    ======================================== */
-:root {
   --gradient-auth-panel: linear-gradient(135deg, var(--color-gradient-auth-start) 0%, var(--color-gradient-auth-end) 100%);
   --gradient-telegram: linear-gradient(180deg, var(--color-telegram-start) 0%, var(--color-telegram-end) 100%);
-}
 
 /* ========================================
    SHADOW UTILITIES
    ======================================== */
-:root {
   --shadow-sm: 0px 4px 4px var(--color-black-alpha-25);
   --shadow-md: 0px 10px 15px -3px var(--color-black-alpha-10), 0px 4px 6px -4px var(--color-black-alpha-10);
   --shadow-lg: 0px 25px 50px -12px var(--color-black-alpha-25);
@@ -158,34 +140,3 @@
   --planner-tag: var(--color-planner-day3-tag);
   --planner-card: var(--color-planner-day3-card);
 }
-
-/* ========================================
-   USAGE EXAMPLES
-   ======================================== */
-/*
-  Background:
-    background: var(--color-bg-primary);
-    background: var(--color-bg-secondary);
-  
-  Text:
-    color: var(--color-text-primary);
-    color: var(--color-text-secondary);
-  
-  Buttons:
-    background: var(--color-button-primary);
-    color: var(--color-white);
-  
-  Inputs:
-    background: var(--color-input-bg);
-    border: 0.8px solid var(--color-input-border);
-  
-  Borders:
-    border: 2px solid var(--color-border-primary);
-  
-  Gradients:
-    background: var(--gradient-auth-panel);
-  
-  Shadows:
-    box-shadow: var(--shadow-md);
-    text-shadow: var(--text-shadow-default);
-*/
