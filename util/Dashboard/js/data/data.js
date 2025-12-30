@@ -1,3 +1,247 @@
+export let visitingPlans = [
+  {
+    id: "1",
+    title: "Angkor Wat",
+    heroImageUrl: "https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt8e4f4d2f6f5f5b2c/663907b7f1e4cbf1b69ca850/jonas-lee-E6HjQa8p8p4-unsplash-edited-MOBILE-HEADER.jpg?fit=crop&disable=upscale&auto=webp&quality=60&crop=smart",
+    meta: {
+      travelDate: "Jan 4, 2025 - Jan 24, 2025",
+      travelStatus: "visiting", // Options: 'Visited', 'Upcoming', 'Planned'  
+      travelType: "Festival" // Options: 'Citytrip', 'Roadtrip', 'Beach', 'Festival', 'Camping', 'Hiking'
+    },
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          { title: "Visit A", isDone: true },
+          { title: "Sleep in Sokha Hotel", isDone: true },
+        ]
+      },
+      {
+        day: 3,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      }
+      // You can add more days here
+    ]
+  },
+  {
+    id: "2",
+    title: "Kampot",
+    heroImageUrl: "https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt1e2f5f4f5f5f5b2c/663907b7f1e4cbf1b69ca84c/jonas-lee-E6HjQa8p8p4-unsplash-edited-MOBILE-HEADER.jpg?fit=crop&disable=upscale&auto=webp&quality=60&crop=smart",
+    meta: {
+      travelDate: "Jan 4, 2025 - Jan 24, 2025",
+      travelStatus: "visiting", // Options: 'Visited', 'Upcoming', 'Planned'
+      travelType: "Beach" // Options: 'Citytrip', 'Roadtrip', 'Beach', 'Festival', 'Camping', 'Hiking'
+    },
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          { title: "Visit A", isDone: true },
+          { title: "Sleep in Sokha Hotel", isDone: true },
+        ]
+      },
+      {
+        day: 3,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      }
+      // You can add more days here
+    ]
+  },
+  {
+    id: "3",
+    title: "Singapore",
+    heroImageUrl: "https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt5f4f5f4f5f5f5b2c/663907b7f1e4cbf1b69ca84e/jonas-lee-E6HjQa8p8p4-unsplash-edited-MOBILE-HEADER.jpg?fit=crop&disable=upscale&auto=webp&quality=60&crop=smart",
+    meta: {
+      travelDate: "Jan 4, 2025 - Jan 24, 2025",
+      travelStatus: "visiting", // Options: 'Visited', 'Upcoming', 'Planned'
+      travelType: "Citytrip" // Options: 'Citytrip', 'Roadtrip', 'Beach', 'Festival', 'Camping', 'Hiking'
+    },
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          { title: "Visit A", isDone: true },
+          { title: "Sleep in Sokha Hotel", isDone: true },
+        ]
+      },
+      {
+        day: 3,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      }
+      // You can add more days here
+    ] 
+  }
+];
+
+export let upcomingPlans = [
+  {
+    id: "1",
+    title: "New York",
+    heroImageUrl: "https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt8e4f4d2f6f5f5b2c/663907b7f1e4cbf1b69ca850/jonas-lee-E6HjQa8p8p4-unsplash-edited-MOBILE-HEADER.jpg?fit=crop&disable=upscale&auto=webp&quality=60&crop=smart",
+    meta: {
+      travelDate: "Jan 4, 2025 - Jan 24, 2025",
+      travelStatus: "upcoming", // Options: 'Visited', 'Upcoming', 'Planned'  
+      travelType: "Citytrip" // Options: 'Citytrip', 'Roadtrip', 'Beach', 'Festival', 'Camping', 'Hiking'
+    },
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          { title: "Visit A", isDone: true },
+          { title: "Sleep in Sokha Hotel", isDone: true },
+        ]
+      },
+      {
+        day: 3,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      }
+      // You can add more days here
+    ]
+  },
+  {
+    id: "2",
+    title: "Mondulkiri",
+    heroImageUrl: "https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt1e2f5f4f5f5f5b2c/663907b7f1e4cbf1b69ca84c/jonas-lee-E6HjQa8p8p4-unsplash-edited-MOBILE-HEADER.jpg?fit=crop&disable=upscale&auto=webp&quality=60&crop=smart",
+    meta: {
+      travelDate: "Jan 4, 2025 - Jan 24, 2025",
+      travelStatus: "upcoming", // Options: 'Visited', 'Upcoming', 'Planned'
+      travelType: "Hiking" // Options: 'Citytrip', 'Roadtrip', 'Beach', 'Festival', 'Camping', 'Hiking'
+    },
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          { title: "Visit A", isDone: true },
+          { title: "Sleep in Sokha Hotel", isDone: true },
+        ]
+      },
+      {
+        day: 3,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      }
+      // You can add more days here
+    ]
+  },
+  {
+    id: "3",
+    title: "Phnom 1500",
+    heroImageUrl: "https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt5f4f5f4f5f5f5b2c/663907b7f1e4cbf1b69ca84e/jonas-lee-E6HjQa8p8p4-unsplash-edited-MOBILE-HEADER.jpg?fit=crop&disable=upscale&auto=webp&quality=60&crop=smart",
+    meta: {
+      travelDate: "Jan 4, 2025 - Jan 24, 2025",
+      travelStatus: "upcoming", // Options: 'Visited', 'Upcoming', 'Planned'
+      travelType: "Roadtrip" // Options: 'Citytrip', 'Roadtrip', 'Beach', 'Festival', 'Camping', 'Hiking'
+    },
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          { title: "Visit A", isDone: true },
+          { title: "Sleep in Sokha Hotel", isDone: true },
+        ]
+      },
+      {
+        day: 3,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      }
+      // You can add more days here
+    ] 
+  },
+  {
+    id: "4",
+    title: "Kirirom National Park",
+    heroImageUrl: "https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt5f4f5f4f5f5f5b2c/663907b7f1e4cbf1b69ca84e/jonas-lee-E6HjQa8p8p4-unsplash-edited-MOBILE-HEADER.jpg?fit=crop&disable=upscale&auto=webp&quality=60&crop=smart",
+    meta: {
+      travelDate: "Jan 4, 2025 - Jan 24, 2025",
+      travelStatus: "upcoming", // Options: 'Visited', 'Upcoming', 'Planned'
+      travelType: "Camping" // Options: 'Citytrip', 'Roadtrip', 'Beach', 'Festival', 'Camping', 'Hiking'
+    },
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          { title: "Visit A", isDone: true },
+          { title: "Sleep in Sokha Hotel", isDone: true },
+        ]
+      },
+      {
+        day: 3,
+        activities: [
+          { title: "Visit A", isDone: false },
+          { title: "Sleep in A", isDone: false },
+        ]
+      }
+      // You can add more days here
+    ] 
+  }
+];
+
 export let visitedPlans = [
   {
     id: "1",
