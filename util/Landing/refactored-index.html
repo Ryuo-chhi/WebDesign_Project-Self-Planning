@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -8,57 +8,168 @@
   <link rel="stylesheet" href="../../asset/colors.css" />
   <link rel="stylesheet" href="../../asset/fontSize.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" />
-  <link rel="stylesheet" href="nav.css" />
-  <link rel="stylesheet" href="footer.css" />
-  <link rel="stylesheet" href="form.css" />
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css" />
   <link rel="stylesheet"
     href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <style>
-    html {scroll-behavior: smooth;}
-    button {cursor: pointer;}
+    /* Header & Nav - dynamic classes */
+    nav .link {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out;
+    }
+
+    nav .link.open {
+      max-height: 500px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .link a:hover {
+      background-color: var(--color-white-alpha-10);
+    }
+
+    nav .close:hover,
+    .menu:hover {
+      scale: 1.1;
+      background-color: transparent;
+    }
+
+    /* Footer icon colors */
+    footer .fi-brands-facebook {
+      color: #1877f2;
+    }
+
+    footer .fi-brands-telegram {
+      color: #27a7e7;
+    }
+
+    footer .fi-brands-github {
+      color: #ffff;
+    }
+
+    /* Form dynamic classes */
+    .form-group.open {
+      display: flex !important;
+    }
+
+    .signup-group.slide,
+    .login-group.slide {
+      transform: translateX(100%);
+    }
+
+    .form-group .close:hover {
+      background-color: darkred;
+    }
+
+    .input-group i {
+      position: absolute;
+      top: 58%;
+      left: 10px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .gradient-bg {
+      background: var(--gradient-auth-panel);
+    }
+
+    .form-section {
+      width: 24rem;
+      height: 36rem;
+    }
+
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+      .form-section {
+        width: 24rem;
+        height: 36rem;
+        max-height: none;
+      }
+    }
+
+    @media (min-width: 1024px) {
+
+      nav,
+      nav .link,
+      nav .log-sign,
+      .link li {
+        flex-direction: row;
+      }
+
+      nav .link {
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        padding-right: 10px;
+      }
+
+      nav .logo {
+        width: auto;
+      }
+
+      .link li {
+        gap: 3rem;
+      }
+
+      .container-box {
+        width: auto;
+      }
+
+      .gradient-bg,
+      .welcome-content {
+        display: flex;
+      }
+    }
   </style>
 
 </head>
 
-<body class="m-0 p-0 box-border font-['Poppins',sans-serif]">
+<body class="m-0 p-0 box-border font-['Poppins',sans-serif] bg-[color:var(--color-bg-primary)]">
   <div class="grid grid-rows-[auto_auto_auto] gap-16 justify-items-center">
     <!-- navBar -->
-    <header class="col-start-1 row-start-1">
-      <nav>
-        <div class="logo">
+    <header
+      class="col-start-1 row-start-1 w-[95%] fixed top-5 left-0 right-0 mx-auto transition-all duration-500 z-[100]">
+      <nav
+        class="w-11/12 flex flex-col lg:flex-row justify-between items-center bg-[color:var(--color-bg-overlay)] rounded-[10px] px-2 lg:px-4 py-2 shadow-[var(--shadow-sm)] backdrop-blur-sm">
+        <div class="logo w-full lg:w-auto flex justify-between items-center">
           <a href="#">
-            <img src="/asset/img/Self-Planning-Logo.png" alt="logo" />
+            <img src="/asset/img/Self-Planning-Logo.png" alt="logo" class="h-12" />
           </a>
-          <div class="mobile">
-            <div class="menu">
+          <div class="mobile flex lg:hidden gap-2">
+            <div class="menu flex justify-center items-center text-white text-3xl cursor-pointer hover:scale-110">
               <i class="fi fi-rr-menu-burger"></i>
             </div>
-            <div class="close">
+            <div class="close hidden justify-center items-center text-white text-3xl cursor-pointer hover:scale-110">
               <i class="fi fi-rr-cross"></i>
             </div>
           </div>
         </div>
-        <div class="link">
-          <ul>
-            <li>
-              <a href="#">Home</a>
-              <a href="../about/about.html">About</a>
-              <a href="#features">Feature</a>
-              <a href="#Contact">Contact</a>
+        <div
+          class="link w-full lg:w-2/3 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 lg:gap-0">
+          <ul class="flex flex-col lg:flex-row gap-0.5 lg:gap-12 w-full lg:w-auto">
+            <li class="flex flex-col gap-0.5">
+              <a href="#"
+                class="text-[color:var(--color-text-primary)] no-underline hover:bg-[color:var(--color-white-alpha-10)] rounded-md p-1 transition-all">Home</a>
+              <a href="../about/about.html"
+                class="text-[color:var(--color-text-primary)] no-underline hover:bg-[color:var(--color-white-alpha-10)] rounded-md p-1 transition-all">About</a>
+              <a href="#features"
+                class="text-[color:var(--color-text-primary)] no-underline hover:bg-[color:var(--color-white-alpha-10)] rounded-md p-1 transition-all">Feature</a>
+              <a href="#Contact"
+                class="text-[color:var(--color-text-primary)] no-underline hover:bg-[color:var(--color-white-alpha-10)] rounded-md p-1 transition-all">Contact</a>
             </li>
           </ul>
-          <div class="log-sign">
-            <div>
+          <div class="log-sign flex flex-col lg:flex-row gap-2.5 w-full lg:w-auto">
+            <div class="w-full lg:w-auto">
               <button id="login"
-                class="bg-[color:var(--color-primary-blue)] text-[color:var(--color-text-primary)] text-[length:var(--font-size-h4)] py-1.5 px-2.5 rounded-[10px] border border-[color:var(--color-primary-blue)] cursor-pointer transition-all duration-500 hover:bg-[color:var(--color-primary-blue-alpha-80)] hover:border-[color:var(--color-primary-blue-alpha-80)] hover:translate-y-[3px]">Log
+                class="w-full bg-[color:var(--color-primary-blue)] text-[color:var(--color-text-primary)] text-[length:var(--font-size-h4)] py-1.5 px-2.5 rounded-[10px] border border-[color:var(--color-primary-blue)] cursor-pointer transition-all duration-500 hover:bg-[color:var(--color-primary-blue-alpha-80)] hover:border-[color:var(--color-primary-blue-alpha-80)] hover:translate-y-1">Log
                 in</button>
             </div>
-            <div>
+            <div class="w-full lg:w-auto">
               <button id="sign-up"
-                class="bg-[color:var(--color-primary-blue)] text-[color:var(--color-text-primary)] text-[length:var(--font-size-h4)] py-1.5 px-2.5 rounded-[10px] border border-[color:var(--color-primary-blue)] cursor-pointer transition-all duration-500 hover:bg-[color:var(--color-primary-blue-alpha-80)] hover:border-[color:var(--color-primary-blue-alpha-80)] hover:translate-y-[3px]">Sign
+                class="w-full bg-[color:var(--color-primary-blue)] text-[color:var(--color-text-primary)] text-[length:var(--font-size-h4)] py-1.5 px-2.5 rounded-[10px] border border-[color:var(--color-primary-blue)] cursor-pointer transition-all duration-500 hover:bg-[color:var(--color-primary-blue-alpha-80)] hover:border-[color:var(--color-primary-blue-alpha-80)] hover:translate-y-1">Sign
                 up</button>
             </div>
           </div>
@@ -69,12 +180,14 @@
       class="col-start-1 row-start-2 flex flex-col justify-center items-center gap-16 w-full px-4 md:px-24 min-w-[374px]">
       <section
         class="grid grid-cols-[0.8fr] md:grid-cols-[minmax(500px,1fr)] lg:grid-cols-[1fr_0.8fr] justify-items-center items-center justify-center gap-12 p-4">
-        <div class="w-full">
+        <div class="w-full ml-0 md:ml-4">
           <div class="mb-1.5">
-            <h1 class="text-[color:var(--color-text-primary)] text-[length:var(--font-size-hero)] leading-none">Welcome
+            <h1
+              class="text-[color:var(--color-text-primary)] text-[length:var(--font-size-hero)] leading-none font-semibold">
+              Welcome
               to</h1>
             <h1
-              class="text-[color:var(--color-primary-blue)] text-[length:var(--font-size-h1)] md:text-[length:var(--font-size-h2)] lg:text-[length:var(--font-size-h1)] leading-none">
+              class="text-[color:var(--color-primary-blue)] text-[length:var(--font-size-h1)] md:text-[length:var(--font-size-h2)] lg:text-[length:var(--font-size-h1)] leading-none font-semibold">
               Self-Planning Travel Planner</h1>
           </div>
           <span class="flex items-center text-[color:var(--color-text-accent)] text-[length:var(--font-size-h4)]">Stop
@@ -96,13 +209,14 @@
       </section>
       <section id="features">
         <div class="flex justify-center items-center gap-2">
-          <h2 class="text-[color:var(--color-text-primary)] mb-5 text-[length:var(--font-size-h2)]">Everything is yours
+          <h2 class="text-[color:var(--color-text-primary)] text-[length:var(--font-size-h2)] font-semibold">Everything
+            is yours</h2>
+          <h2 class="text-[color:var(--color-text-accent)] text-[length:var(--font-size-h2)] font-semibold">Benefits
           </h2>
-          <h2 class="text-[color:var(--color-text-accent)] mb-5 text-[length:var(--font-size-h2)]">Benefits</h2>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 p-4 gap-8 justify-items-center">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 p-4 gap-8 justify-items-center mt-[20px] mb-1">
           <div
-            class="max-w-[400px] flex flex-col justify-center items-center bg-[color:var(--color-bg-secondary)] p-2.5 gap-2.5 rounded-[15px] shadow-[var(--shadow-sm)] transition-all duration-500 hover:-translate-y-1.5">
+            class=" max-w-[400px] flex flex-col justify-center items-center bg-[color:var(--color-bg-secondary)] p-2.5 gap-2.5 rounded-[15px] shadow-[var(--shadow-sm)] transition-all duration-500 hover:-translate-y-1.5">
             <img src="/asset/img/to-do-list .png" alt="to-do-list"
               class="h-[66px] w-[66px] aspect-square object-cover" />
             <h3 class="text-[color:var(--color-text-primary)]">To-Do List</h3>
@@ -135,160 +249,189 @@
         </div>
       </section>
     </main>
-    <footer class="col-start-1 row-start-3 px-4">
-      <div class="container">
-        <hr />
-        <div class="logo">
+    <footer class="col-start-1 row-start-3 px-4 w-full">
+      <div class="container w-full">
+        <hr class="w-full h-1.5 bg-white border-none mb-4" />
+        <div class="logo flex justify-center mb-4">
           <a href="#">
-            <img src="/asset/img/Self-Planning-Logo.png" alt="logo" />
+            <img src="/asset/img/Self-Planning-Logo.png" alt="logo" class="h-12" />
           </a>
         </div>
-        <div class="footer-info" id="Contact">
-          <div class="so-me">
-            <h3>Follow us on:</h3>
-            <div class="icon">
-              <i class="fi fi-brands-facebook"></i>
-              <i class="fi fi-brands-telegram"></i>
-              <i class="fi fi-brands-github"></i>
+        <div class="footer-info flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12" id="Contact">
+          <div class="so-me flex flex-col items-center gap-2">
+            <h3 class="text-[color:var(--color-text-primary)] font-semibold">Follow us on:</h3>
+            <div class="icon flex gap-1">
+              <i class="fi fi-brands-facebook text-5xl m-1.5 cursor-pointer"></i>
+              <i class="fi fi-brands-telegram text-5xl m-1.5 cursor-pointer"></i>
+              <i class="fi fi-brands-github text-5xl m-1.5 cursor-pointer"></i>
             </div>
           </div>
           <div class="link">
-            <ul>
+            <ul class="list-none flex flex-col gap-2.5">
               <li>
-                <a href="/util/about/about.html">About</a>
-                <a href="#features">Feature</a>
-                <a href="#Contack">Contact</a>
+                <a href="/util/about/about.html" class="text-[color:var(--color-text-primary)] no-underline">About</a>
+              </li>
+              <li>
+                <a href="#features" class="text-[color:var(--color-text-primary)] no-underline">Feature</a>
+              </li>
+              <li>
+                <a href="#Contact" class="text-[color:var(--color-text-primary)] no-underline">Contact</a>
               </li>
             </ul>
           </div>
-          <div class="img">
-            <img src="/asset/img/self-service.png" alt="self-service" />
+          <div class="img hidden md:flex">
+            <img src="/asset/img/self-service.png" alt="self-service" class="h-[170px] w-[170px] aspect-square" />
           </div>
         </div>
-        <div class="copy-rigth">
-          <p>Copyright © 2025 Self-Planning, All rights reserved.</p>
+        <div class="copy-right text-center mt-6">
+          <p class="text-[color:var(--color-text-secondary)]">Copyright © 2025 Self-Planning, All rights reserved.</p>
         </div>
       </div>
     </footer>
   </div>
   <!-- overlays moved out of nav so fixed positioning covers viewport -->
-  <div class="form-group" id="formOverlay" aria-hidden="true">
-    <div class="container-box">
-      <div class="container gradient-bg">
-        <div class="welcome-content">
-          <div class="safe-lock">
+  <div class="form-group hidden fixed inset-0 z-50 bg-black/50 items-center justify-center transition-all"
+    id="formOverlay" aria-hidden="true">
+    <div
+      class="container-box w-96 h-auto flex flex-col lg:flex-row justify-center items-center rounded-[12px] border border-[color:var(--color-bg-overlay)] shadow-[var(--shadow-sm)] bg-[color:var(--color-bg-primary)] overflow-hidden">
+      <div
+        class="gradient-bg hidden lg:flex w-96 h-[576px] rounded-l-[10px] border-r border-[color:var(--color-bg-overlay)] shadow-[var(--shadow-sm)] p-10 flex-col justify-center items-start">
+        <div class="welcome-content flex flex-col justify-center items-start gap-4">
+          <div
+            class="safe-lock flex justify-center items-center h-15 w-15 rounded-md bg-[color:var(--color-white-alpha-20)] text-2xl text-[color:var(--color-text-primary)] mb-4">
             <i class="fi fi-rr-lock"></i>
           </div>
           <div>
-            <h2>Welcome to Our Platform</h2>
+            <h2 class="text-[color:var(--color-text-primary)] text-3xl font-bold leading-tight">Welcome to Our
+              Platform</h2>
           </div>
           <div>
-            <p>
-              Join thousands of users who trust our secure and seamless
-              authentication experience.
-            </p>
+            <p class="text-base text-[color:var(--color-white-alpha-80)]">Join thousands of users who trust our
+              secure and seamless authentication experience.</p>
           </div>
         </div>
       </div>
-      <div class="form-section container">
-        <div class="close">
-          <i class="fi fi-rr-cross"></i>
+      <div
+        class="form-section flex flex-col justify-center gap-2.5 p-0 transition-all relative bg-[color:var(--color-bg-primary)] rounded-[10px] overflow-hidden">
+        <div
+          class="close absolute top-0 right-0 z-50 bg-red-600 rounded-bl-none rounded-tr-[10px] p-1.5 cursor-pointer transition-all hover:bg-red-800">
+          <i class="fi fi-rr-cross text-white"></i>
         </div>
-        <div class="login-group" aria-hidden="true">
-          <div>
-            <p class="headline-form">Log In</p>
-            <p class="font-small" style="color: var(--color-text-secondary)">
-              Enter your credentials to access your account
-            </p>
+        <div class="login-group absolute inset-0 translate-x-0 transition-all duration-300" aria-hidden="true">
+          <div class="p-10">
+            <p class="headline-form text-[color:var(--color-text-primary)] text-xl font-semibold">Log In</p>
+            <p class="text-[length:var(--font-size-sm)] text-[color:var(--color-text-secondary)] mt-1">Enter your
+              credentials to access your account</p>
           </div>
 
-          <div>
-            <form action="../Dashboard/dashboard.html" method="POST" id="loginForm">
-              <div class="input-group">
-                <label for="email">Email Address</label>
-                <i class="fi fi-rr-envelope"></i>
-                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          <div class="px-10">
+            <form action="../Dashboard/dashboard.html" method="POST" id="loginForm" class="flex flex-col gap-5 w-full">
+              <div class="input-group relative block">
+                <label for="email" class="block text-1rem font-light text-[color:var(--color-text-primary)] mb-2">Email
+                  Address</label>
+                <i class="fi fi-rr-envelope absolute top-14 left-2.5 pointer-events-none"></i>
+                <input type="email" id="email" name="email" placeholder="you@example.com"
+                  class="w-full p-3 pl-10 bg-[color:var(--color-input-bg)] border border-[color:var(--color-input-border)] text-[color:var(--color-text-primary)] rounded-md text-[length:var(--font-size-sm)] placeholder:text-[color:var(--color-text-secondary)]"
+                  required />
               </div>
 
-              <div class="input-group">
-                <label for="password">Password</label>
-                <i class="fi fi-rr-lock"></i>
-                <input type="password" id="password" name="password" placeholder="********" required />
+              <div class="input-group relative block">
+                <label for="password"
+                  class="block text-1rem font-light text-[color:var(--color-text-primary)] mb-2">Password</label>
+                <i class="fi fi-rr-lock absolute top-14 left-2.5 pointer-events-none"></i>
+                <input type="password" id="password" name="password" placeholder="********"
+                  class="w-full p-3 pl-10 bg-[color:var(--color-input-bg)] border border-[color:var(--color-input-border)] text-[color:var(--color-text-primary)] rounded-md text-[length:var(--font-size-sm)] placeholder:text-[color:var(--color-text-secondary)]"
+                  required />
               </div>
-              <div class="forgot-pw font-small">
-                <span><a href="#">Forgot password?</a></span>
+              <div class="forgot-pw text-right text-[length:var(--font-size-sm)]">
+                <span><a href="#" class="text-[color:var(--color-primary-blue-light)]">Forgot password?</a></span>
               </div>
               <div class="actions">
-                <button type="submit" class="create-account-btn">
+                <button type="submit"
+                  class="create-account-btn w-full p-3 rounded-md font-medium bg-[color:var(--color-primary-blue)] text-[color:var(--color-text-primary)] cursor-pointer border-none transition-colors hover:bg-[color:var(--color-primary-blue-alpha-80)]">
                   Log in
                 </button>
               </div>
             </form>
           </div>
-          <div class="link-container">
-            <p class="rd-have-acc">
+          <div class="link-container px-10">
+            <p class="rd-have-acc text-center text-0.9rem text-[color:var(--color-text-secondary)]">
               Don't have an account?
-              <a href="" class="link-signup">Sign Up</a>
+              <a href="" class="link-signup text-[color:var(--color-primary-blue)]">Sign Up</a>
             </p>
           </div>
-          <div class="continue-with-text">
-            <div class="line"></div>
-            <div class="font-small">or continue with</div>
-            <div class="line"></div>
+          <div
+            class="continue-with-text px-10 text-center text-0.85rem text-[color:var(--color-text-muted)] gap-2.5 flex items-center justify-center">
+            <div class="line flex-grow h-px bg-[color:var(--color-text-secondary)]"></div>
+            <div class="text-[length:var(--font-size-sm)]">or continue with</div>
+            <div class="line flex-grow h-px bg-[color:var(--color-text-secondary)]"></div>
           </div>
 
-          <div>
-            <button type="button" class="google-btn">Google</button>
+          <div class="px-10 pb-10">
+            <button type="button"
+              class="google-btn w-full p-3 rounded-md font-semibold bg-[color:var(--color-primary-blue)] text-[color:var(--color-text-primary)] cursor-pointer border-none transition-colors hover:bg-[color:var(--color-primary-blue-alpha-80)]">Google</button>
           </div>
         </div>
-        <div class="signup-group" aria-hidden="true">
-          <div>
-            <p class="headline-form">Create your account</p>
-            <p class="font-small" style="color: var(--color-text-secondary)">
-              Fill in your details to get started.
+        <div class="signup-group absolute inset-0 translate-x-0 transition-all duration-300" aria-hidden="true">
+          <div class="p-10">
+            <p class="headline-form text-[color:var(--color-text-primary)] text-xl font-semibold">Create your account
             </p>
+            <p class="text-[length:var(--font-size-sm)] text-[color:var(--color-text-secondary)] mt-1">Fill in your
+              details to get started.</p>
           </div>
-          <div>
-            <form action="../Dashboard/dashboard.html" method="POST" id="sign-upForm">
-              <div class="input-group">
-                <label for="fullname">Full Name</label>
-                <i class="fi fi-rr-user"></i>
-                <input type="text" id="fullname" name="fullname" placeholder="John Doe" required />
+          <div class="px-10">
+            <form action="../Dashboard/dashboard.html" method="POST" id="sign-upForm"
+              class="flex flex-col gap-5 w-full">
+              <div class="input-group relative block">
+                <label for="fullname"
+                  class="block text-1rem font-light text-[color:var(--color-text-primary)] mb-2">Full Name</label>
+                <i class="fi fi-rr-user absolute top-14 left-2.5 pointer-events-none"></i>
+                <input type="text" id="fullname" name="fullname" placeholder="John Doe"
+                  class="w-full p-3 pl-10 bg-[color:var(--color-input-bg)] border border-[color:var(--color-input-border)] text-[color:var(--color-text-primary)] rounded-md text-[length:var(--font-size-sm)] placeholder:text-[color:var(--color-text-secondary)]"
+                  required />
               </div>
 
-              <div class="input-group">
-                <label for="email">Email Address</label>
-                <i class="fi fi-rr-envelope"></i>
-                <input type="email" id="email-sign" name="email" placeholder="you@example.com" required />
+              <div class="input-group relative block">
+                <label for="email-sign"
+                  class="block text-1rem font-light text-[color:var(--color-text-primary)] mb-2">Email Address</label>
+                <i class="fi fi-rr-envelope absolute top-14 left-2.5 pointer-events-none"></i>
+                <input type="email" id="email-sign" name="email" placeholder="you@example.com"
+                  class="w-full p-3 pl-10 bg-[color:var(--color-input-bg)] border border-[color:var(--color-input-border)] text-[color:var(--color-text-primary)] rounded-md text-[length:var(--font-size-sm)] placeholder:text-[color:var(--color-text-secondary)]"
+                  required />
               </div>
 
-              <div class="input-group">
-                <label for="password-sign">Password</label>
-                <i class="fi fi-rr-lock"></i>
-                <input type="password" id="password-sign" name="password" placeholder="********" required />
+              <div class="input-group relative block">
+                <label for="password-sign"
+                  class="block text-1rem font-light text-[color:var(--color-text-primary)] mb-2">Password</label>
+                <i class="fi fi-rr-lock absolute top-14 left-2.5 pointer-events-none"></i>
+                <input type="password" id="password-sign" name="password" placeholder="********"
+                  class="w-full p-3 pl-10 bg-[color:var(--color-input-bg)] border border-[color:var(--color-input-border)] text-[color:var(--color-text-primary)] rounded-md text-[length:var(--font-size-sm)] placeholder:text-[color:var(--color-text-secondary)]"
+                  required />
               </div>
 
               <div class="actions">
-                <button type="submit" class="create-account-btn">
+                <button type="submit"
+                  class="create-account-btn w-full p-3 rounded-md font-medium bg-[color:var(--color-primary-blue)] text-[color:var(--color-text-primary)] cursor-pointer border-none transition-colors hover:bg-[color:var(--color-primary-blue-alpha-80)]">
                   Create Account
                 </button>
               </div>
             </form>
           </div>
-          <div class="link-container">
-            <p class="rd-have-acc">
+          <div class="link-container px-10">
+            <p class="rd-have-acc text-center text-0.9rem text-[color:var(--color-text-secondary)]">
               Already have an account?
-              <a href="" class="link-login">Log in</a>
+              <a href="" class="link-login text-[color:var(--color-primary-blue)]">Log in</a>
             </p>
           </div>
-          <div class="continue-with-text">
-            <div class="line"></div>
-            <div>or continue with</div>
-            <div class="line"></div>
+          <div class="continue-with-text px-10 text-center text-0.85rem gap-2.5 flex items-center justify-center">
+            <div class="line flex-grow h-px bg-[color:var(--color-text-secondary)]"></div>
+            <div class="text-[length:var(--font-size-sm)] text-[color:var(--color-text-muted)]">or continue with</div>
+            <div class="line flex-grow h-px bg-[color:var(--color-text-secondary)]"></div>
           </div>
 
-          <div>
-            <button type="button" class="google-btn">Google</button>
+          <div class="px-10 pb-10">
+            <button type="button"
+              class="google-btn w-full p-3 rounded-md font-semibold bg-[color:var(--color-primary-blue)] text-[color:var(--color-text-primary)] cursor-pointer border-none transition-colors hover:bg-[color:var(--color-primary-blue-alpha-80)]">Google</button>
           </div>
         </div>
       </div>
